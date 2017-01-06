@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sunsoft.zyebiz.b2e">
+
+    <application
+        android:largeHeap="true"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!--Activity的基类-->
+        <activity android:name=".mvp.base.BaseActivity"></activity>
+        <!--闪屏页-->
+        <activity android:name=".mvp.splash.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--指导页-->
+        <activity android:name=".mvp.welcome.GuideActivity"></activity>
+    </application>
+
+
+</manifest>
