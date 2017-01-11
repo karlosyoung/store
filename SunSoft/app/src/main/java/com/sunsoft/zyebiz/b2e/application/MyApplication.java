@@ -14,6 +14,17 @@ public class MyApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+        initCommonFeature();
+    }
 
+    public static Context getContext(){
+        return context;
+    }
+
+    /**
+     * 初始化功能
+     */
+    private void initCommonFeature(){
+        context = getApplicationContext();
     }
 }
