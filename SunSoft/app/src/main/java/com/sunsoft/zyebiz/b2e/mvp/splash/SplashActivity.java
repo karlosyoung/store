@@ -7,4 +7,18 @@ import com.sunsoft.zyebiz.b2e.mvp.base.BaseActivity;
  */
 public class SplashActivity extends BaseActivity {
 
+    @Override
+    protected void handleActivityKilledException() {
+
+    }
+
+    @Override
+    protected void initSubView() {
+
+    }
+
+    @Override
+    protected void clearData() {
+
+    }
 }

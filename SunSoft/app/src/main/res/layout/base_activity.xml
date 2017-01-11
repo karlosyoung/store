@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/base_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </FrameLayout>
+    <!--无网标题栏展示-->
+    <RelativeLayout
+        android:layout_marginTop="@dimen/title_height"
+        android:id="@+id/no_net_title_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:visibility="gone"
+        >
+        <include layout="@layout/common_no_net_title"></include>
+    </RelativeLayout>
+</RelativeLayout>

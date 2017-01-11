@@ -28,7 +28,10 @@ android {
 
         multiDexEnabled true
     }
-
+    /*UTF和GBK的问题*/
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
 
     /*打包使用的*/
     signingConfigs {
@@ -67,4 +70,6 @@ dependencies {
     provided 'javax.annotation:javax.annotation-api:1.2'
     compile 'com.google.dagger:dagger:2.5'
     apt 'com.google.dagger:dagger-compiler:2.5'
+    //OkHttp的使用
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
 }

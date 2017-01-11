@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="@dimen/title_height"
+    android:background="#ff0000"
+    >
+    <RelativeLayout
+        android:id="@+id/top_title_left"
+        android:layout_width="@dimen/title_height"
+        android:layout_height="@dimen/title_height">
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="标题"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_alignParentRight="true"
+        android:id="@+id/top_title_right"
+        android:layout_width="@dimen/title_height"
+        android:layout_height="@dimen/title_height">
+
+    </RelativeLayout>
+</RelativeLayout>

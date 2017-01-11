@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/no_net_rl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:gravity="center"
+        android:background="@color/yellow_no_net_bg"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="网络无法连接，请检查您的网络设置"
+            android:drawableLeft="@drawable/no_net_msg"
+            android:textSize="14sp"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            />
+    </RelativeLayout>
+</LinearLayout>
