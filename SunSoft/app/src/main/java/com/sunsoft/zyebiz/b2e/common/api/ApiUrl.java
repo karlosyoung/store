@@ -11,5 +11,5 @@ public class ApiUrl {
     /**
      *
      */
-    public static final String LOGIN_RELEASE = "";
+    public static final String RELEASE_LOGIN = "";
 }
