@@ -53,10 +53,10 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="40dp"
-                android:background="@drawable/select_load_again_bt2"
+                android:background="@drawable/select_load_again"
                 android:gravity="center"
 
-                android:textColor="@color/color_gray" />
+                android:textColor="#bebebe" />
             <!--shape_no_msg_bt-->
             <TextView
                 android:layout_width="wrap_content"

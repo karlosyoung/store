@@ -45,7 +45,7 @@
                 android:layout_gravity="center_horizontal"
                 android:text="互联网似乎已断开连接~"
                 android:layout_marginTop="15dp"
-                android:textColor="@color/color_gray"
+                android:textColor="#bebebe"
                 android:textSize="14dp"
                 />
 
@@ -55,9 +55,9 @@
                 android:layout_height="38dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="50dp"
-                android:background="@drawable/select_load_again_bt2"
+                android:background="@drawable/select_load_again"
                 android:gravity="center"
-                android:textColor="@color/color_gray" />
+                android:textColor="#bebebe" />
 
             <TextView
                 android:layout_width="wrap_content"
