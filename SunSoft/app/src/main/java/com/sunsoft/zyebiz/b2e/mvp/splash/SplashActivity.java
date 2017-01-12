@@ -1,29 +1,9 @@
 package com.sunsoft.zyebiz.b2e.mvp.splash;
 
-import com.sunsoft.zyebiz.b2e.mvp.base.BaseActivity;
-
 /**
  *
  */
-public class SplashActivity extends BaseActivity {
+public class SplashActivity  {
 
-    @Override
-    protected void handleActivityKilledException() {
 
-    }
-
-    @Override
-    protected void initSubView() {
-
-    }
-
-    @Override
-    protected void clearData() {
-
-    }
-
-    @Override
-    protected void isFinishCurrentActivity() {
-
-    }
 }

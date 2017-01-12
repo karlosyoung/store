@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/loading_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:indeterminateDrawable="@drawable/drawable_progressbar"
+            />
+    </RelativeLayout>
+    <com.sunsoft.zyebiz.b2e.view.MyRelativelayout
+        android:id="@+id/loading_can_not_touch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </com.sunsoft.zyebiz.b2e.view.MyRelativelayout>
 
-</LinearLayout>
+</RelativeLayout>

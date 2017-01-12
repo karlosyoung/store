@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="titlebar_bg">#4CB050</color>
     <color name="colorPrimary">#24cf5f</color>
     <color name="colorPrimaryDark">#24cf5f</color>
@@ -16,6 +17,7 @@
     <color name="common_gray">#666666</color>
     <!-- 公共背景 -->
     <color name="common_content_bg">#eeeeee</color>
+
     <!--没有网络的背景色-->
     <color name="no_net_bg">#FFF2C8</color>
     <!--引用颜色-->
@@ -41,4 +43,7 @@
     <color name="color_171717">#171717</color>
     <color name="color_343332">#343332</color>
 
+    <color name="yellow_no_net_bg">#FFF2C8</color>
+    <!--标题栏的颜色-->
+    <color name="green_title">#4CB050</color>
 </resources>

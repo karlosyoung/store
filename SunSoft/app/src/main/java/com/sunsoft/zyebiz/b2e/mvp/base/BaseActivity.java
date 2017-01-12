@@ -5,14 +5,18 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.view.KeyEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.common.Manager.AppManager;
 import com.sunsoft.zyebiz.b2e.common.net.checkNet.NetEvent;
+import com.sunsoft.zyebiz.b2e.utils.localUtil.CloseKeyBoard;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 import de.greenrobot.event.EventBus;
 
 /**
@@ -20,45 +24,100 @@ import de.greenrobot.event.EventBus;
  * Activity的销毁
  * Created by MJX on 2017/1/4.
  */
-public abstract class BaseActivity extends FragmentActivity{
-    protected FrameLayout baseFramelayout;
-    protected RelativeLayout noNetTitleView;
+
+
+
+
+public abstract class BaseActivity extends FragmentActivity {
+
+    @InjectView(R.id.notice)
+    TextView notice;
+    @InjectView(R.id.top_title_left)
+    RelativeLayout topTitleLeft;
+    @InjectView(R.id.mid_title)
+    TextView midTitle;
+    @InjectView(R.id.right_title)
+    TextView rightTitle;
+    @InjectView(R.id.top_title_right)
+    RelativeLayout topTitleRight;
+    @InjectView(R.id.base_title)
+    RelativeLayout baseTitle;
+    @InjectView(R.id.base_framelayout)
+    FrameLayout baseFramelayout;
+    @InjectView(R.id.no_net_rl)
+    RelativeLayout noNetRl;
+    @InjectView(R.id.no_net_title_view)
+    RelativeLayout noNetTitleView;
+    @InjectView(R.id.title_back)
+    ImageView titleBack;
+    @InjectView(R.id.red_round_tv)
+    TextView redRoundTv;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.base_activity);
-        initView();
+        ButterKnife.inject(this);
+//        initView();
         checkNet();
         initSubView();
         handleActivityKilledException();
         AppManager.getAppManager().addActivity(this);
     }
 
-    private void initView(){
+    private void initView() {
         baseFramelayout = (FrameLayout) findViewById(R.id.base_framelayout);
         noNetTitleView = (RelativeLayout) findViewById(R.id.no_net_title_view);
-
     }
 
 
-    protected int getBaseFragmeLayout(){
+    /**
+     * 左边是返回键，中间标题，右边不显示
+     */
+    public void showCommonTitle() {
+        topTitleLeft.setVisibility(View.VISIBLE);
+        titleBack.setVisibility(View.VISIBLE);
+        topTitleRight.setVisibility(View.GONE);
+        initTitleFeature();
+    }
+
+
+    /**
+     * 统购标题的显示
+     */
+    public void showGroupBuyTitle() {
+        topTitleLeft.setVisibility(View.VISIBLE);
+        titleBack.setVisibility(View.GONE);
+        notice.setVisibility(View.VISIBLE);
+        redRoundTv.setVisibility(View.VISIBLE);
+        topTitleRight.setVisibility(View.GONE);
+    }
+
+    public void showOnlyRight(){
+        topTitleLeft.setVisibility(View.GONE);
+        topTitleRight.setVisibility(View.VISIBLE);
+        rightTitle.setVisibility(View.VISIBLE);
+    }
+
+
+    protected int getBaseFragmeLayout() {
         return R.id.base_framelayout;
     }
 
     /**
      * 无网标题栏显示
      */
-    protected void checkNet(){
+    protected void checkNet() {
         EventBus.getDefault().register(this);
     }
 
 
     public void onEventMainThread(NetEvent event) {
         boolean netFlag = event.getMsg();
-        if(netFlag){
+        if (netFlag) {
             noNetTitleView.setVisibility(View.GONE);
-        }else{
+        } else {
             noNetTitleView.setVisibility(View.VISIBLE);
         }
     }
@@ -80,6 +139,7 @@ public abstract class BaseActivity extends FragmentActivity{
     protected void onDestroy() {
         super.onDestroy();
         clearData();
+        CloseKeyBoard.hideInputMethod(this);
         EventBus.getDefault().unregister(this);
         AppManager.getAppManager().finishActivity();
     }
@@ -103,5 +163,10 @@ public abstract class BaseActivity extends FragmentActivity{
      * 是否关闭Activity
      */
     protected abstract void isFinishCurrentActivity();
+
+    /**
+     * 实现标题栏的回退和显示文字
+     */
+    protected abstract void initTitleFeature();
 
 }

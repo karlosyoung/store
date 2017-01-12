@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rel_network_no"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    android:gravity="center"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="60dp"
+        android:gravity="center"
+        >
+        <LinearLayout
+            android:layout_width="311dp"
+            android:layout_height="335dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:background="@drawable/shape_common_no_net"
+            >
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/no_network"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:text="网络未连接"
+                android:textColor="#00000000"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="互联网似乎已断开连接~"
+                android:layout_marginTop="15dp"
+                android:textColor="#bebebe"
+                android:textSize="14dp"
+                />
+
+            <TextView
+                android:id="@+id/bt_load_again"
+                android:layout_width="110dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/select_load_again"
+                android:gravity="center"
+                android:textColor="#bebebe" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

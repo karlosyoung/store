@@ -37,7 +37,7 @@ public abstract class CommonPag extends FrameLayout {
     }
 
     private View onCreateErrorView() {
-        return View.inflate(UIUtil.getContext(), R.layout.common_error_view,null);
+        return View.inflate(UIUtil.getContext(), R.layout.common_no_net_view,null);
     }
 
     private View onCreateLoadingView() {
