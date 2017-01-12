@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.sunsoft.zyebiz.b2e.common.net.checkNet.NetAndRefreshService;
+import com.sunsoft.zyebiz.b2e.common.net.http.HttpMethod;
+
+import okhttp3.OkHttpClient;
 
 /**
  * 初始化：

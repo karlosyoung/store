@@ -12,7 +12,7 @@ import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 /**
  * Created by MJX on 2017/1/4.
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment{
      public  CommonPag commonPag;
 
     @Nullable
