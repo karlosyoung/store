@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
         android:gravity="center"
-        android:background="@color/yellow_no_net_bg"
+        android:background="@color/no_net_bg"
         >
         <TextView
             android:layout_width="wrap_content"

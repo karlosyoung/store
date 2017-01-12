@@ -10,8 +10,8 @@ public class ServerBean {
      * body : {"obj":{"bundleCode":"103.0","referer":null,"bundleIsUpdate":"0","bundleUrl":"https://ssl.ygzykj.com/app/bundle/android/102_3_7/bundle/103_0/android_20161229_102_3_7_103_0.zip","auditBaseEntity":null,"pageSize":0,"type":"10","content":"乌拉拉乌拉拉想要回家乌拉拉乌拉拉快快回家","deleteFlag":"0","operatorTime":null,"pageNo":0,"operatorUname":null,"hashCode":null,"serverUrl":"https://ssl.ygzykj.com/sunsoft-app/","operatorUid":null,"reserve1":null,"reserve3":null,"reserve2":null,"versionCode":"102.3.7","url":"https://ssl.ygzykj.com/app/apk/10237-20161222-001.apk","sha1":null,"versionId":"c9870e7e59464b33a4ddba4b5b491e40","tranIP":null,"createTime":"20161228143416","operatorRname":null,"isUpdate":"0"},"msgInfo":"","msgCode":"0"}
      * message : null
      */
-    private String title;
-    private BodyEntity body;
+    private String title;        //更新名称等
+    private BodyEntity body;     //版本信息等
     private String message;
 
     public void setTitle(String title) {

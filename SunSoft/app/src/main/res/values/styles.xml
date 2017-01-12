@@ -2,9 +2,12 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/color_dark_blue</item>
-        <item name="colorPrimaryDark">@color/color_dark_blue</item>
+        <!-- titlebar（actionbar）颜色 -->
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <!-- 状态栏颜色 -->
+        <item name="colorPrimaryDark">@color/titlebar_bg</item>
+        <!-- 窗口的背景颜色 -->
+        <item name="android:windowBackground">@null</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
