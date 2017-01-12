@@ -3,11 +3,17 @@ package com.sunsoft.zyebiz.b2e.mvp.base;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
 import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.common.Manager.AppManager;
+import com.sunsoft.zyebiz.b2e.common.net.checkNet.NetEvent;
+
+import de.greenrobot.event.EventBus;
 
 /**
  * Activity的异常退出
@@ -17,6 +23,10 @@ import com.sunsoft.zyebiz.b2e.common.Manager.AppManager;
 public abstract class BaseActivity extends FragmentActivity{
     protected FrameLayout baseFramelayout;
     protected RelativeLayout noNetTitleView;
+    protected Button noData;
+    protected Button noNet;
+    protected Button haveNet;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,13 +41,52 @@ public abstract class BaseActivity extends FragmentActivity{
     private void initView(){
         baseFramelayout = (FrameLayout) findViewById(R.id.base_framelayout);
         noNetTitleView = (RelativeLayout) findViewById(R.id.no_net_title_view);
+        noData = (Button) findViewById(R.id.noData);
+        noNet = (Button) findViewById(R.id.noNet);
+        haveNet = (Button) findViewById(R.id.haveNet);
+    }
+
+
+    protected int getBaseFragmeLayout(){
+        return R.id.base_framelayout;
     }
 
     /**
      * 无网标题栏显示
      */
     protected void checkNet(){
+        EventBus.getDefault().register(this);
+    }
 
+
+    public void onEventMainThread(NetEvent event) {
+        boolean netFlag = event.getMsg();
+        if(netFlag){
+            noNetTitleView.setVisibility(View.GONE);
+        }else{
+            noNetTitleView.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK
+                && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if (!getFragmentManager().popBackStackImmediate()) {
+                isFinishCurrentActivity();
+            }
+            getFragmentManager().popBackStackImmediate();
+
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        clearData();
+        EventBus.getDefault().unregister(this);
+        AppManager.getAppManager().finishActivity();
     }
 
     /**
@@ -55,11 +104,9 @@ public abstract class BaseActivity extends FragmentActivity{
      */
     protected abstract void clearData();
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        clearData();
-        AppManager.getAppManager().finishActivity();
-    }
+    /**
+     * 是否关闭Activity
+     */
+    protected abstract void isFinishCurrentActivity();
 
 }

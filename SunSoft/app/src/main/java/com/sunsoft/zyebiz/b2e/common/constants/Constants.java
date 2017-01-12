@@ -15,5 +15,9 @@ public class Constants {
     public static String RELEASE_INIT_SERVER_URL = "https://www.ygzykj.com/";
     //网络超时时间
     public static final int NET_TIME_OUT = 10;
-    /*———————————————————————————————————————————————————————————————————--*/
+
+
+    /*—————————————————————常量——————————————————————————————————————————————--*/
+    public static final String FRAGMENT_LOGIN_TAG = "fragment_login";
+
 }

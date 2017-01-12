@@ -1,6 +1,7 @@
 package com.sunsoft.zyebiz.b2e.utils.localUtil;
 
 import android.content.Context;
+import android.view.View;
 
 import com.sunsoft.zyebiz.b2e.application.MyApplication;
 
@@ -44,4 +45,9 @@ public class UIUtil {
         float density = getContext().getResources().getDisplayMetrics().density;
         return (int)(px/density+0.5);
     }
+
+    public static View inflate(int id){
+        return View.inflate(getContext(), id, null);
+    }
+
 }

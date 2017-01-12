@@ -21,4 +21,9 @@ public class SplashActivity extends BaseActivity {
     protected void clearData() {
 
     }
+
+    @Override
+    protected void isFinishCurrentActivity() {
+
+    }
 }

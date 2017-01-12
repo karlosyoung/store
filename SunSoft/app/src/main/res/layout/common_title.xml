@@ -2,12 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="@dimen/title_height"
-    android:background="#ff0000"
+    android:background="@color/green_title"
     >
     <RelativeLayout
         android:id="@+id/top_title_left"
         android:layout_width="@dimen/title_height"
         android:layout_height="@dimen/title_height">
+        <Button
+            android:id="@+id/noNet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="无网"
+
+            />
 
     </RelativeLayout>
     <RelativeLayout
@@ -15,10 +22,17 @@
         android:layout_height="match_parent"
         android:gravity="center"
         >
-        <TextView
+       <!-- <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="标题"
+            />-->
+        <Button
+            android:id="@+id/haveNet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="有网"
+
             />
     </RelativeLayout>
     <RelativeLayout
@@ -26,6 +40,12 @@
         android:id="@+id/top_title_right"
         android:layout_width="@dimen/title_height"
         android:layout_height="@dimen/title_height">
+        <Button
+            android:id="@+id/noData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="无数据"
 
+            />
     </RelativeLayout>
 </RelativeLayout>
