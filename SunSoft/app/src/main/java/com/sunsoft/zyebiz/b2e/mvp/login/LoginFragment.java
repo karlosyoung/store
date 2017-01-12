@@ -12,8 +12,6 @@ import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
  */
 public class LoginFragment extends BaseFragment  {
 
-
-
     @Override
     protected View initSubSuccedView() {
         View mView = UIUtil.inflate(R.layout.fragment_login);
