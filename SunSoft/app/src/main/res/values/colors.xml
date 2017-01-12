@@ -18,6 +18,7 @@
     <!-- 公共背景 -->
     <color name="common_content_bg">#eeeeee</color>
 
+    <!--没有网络的背景色-->
     <color name="no_net_bg">#FFF2C8</color>
 
     

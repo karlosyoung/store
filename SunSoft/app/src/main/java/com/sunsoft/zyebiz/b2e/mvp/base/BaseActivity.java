@@ -24,6 +24,10 @@ import de.greenrobot.event.EventBus;
  * Activity的销毁
  * Created by MJX on 2017/1/4.
  */
+
+
+
+
 public abstract class BaseActivity extends FragmentActivity {
 
     @InjectView(R.id.notice)
@@ -49,6 +53,7 @@ public abstract class BaseActivity extends FragmentActivity {
     @InjectView(R.id.red_round_tv)
     TextView redRoundTv;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +66,10 @@ public abstract class BaseActivity extends FragmentActivity {
         AppManager.getAppManager().addActivity(this);
     }
 
+    private void initView() {
+        baseFramelayout = (FrameLayout) findViewById(R.id.base_framelayout);
+        noNetTitleView = (RelativeLayout) findViewById(R.id.no_net_title_view);
+    }
 
 
     /**

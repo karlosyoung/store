@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="@dimen/title_height"
-    android:background="@color/green_title"
+    android:background="@color/titlebar_bg"
     >
     <!--三种情况：返回键，支付，统购-->
     <RelativeLayout
@@ -12,6 +12,10 @@
         android:gravity="center"
         >
         <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
             android:id="@+id/title_back"
             style="@style/wrap"
             android:background="@drawable/title_main_back"
