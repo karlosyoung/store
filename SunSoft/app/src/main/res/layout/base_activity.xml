@@ -3,7 +3,14 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:id="@+id/base_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height">
+    <include layout="@layout/common_title"></include>
+    </RelativeLayout>
     <FrameLayout
+        android:layout_below="@id/base_title"
         android:id="@+id/base_framelayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

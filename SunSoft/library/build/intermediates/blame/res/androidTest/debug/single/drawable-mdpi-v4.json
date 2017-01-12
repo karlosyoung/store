@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "E:\\workss\\android\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\default_ptr_rotate.png",
         "source": "E:\\workss\\android\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_rotate.png"
     },
@@ -40,10 +41,13 @@
         "source": "E:\\workss\\android\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\indicator_arrow.png"
     },
     {
+=======
+>>>>>>> 2b947319747d9202765d70e609207ca52f547786
         "merged": "E:\\androidNew\\android\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\default_ptr_flip.png",
         "source": "E:\\androidNew\\android\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_flip.png"
     },
     {
+<<<<<<< HEAD
         "merged": "E:\\workspace\\zysoft\\android2.0\\android_master\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\indicator_arrow.png",
         "source": "E:\\workspace\\zysoft\\android2.0\\android_master\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\indicator_arrow.png"
     },
@@ -108,15 +112,13 @@
         "source": "H:\\ApplicationRelease\\1227-237\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_flip.png"
     },
     {
+=======
+>>>>>>> 2b947319747d9202765d70e609207ca52f547786
         "merged": "E:\\androidNew\\android\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\default_ptr_rotate.png",
         "source": "E:\\androidNew\\android\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_rotate.png"
     },
     {
-        "merged": "E:\\1114cloneCode\\zysoft\\android2.0\\android_master\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\default_ptr_rotate.png",
-        "source": "E:\\1114cloneCode\\zysoft\\android2.0\\android_master\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_rotate.png"
-    },
-    {
-        "merged": "G:\\xiaolian\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\default_ptr_flip.png",
-        "source": "G:\\xiaolian\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\default_ptr_flip.png"
+        "merged": "E:\\androidNew\\android\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\indicator_arrow.png",
+        "source": "E:\\androidNew\\android\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\indicator_arrow.png"
     }
 ]

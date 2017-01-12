@@ -2,6 +2,9 @@ package com.sunsoft.zyebiz.b2e.application;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
+
+import com.sunsoft.zyebiz.b2e.common.net.checkNet.NetAndRefreshService;
 
 /**
  * 初始化：
@@ -14,6 +17,23 @@ public class MyApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+        initCommonFeature();
+    }
 
+    public static Context getContext(){
+        return context;
+    }
+
+    /**
+     * 初始化功能
+     */
+    private void initCommonFeature(){
+        context = getApplicationContext();
+        startNetAndRefreshMonitor();
+    }
+
+    private void startNetAndRefreshMonitor(){
+        Intent intent = new Intent(this, NetAndRefreshService.class);
+        startService(intent);
     }
 }

@@ -269,6 +269,7 @@
                 }
             }
         ]
+<<<<<<< HEAD
     },
     {
         "outputFile": "H:\\ApplicationRelease\\1227-237\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
@@ -2708,5 +2709,7 @@
                 }
             }
         ]
+=======
+>>>>>>> 2b947319747d9202765d70e609207ca52f547786
     }
 ]

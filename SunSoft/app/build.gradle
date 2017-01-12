@@ -71,5 +71,11 @@ dependencies {
     compile 'com.google.dagger:dagger:2.5'
     apt 'com.google.dagger:dagger-compiler:2.5'
     //OkHttp的使用
+<<<<<<< HEAD
     compile 'com.squareup.okhttp3:okhttp:3.5.0'
+=======
+    compile 'com.squareup.okhttp3:okhttp:3.2.0'
+    compile files('libs/eventbus-2.4.0.jar')
+    compile 'com.jakewharton:butterknife:5.1.1'
+>>>>>>> 2b947319747d9202765d70e609207ca52f547786
 }

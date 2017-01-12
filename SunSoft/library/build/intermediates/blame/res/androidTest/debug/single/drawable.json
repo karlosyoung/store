@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "F:\\1024cloneCode\\zysoft\\android2.0\\android2.3.5\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
         "source": "F:\\1024cloneCode\\zysoft\\android2.0\\android2.3.5\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
     },
@@ -52,10 +53,13 @@
         "source": "H:\\APeiXun\\cleanPackge\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
     },
     {
+=======
+>>>>>>> 2b947319747d9202765d70e609207ca52f547786
         "merged": "E:\\androidNew\\android\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
         "source": "E:\\androidNew\\android\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "F:\\1102React35\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
         "source": "F:\\1102React35\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
     },
@@ -76,6 +80,8 @@
         "source": "G:\\xiaolian\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
     },
     {
+=======
+>>>>>>> 2b947319747d9202765d70e609207ca52f547786
         "merged": "E:\\androidNew\\android\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
         "source": "E:\\androidNew\\android\\SunSoft\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
     }

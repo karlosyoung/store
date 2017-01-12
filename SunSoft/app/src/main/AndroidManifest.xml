@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sunsoft.zyebiz.b2e">
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
+        android:name=".application.MyApplication"
         android:largeHeap="true"
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--Activity的基类-->
-        <activity android:name=".mvp.base.BaseActivity"></activity>
         <!--闪屏页-->
-        <activity android:name=".mvp.splash.SplashActivity">
+        <activity android:name=".mvp.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,6 +21,8 @@
         </activity>
         <!--指导页-->
         <activity android:name=".mvp.welcome.GuideActivity"></activity>
+        <!--有无网络和刷新页面-->
+        <service android:name=".common.net.checkNet.NetAndRefreshService"></service>
     </application>
 
 

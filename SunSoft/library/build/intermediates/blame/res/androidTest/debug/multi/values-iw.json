@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "F:\\1102React35\\Sunsoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-iw\\values-iw.xml",
         "map": [
             {
@@ -558,6 +559,8 @@
         ]
     },
     {
+=======
+>>>>>>> 2b947319747d9202765d70e609207ca52f547786
         "outputFile": "E:\\androidNew\\android\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-iw\\values-iw.xml",
         "map": [
             {

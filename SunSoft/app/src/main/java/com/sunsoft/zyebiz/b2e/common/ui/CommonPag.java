@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.sunsoft.zyebiz.b2e.R;
-import com.sunsoft.zyebiz.b2e.application.MyApplication;
+import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
 
 /**
  * Created by MJX on 2017/1/9.
@@ -33,18 +33,15 @@ public abstract class CommonPag extends FrameLayout {
     }
 
     protected  View onCreateEmptyView(){
-        return View.inflate(MyApplication.context, R.layout.common_empty_view,null);
+        return View.inflate(UIUtil.getContext(), R.layout.common_empty_view,null);
     }
 
-    protected abstract View onCreateSuccessedView();
-
-
     private View onCreateErrorView() {
-        return View.inflate(MyApplication.context, R.layout.common_error_view,null);
+        return View.inflate(UIUtil.getContext(), R.layout.common_error_view,null);
     }
 
     private View onCreateLoadingView() {
-        return View.inflate(MyApplication.context, R.layout.common_loading_view,null);
+        return View.inflate(UIUtil.getContext(), R.layout.common_loading_view,null);
     }
 
     public void  showLoadigView(){
@@ -83,5 +80,5 @@ public abstract class CommonPag extends FrameLayout {
             loadingView.setVisibility(View.GONE);
         }
     }
-
+    protected abstract View onCreateSuccessedView();
 }

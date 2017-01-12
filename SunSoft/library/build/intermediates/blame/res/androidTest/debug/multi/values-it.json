@@ -60,6 +60,7 @@
                 }
             }
         ]
+<<<<<<< HEAD
     },
     {
         "outputFile": "H:\\APeiXun\\cleanPackge\\SunSoft\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-it\\values-it.xml",
@@ -618,5 +619,7 @@
                 }
             }
         ]
+=======
+>>>>>>> 2b947319747d9202765d70e609207ca52f547786
     }
 ]

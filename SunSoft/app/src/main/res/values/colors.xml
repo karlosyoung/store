@@ -17,6 +17,7 @@
     <!-- 公共背景 -->
     <color name="common_content_bg">#eeeeee</color>
     <!--没有网络的背景色-->
+<<<<<<< HEAD
     <color name="no_net_bg">#FFF2C8</color>
     <!--引用颜色-->
     <color name="color_323232">#323232</color>
@@ -41,4 +42,9 @@
     <color name="color_171717">#171717</color>
     <color name="color_343332">#343332</color>
 
+=======
+    <color name="yellow_no_net_bg">#FFF2C8</color>
+    <!--标题栏的颜色-->
+    <color name="green_title">#4CB050</color>
+>>>>>>> 2b947319747d9202765d70e609207ca52f547786
 </resources>
