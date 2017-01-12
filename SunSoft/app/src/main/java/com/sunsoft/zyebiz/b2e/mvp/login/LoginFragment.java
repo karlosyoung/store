@@ -10,7 +10,7 @@ import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
  * 登录的Fragment
  * Created by MJX on 2017/1/11.
  */
-public class LoginFragment extends BaseFragment  {
+public class LoginFragment extends BaseFragment {
 
     @Override
     protected View initSubSuccedView() {

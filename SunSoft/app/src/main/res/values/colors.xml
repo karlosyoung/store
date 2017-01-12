@@ -19,6 +19,8 @@
     <color name="common_content_bg">#eeeeee</color>
 
     <color name="no_net_bg">#FFF2C8</color>
+
+    
     <!--引用颜色-->
     <color name="color_323232">#323232</color>
     <color name="color_696969">#696969</color>

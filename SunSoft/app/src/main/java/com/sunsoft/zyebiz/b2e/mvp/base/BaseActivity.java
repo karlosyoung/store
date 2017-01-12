@@ -54,7 +54,7 @@ public abstract class BaseActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.base_activity);
         ButterKnife.inject(this);
-//        initView();
+        initTitleFeature();
         checkNet();
         initSubView();
         handleActivityKilledException();
@@ -70,7 +70,6 @@ public abstract class BaseActivity extends FragmentActivity {
         topTitleLeft.setVisibility(View.VISIBLE);
         titleBack.setVisibility(View.VISIBLE);
         topTitleRight.setVisibility(View.GONE);
-        initTitleFeature();
     }
 
 
@@ -83,6 +82,7 @@ public abstract class BaseActivity extends FragmentActivity {
         notice.setVisibility(View.VISIBLE);
         redRoundTv.setVisibility(View.VISIBLE);
         topTitleRight.setVisibility(View.GONE);
+
     }
 
     public void showOnlyRight(){
@@ -91,6 +91,13 @@ public abstract class BaseActivity extends FragmentActivity {
         rightTitle.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * 只显示中间标题
+     */
+    public void showOnlyMidTitle(){
+        topTitleLeft.setVisibility(View.GONE);
+        topTitleRight.setVisibility(View.GONE);
+    }
 
     protected int getBaseFragmeLayout() {
         return R.id.base_framelayout;
