@@ -23,9 +23,6 @@ import de.greenrobot.event.EventBus;
 public abstract class BaseActivity extends FragmentActivity{
     protected FrameLayout baseFramelayout;
     protected RelativeLayout noNetTitleView;
-    protected Button noData;
-    protected Button noNet;
-    protected Button haveNet;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,9 +38,7 @@ public abstract class BaseActivity extends FragmentActivity{
     private void initView(){
         baseFramelayout = (FrameLayout) findViewById(R.id.base_framelayout);
         noNetTitleView = (RelativeLayout) findViewById(R.id.no_net_title_view);
-        noData = (Button) findViewById(R.id.noData);
-        noNet = (Button) findViewById(R.id.noNet);
-        haveNet = (Button) findViewById(R.id.haveNet);
+
     }
 
 

@@ -1,38 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/login_bg"
     android:id="@+id/login_root">
 
-    <include android:id="@+id/toolbar_out_root"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/register_title_bar" />
 
     <LinearLayout
         android:id="@+id/slogan"
         android:layout_marginTop="@dimen/dimen_150"
         android:gravity="center"
         android:layout_width="match_parent"
-=======
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
-
-   <EditText
-       android:id="@+id/username"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:hint="请输入用户名"
-       />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="wrap_content"
->>>>>>> 2b947319747d9202765d70e609207ca52f547786
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -130,12 +108,6 @@
     </FrameLayout>
 
 
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/progressBar" />
-
     <Button
         android:id="@+id/tv_login"
         android:layout_width="@dimen/dimen_267"
@@ -165,9 +137,7 @@
             android:layout_width="1dp"
             android:layout_height="10dp"
             android:background="@color/login_text_hint_color"
-            android:layout_centerInParent="true"
-
-            />
+            android:layout_centerInParent="true" />
 
         <TextView
             android:id="@+id/tv_register"
