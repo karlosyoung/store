@@ -1,4 +1,4 @@
-package com.sunsoft.zyebiz.b2e.mvp.welcome;
+package com.sunsoft.zyebiz.b2e.mvp.guide;
 
 /**
  * 数据保存

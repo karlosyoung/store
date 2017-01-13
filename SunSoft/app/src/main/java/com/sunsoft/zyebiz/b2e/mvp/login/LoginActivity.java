@@ -32,9 +32,10 @@ public class LoginActivity extends BaseActivity{
     }
 
     @Override
-    protected void setCurrentName(String name) {
+    protected void setCurrentName() {
 
     }
+
 
     @Override
     protected String getCurrentName() {

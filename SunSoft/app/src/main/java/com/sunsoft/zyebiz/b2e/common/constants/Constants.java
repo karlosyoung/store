@@ -10,9 +10,9 @@ public class Constants {
     //ReactNative的初始zip包
     public static String ZIP_NAME = "";
     //测试环境,获取动态ip的初始化地址
-    public static String TEST_INIT_SERVER_URL = "https://ssl.ygzykj.com/";
+    public static String TEST_INIT_SERVER_URL = "https://ssl.ygzykj.com/sunsoft-app/version/checkVersionip.json?versionCode="+GetVersion.getVersionName()+"&type=10";
     //生产环境，获取动态ip的初始化地址
-    public static String RELEASE_INIT_SERVER_URL = "https://www.ygzykj.com/";
+    public static String RELEASE_INIT_SERVER_URL = "https://www.ygzykj.com/sunsoft-app/version/checkVersionip.json?versionCode="+GetVersion.getVersionName()+"&type=10";
     //网络超时时间
     public static final int NET_TIME_OUT = 10;
 

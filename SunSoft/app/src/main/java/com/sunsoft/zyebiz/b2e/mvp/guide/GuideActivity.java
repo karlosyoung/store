@@ -1,4 +1,4 @@
-package com.sunsoft.zyebiz.b2e.mvp.welcome;
+package com.sunsoft.zyebiz.b2e.mvp.guide;
 
 
 import android.app.Activity;
@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.data.GetSpInsance;
 import com.sunsoft.zyebiz.b2e.mvp.login.LoginActivity;
-import com.sunsoft.zyebiz.b2e.mvp.welcome.adapter.GuideViewPagerAdapter;
+import com.sunsoft.zyebiz.b2e.mvp.guide.adapter.GuideViewPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -13,7 +13,6 @@
         android:theme="@style/AppTheme">
         <!--闪屏页-->
         <activity android:name=".mvp.splash.SplashActivity"
-
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +22,7 @@
         <!--有无网络和刷新页面-->
         <service android:name=".common.net.checkNet.NetAndRefreshService"></service>
         <!--引导页-->
-        <activity android:name="com.sunsoft.zyebiz.b2e.mvp.welcome.GuideActivity"
+        <activity android:name="com.sunsoft.zyebiz.b2e.mvp.guide.GuideActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             ></activity>
         <activity android:name="com.sunsoft.zyebiz.b2e.mvp.login.LoginActivity"></activity>

@@ -61,7 +61,7 @@ public abstract class BaseActivity extends FragmentActivity {
         setContentView(R.layout.base_activity);
         ButterKnife.inject(this);
         initTitleFeature();
-        setCurrentName(currentNmae);
+        setCurrentName();
         checkNet();
         initSubView();
         handleActivityKilledException();
@@ -136,7 +136,6 @@ public abstract class BaseActivity extends FragmentActivity {
                 isFinishCurrentActivity();
             }
             getFragmentManager().popBackStackImmediate();
-
         }
         return super.onKeyDown(keyCode, event);
     }
@@ -193,15 +192,16 @@ public abstract class BaseActivity extends FragmentActivity {
     protected abstract void initTitleFeature();
 
     /**
-     *设置 当前页面的称呼
-     * @param name
+     *设置当前页面的称呼
      */
-    protected abstract void setCurrentName(String name);
+    protected abstract void setCurrentName();
 
     /**
      * 得到当前页面的称呼
      * @return
      */
-    protected abstract String getCurrentName();
+    protected  String getCurrentName(){
+        return currentNmae;
+    }
 
 }

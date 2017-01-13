@@ -1,4 +1,4 @@
-package com.sunsoft.zyebiz.b2e.mvp.welcome.adapter;
+package com.sunsoft.zyebiz.b2e.mvp.guide.adapter;
 
 import android.view.View;
 import android.widget.ImageView;

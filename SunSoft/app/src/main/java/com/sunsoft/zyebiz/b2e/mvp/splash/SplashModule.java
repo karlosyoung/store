@@ -6,7 +6,7 @@ package com.sunsoft.zyebiz.b2e.mvp.splash;
 public class SplashModule implements SplashContrct.ISplashModule {
     @Override
     public void splashRequestServerUrl() {
-
+//        HttpMethod.OkHttpGet();
     }
 
     @Override
