@@ -48,4 +48,6 @@
     <color name="yellow_no_net_bg">#FFF2C8</color>
     <!--标题栏的颜色-->
     <color name="green_title">#4CB050</color>
+    <!--透明色-->
+    <color name="Transparent_color">#00000000</color>
 </resources>

@@ -14,6 +14,7 @@ import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.common.Manager.AppManager;
 import com.sunsoft.zyebiz.b2e.common.net.checkNet.NetEvent;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.CloseKeyBoard;
+import com.umeng.analytics.MobclickAgent;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -52,7 +53,7 @@ public abstract class BaseActivity extends FragmentActivity {
     ImageView titleBack;
     @InjectView(R.id.red_round_tv)
     TextView redRoundTv;
-
+    public String currentNmae = "";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -60,11 +61,13 @@ public abstract class BaseActivity extends FragmentActivity {
         setContentView(R.layout.base_activity);
         ButterKnife.inject(this);
         initTitleFeature();
+        setCurrentName(currentNmae);
         checkNet();
         initSubView();
         handleActivityKilledException();
         AppManager.getAppManager().addActivity(this);
     }
+
 
 
 
@@ -138,6 +141,23 @@ public abstract class BaseActivity extends FragmentActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        MobclickAgent.onPageStart(getCurrentName());
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPageEnd(getCurrentName());
+        MobclickAgent.onPause(this);
+    }
+
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -171,5 +191,17 @@ public abstract class BaseActivity extends FragmentActivity {
      * 实现标题栏的回退和显示文字
      */
     protected abstract void initTitleFeature();
+
+    /**
+     *设置 当前页面的称呼
+     * @param name
+     */
+    protected abstract void setCurrentName(String name);
+
+    /**
+     * 得到当前页面的称呼
+     * @return
+     */
+    protected abstract String getCurrentName();
 
 }

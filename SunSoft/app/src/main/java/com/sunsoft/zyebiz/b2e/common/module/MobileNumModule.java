@@ -1,8 +1,7 @@
 package com.sunsoft.zyebiz.b2e.common.module;
 
-import android.widget.TextView;
 
-import com.example.acer.myloading.HttpMethod;
+import com.sunsoft.zyebiz.b2e.common.net.http.HttpMethod;
 
 /**
  * 短信验证码
