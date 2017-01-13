@@ -66,10 +66,6 @@ public abstract class BaseActivity extends FragmentActivity {
         AppManager.getAppManager().addActivity(this);
     }
 
-    private void initView() {
-        baseFramelayout = (FrameLayout) findViewById(R.id.base_framelayout);
-        noNetTitleView = (RelativeLayout) findViewById(R.id.no_net_title_view);
-    }
 
 
     /**
