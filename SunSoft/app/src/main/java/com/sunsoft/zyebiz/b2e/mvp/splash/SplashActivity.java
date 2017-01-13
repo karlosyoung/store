@@ -1,35 +1,26 @@
 package com.sunsoft.zyebiz.b2e.mvp.splash;
 
-import com.sunsoft.zyebiz.b2e.mvp.base.BaseActivity;
+import android.app.Activity;
 
 /**
  *闪屏页面
+ * Created by MJX on 2017/1/12.
  */
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends Activity implements SplashContrct.ISplashView {
 
 
     @Override
-    protected void handleActivityKilledException() {
+    public void showProgressBar() {
 
     }
 
     @Override
-    protected void initSubView() {
+    public void showUpDateDialog() {
 
     }
 
     @Override
-    protected void clearData() {
+    public void showUpDateDesDialog() {
 
-    }
-
-    @Override
-    protected void isFinishCurrentActivity() {
-
-    }
-
-    @Override
-    protected void initTitleFeature() {
-        showOnlyMidTitle();
     }
 }

@@ -12,17 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!--闪屏页-->
-        <activity android:name=".mvp.login.LoginActivity">
+        <activity android:name=".mvp.splash.SplashActivity"
+
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--指导页-->
-        <activity android:name=".mvp.welcome.GuideActivity"></activity>
         <!--有无网络和刷新页面-->
         <service android:name=".common.net.checkNet.NetAndRefreshService"></service>
+        <!--引导页-->
+        <activity android:name="com.sunsoft.zyebiz.b2e.mvp.welcome.GuideActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            ></activity>
+        <activity android:name="com.sunsoft.zyebiz.b2e.mvp.login.LoginActivity"></activity>
     </application>
 
 
