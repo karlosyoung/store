@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/setting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+    <FrameLayout 
+        android:id="@+id/my_guard_setting_fr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <include layout="@layout/activity_my_setting2"/>
+        
+    </FrameLayout>
+	
+</RelativeLayout>

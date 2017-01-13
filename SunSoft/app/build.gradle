@@ -6,6 +6,7 @@ apply plugin: 'android-apt'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
+
     defaultConfig {
         applicationId "com.sunsoft.zyebiz.b2e"
         minSdkVersion 16
