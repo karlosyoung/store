@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/maintitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/titlebar_bg" >
+
+    <TextView
+        android:id="@+id/tv_title_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/select_group_title"
+        />
+    <RelativeLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp">
+
+    <ImageView
+        android:id="@+id/img_title_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/title_main_back"
+        android:clickable="true"
+        android:visibility="visible" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/title_main_back_top"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:gravity="center"
+        android:textColor="@color/white" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/title_main"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/dimen_15"
+         >
+    </TextView>
+
+</RelativeLayout>

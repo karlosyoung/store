@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <include layout="@layout/title_main_back" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/have_net"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+    <RelativeLayout
+        android:id="@+id/my_setting_message_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/select_list_item"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen_15"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_15"
+            android:text="@string/push_notification"
+            android:textColor="@color/common_Content_gray"
+            android:textSize="@dimen/dimen_15"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/buy_account_back" />
+    </RelativeLayout>
+
+   <TextView 
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/border_line"
+       />
+
+    <RelativeLayout
+        android:id="@+id/my_setting_clear_cache"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/select_list_item"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen_15" >
+
+        <TextView
+            android:id="@+id/setting_address_shouhuo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_15"
+            android:text="@string/wipe_cache"
+            android:textColor="@color/common_Content_gray"
+            android:textSize="@dimen/dimen_15"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/buy_account_back" />
+    </RelativeLayout>
+
+    <TextView 
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/border_line"
+       />
+    
+    
+    <RelativeLayout
+        android:id="@+id/my_setting_version_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/select_list_item"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen_15"
+        android:clickable="true"
+         >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_15"
+            android:text="新版本检测"
+            android:textColor="@color/common_Content_gray"
+            android:textSize="@dimen/dimen_15"
+            />
+
+        <ImageView
+            android:id="@+id/my_setting_arror"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/buy_account_back" />
+        
+         <TextView
+            android:id="@+id/my_setting_version"
+            android:layout_toLeftOf="@id/my_setting_arror"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_05"
+            android:hint="v1.2.1版"
+            android:textColor="@color/common_Content_gray"
+            android:textSize="@dimen/dimen_15"
+            />
+        
+        <ImageView 
+            android:layout_toLeftOf="@id/my_setting_version"
+            android:id="@+id/set_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/new_version_red"
+            android:layout_gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            />
+       
+    </RelativeLayout>
+	
+     <TextView 
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/border_line"
+       />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f7f7f7"
+        >
+    <Button
+        android:id="@+id/bt_tuichu"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/dimen_30"
+        android:layout_marginRight="@dimen/dimen_30"
+        android:layout_marginTop="@dimen/dimen_23"
+        android:layout_gravity="end"
+        android:background="@drawable/denglumoren"
+        android:clickable="true"
+        android:text="@string/quit_login"
+        android:textColor="@color/common_Content_gray"
+        android:textSize="@dimen/dimen_15"
+        android:layout_alignParentBottom="true"
+       android:layout_marginBottom="40dp"
+        />
+
+    </RelativeLayout>
+    </LinearLayout>
+    <WebView
+        android:id="@+id/login_exit"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:background="@color/common_content_bg" />
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/have_no_net"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:visibility="gone"-->
+        <!--&gt;-->
+        <!--<include layout="@layout/layout_no_network"></include>-->
+    <!--</RelativeLayout>-->
+</LinearLayout>

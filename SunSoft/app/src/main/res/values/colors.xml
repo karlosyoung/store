@@ -9,15 +9,18 @@
     <color name="login_text_hint_color">#cacacc</color>
 
     <color name="translucence">#80000000</color>
+    <!--按钮的蓝  -->
+    <color name="color_button_blue">#77000000</color>
     <color name="cart_bg">#80ffffff</color>
     <color name="white">#FFFFFF</color>
     <color name="text_white">#fffeff</color>
 
-    <!-- 灰色-文字 -->
-    <color name="common_gray">#666666</color>
+    <!-- 内容文字 -->
+    <color name="common_Content_gray">#5e5a57</color>
     <!-- 公共背景 -->
-    <color name="common_content_bg">#eeeeee</color>
-
+    <color name="common_content_bg">#f7f7f7</color>
+    <!--公共边界线颜色-->
+    <color name="border_line">#f7f7f7</color>
     <!--没有网络的背景色-->
     <color name="no_net_bg">#FFF2C8</color>
 
@@ -36,6 +39,7 @@
     <color name="color_979797">#979797</color>
     <color name="color_ffda44">#ffda44</color>
     <color name="color_2AAC62">#2AAC62</color>
+    <color name="color_4CB050">#4CB050</color>
     <color name="color_B5B5B5">#B5B5B5</color>
     <color name="color_272636">#272636</color>
     <color name="color_393939">#393939</color>
