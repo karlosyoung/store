@@ -11,8 +11,8 @@ import android.widget.ImageView;
 
 import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.data.GetSpInsance;
-import com.sunsoft.zyebiz.b2e.mvp.login.LoginActivity;
 import com.sunsoft.zyebiz.b2e.mvp.guide.adapter.GuideViewPagerAdapter;
+import com.sunsoft.zyebiz.b2e.mvp.login.LoginActivity;
 
 import java.util.ArrayList;
 import java.util.List;

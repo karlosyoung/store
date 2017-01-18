@@ -16,11 +16,11 @@
             android:indeterminateDrawable="@drawable/drawable_progressbar"
             />
     </RelativeLayout>
-    <com.sunsoft.zyebiz.b2e.view.MyRelativelayout
+   <!-- <com.sunsoft.zyebiz.b2e.view.MyRelativelayout
         android:id="@+id/loading_can_not_touch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
     </com.sunsoft.zyebiz.b2e.view.MyRelativelayout>
-
+-->
 </RelativeLayout>

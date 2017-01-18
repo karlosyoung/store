@@ -1,330 +1,294 @@
 package com.sunsoft.zyebiz.b2e.common.api;
 
+import com.sunsoft.zyebiz.b2e.common.constants.GetVersion;
+
 /**
+ * 请求网络的Url
  * Created by MJX on 2017/1/12.
  */
 public class ApiUrl {
 
+    /*—————————————————————上线的环境配置——————————————————————————————————————————*/
+    //测试环境,获取动态ip的初始化地址
+    public static String REQUEST_SERVER_URL = "https://ssl.ygzykj.com/sunsoft-app/version/checkVersionip.json?versionCode="+ GetVersion.getVersionName()+"&type=10";
+    //生产环境，获取动态ip的初始化地址
+//    public static String REQUEST_SERVER_URL = "https://www.ygzykj.com/sunsoft-app/version/checkVersionip.json?versionCode="+GetVersion.getVersionName()+"&type=10";
+    /*———————————————————————————————————————————————————————————————————-------*/
+
+
+    /**
+     * 请求的BaseUrl
+     */
+    public static String BASE_URL = "";
+
     /**
      * 用户登陆界面
      */
-    public static final String LOGIN = "login/loginTwo.json";
-    public static final String RELEASE_LOGIN = "";
+    public static  String LOGIN = "login/loginTwo.json";
 
     /**
      * 退出登陆
      */
-    public static final String SIGIN_OUT =  "login/exitlogin.json";
-    public static  String RELEASE_SIGIN_OUT =  "";
+    public static  String SIGIN_OUT =  "login/exitlogin.json";
 
     /**
      * 修改绑定的手机号
      */
-    public static final String CHANGE_PHONE =  "user/updateMobilephone.json";
-    public static  String RELEASE_CHANGE_PHONE =  "";
+    public static  String CHANGE_PHONE =  "user/updateMobilephone.json";
 
     /**
      * 忘记密码
      */
-    public static final String FORGETPWD = "user/getUserDetailPassword.json";
-    public static  String RELEASE_FORGETPWD = "";
+    public static  String FORGETPWD = "user/getUserDetailPassword.json";
 
     /**
      * 修改密码
      */
-    public static final String CHANGE_PASSWORD =  "user/updatePassword.json";
-    public static String RELEASE_CHANGE_PASSWORD = "";
+    public static  String CHANGE_PASSWORD =  "user/updatePassword.json";
 
     /**
      * 重置密码
      */
-    public static final String RESET_PWD =   "user/resetPassword.json";
-    public static String RELEASE_RESET_PWD = "";
+    public static  String RESET_PWD =   "user/resetPassword.json";
 
     /**
      * 获取短信验证码
      */
-    public static final String Get_SMS =  "send/getSendMsg.json";
-    public static  String RELEASE_Get_SMS =  "";
+    public static  String Get_SMS =  "send/getSendMsg.json";
 
     /**
      * 图片验证码
      */
-    public static final String VERIFICATION_CODE = "login/validatecode.json";
-    public static  String RELEASE_VERIFY_CODE = "";
+    public static  String VERIFICATION_CODE = "login/validatecode.json";
 
     /**
      * 注册的第一步
      */
-    public static final String REGISTER_FIRST =  "user/addSunUserTwoOne.json";
-    public static String RELEASE_REGISTER_FIRST = "";
+    public static  String REGISTER_FIRST =  "user/addSunUserTwoOne.json";
+
     /**
      * 注册的第三步
      */
-    public static final String REGISTER_LAST =  "user/addSunUserTwoThree.json";
-    public static String RELEASE_REGISTER_LAST = "";
+    public static  String REGISTER_LAST =  "user/addSunUserTwoThree.json";
 
     /**
      * 绑定手机号的第二个页面
      */
-    public static final String BINDING_PHONE = "user/bindingMobilephoneTwo.json";
-    public static String RELEASE_BINDING_PHONE = "";
+    public static  String BINDING_PHONE = "user/bindingMobilephoneTwo.json";
 
     /**
      * 版本更新
      */
-    public static final String VERSION_UPDATE =  "version/checkVersion.json";
-    public static  String RELEASE_VERSION_UPDATE =  "";
+    public static  String VERSION_UPDATE =  "version/checkVersion.json";
 
     /**
      * bundle的增量更新
      */
-    public static final String BUNDLE_UPDATE= "version/bundleVersionUrl.json";
-    public static  String RELEASE_BUNDLE_UPDATE= "";
+    public static  String BUNDLE_UPDATE= "version/bundleVersionUrl.json";
 
     /**
      * 删除购物车中的商品
      */
-    public static final String DELETE_CART_ITEM = "shoppingCart/deleteShoppingCartGoods.json";
-    public static String RELEASE_DELETE_CART = "";
+    public static  String DELETE_CART_ITEM = "shoppingCart/deleteShoppingCartGoods.json";
 
     /**
      * 修改购物车数量
      */
-    public static final String MODIFY_CART_ITEMS =  "shoppingCart/updateAddSubstract.json";
-    public static String RELEASE_MODIFY_CART =  "";
+    public static  String MODIFY_CART_ITEMS =  "shoppingCart/updateAddSubstract.json";
 
     /**
      * 我的智园界面请求的url
      */
-    public static final String MY_GAEDEN =  "order/getOrderNumberByUserIdThree.json";
-    public static String RELEASE_MY_GAEDEN = "";
+    public static  String MY_GAEDEN =  "order/getOrderNumberByUserIdThree.json";
 
     /**
      * 查询购物车列表的信息
      */
-    public static final String SHOPCART_DETAIL =    "shoppingCart/getShoppingCartList.json";
-    public static  String RELEASE_SHOPCART_DETAIL = "";
+    public static  String SHOPCART_DETAIL =    "shoppingCart/getShoppingCartList.json";
 
     /**
      * 判断购物车商品是否已经下架
      */
-    public static final String GOODS_SHELVES = "shoppingCart/shoppingCartJudgeDue.json";
-    public static String RELEASE_GOODS_SHELVES = "";
+    public static  String GOODS_SHELVES = "shoppingCart/shoppingCartJudgeDue.json";
 
     /**
      * 编辑删除购物车中的数据
      */
-    public static final String DELETE_CART_DATA =  "shoppingCart/DeleteShoppingCartGoods.json";
-    public static String RELEASE_DELETE_CART_DATA = "";
+    public static  String DELETE_CART_DATA =  "shoppingCart/DeleteShoppingCartGoods.json";
 
     /**
      * 意见反馈，改变返回的数据
      */
-    public static final String FEEDBACK =  "feedback/insertFeedback.json";
-    public static String RELEASE_FEEDBACK = "";
+    public static  String FEEDBACK =  "feedback/insertFeedback.json";
 
     /**
      * 统购轮播图的接口
      */
-    public static final String CAROUSEL =  "main/getSlidead.json";
-    public static String RELEASE_CAROUSEL = "";
+    public static  String CAROUSEL =  "main/getSlidead.json";
 
     /**
      * 统购商品列表
      */
-    public static final String COMMODIT_LIST =  "school/findGoodsList.json";
-    public static  String RELEASE_COMMODIT_LIST =  "";
+    public static  String COMMODIT_LIST =  "school/findGoodsList.json";
 
     /**
      * 统购的商品详情
      */
-    public static final String TOGETHER_GOODS_DETAIL = "school/schoolDetail.json";
-    public static String RELEASE_GOODS_DETAIL = "";
+    public static  String TOGETHER_GOODS_DETAIL = "school/schoolDetail.json";
 
     /**
      * 统购的厂商详情
      */
-    public static final String TOGETHER_FACTORY_DETAIL =  "supplier/findByid.json";
-    public static String RELEASE_FACTORY_DETAIL = "";
+    public static  String TOGETHER_FACTORY_DETAIL =  "supplier/findByid.json";
 
     /**
      * 判断统购或者零售是否有数据
      */
-    public static final String TEST_DATA_VALID =   "school/schoolGoodsisnull.json";
-    public static String RELEASE_DATA_VALID = "";
+    public static  String TEST_DATA_VALID =   "school/schoolGoodsisnull.json";
 
     /**
      * 获取省市区的接口
      */
-    public static final String REGIONAL_INFO=  "sunAppRegion/selectByPrimaryKeySunAppRegion.json";
-    public static String RELEASE_REGIONAL_INFO = "";
+    public static  String REGIONAL_INFO=  "sunAppRegion/selectByPrimaryKeySunAppRegion.json";
 
     /**
      * 获取学校的接口
      */
-    public static final String ACCESS_SCHOOL = "school/selectSunSchoolListPrecise.json";
-    public static String RELEASE_ACCESS_SCHOOL = "";
+    public static  String ACCESS_SCHOOL = "school/selectSunSchoolListPrecise.json";
 
     /**
      * 判断历史公告和新公告的接口
      */
-    public static final String JUDGE_NEW_OR_HISTORY = "school/schoolGoodsisnull.json";
-    public static String RELEASE_JUDGE_NEW_OR_HISTORY = "";
+    public static  String JUDGE_NEW_OR_HISTORY = "school/schoolGoodsisnull.json";
 
     /**
      * 历史公告
      */
-    public static final String HISTORY_NOTICE =  "school/selectHistoryNoticeByUserName.json";
-    public static String RELEASE_HISTORY_NOTICE = "";
+    public static  String HISTORY_NOTICE =  "school/selectHistoryNoticeByUserName.json";
 
     /**
      * 尺码助手
      */
-    public static final String SIZE_ASSISTANT = "goods/getSizeInfo.json";
-    public static String RELEASE_SIZE_ASSISTANT = "";
+    public static  String SIZE_ASSISTANT = "goods/getSizeInfo.json";
 
     /**
      * 立即购买
      */
-    public static final String INSTANT_PAY =  "school/schoolNoticeGoods.json";
-    public static String RELEASE_INSTANT_PAY = "";
+    public static  String INSTANT_PAY =  "school/schoolNoticeGoods.json";
 
     /**
      * 请求支付
      */
-    public static final String PAY_REQUESTS =  "order/submitNoticeByOrder.json";
-    public static String RELEASE_PAY_REQUESTS = "";
+    public static  String PAY_REQUESTS =  "order/submitNoticeByOrder.json";
 
     /**
      * 获取支付方式
      */
-    public static final String PAY_WAY =  "pay/getOnlineEnabledPaymentList.json";
-    public static String RELEASE_PAY_WAY = "";
+    public static  String PAY_WAY =  "pay/getOnlineEnabledPaymentList.json";
 
     /**
      * 更改学校
      */
-    public static final String CHANGE_SCHOOL = "user/updateUserInfoDetailSchoolId.json";
-    public static String RELEASE_CHANGE_SCHOOL = "";
+    public static  String CHANGE_SCHOOL = "user/updateUserInfoDetailSchoolId.json";
 
     /**
      * 获取左侧抽屉的数据
      */
-    public static final String DRAWERLAYOUT_DATA =  "school/findGoodsListTitleTwo.json";
-    public static String RELEASE_DRAWERLAYOUT_DATA = "";
+    public static  String DRAWERLAYOUT_DATA =  "school/findGoodsListTitleTwo.json";
 
     /**
      * 购物车结算中心
      */
-    public static final String PAY_CENTER =  "shoppingCart/selectByIds.json";
-    public static String RELEASE_PAY_CENTER = "";
+    public static  String PAY_CENTER =  "shoppingCart/selectByIds.json";
 
     /**
      * 确定提交的支付接口
      */
-    public static final String READY_SUBMIT =  "pay/getPayDetail.json";
-    public static String RELEASE_READY_SUBMIT = "";
+    public static  String READY_SUBMIT =  "pay/getPayDetail.json";
 
     /**
      * 精确计算尺码
      */
-    public static final String COMPUTE_SIZE =  "goods/computeClotHingSize.json";
-    public static String RELEASE_COMPUTE_SIZE = "";
+    public static  String COMPUTE_SIZE =  "goods/computeClotHingSize.json";
 
     /**
      * 计算特体尺码的接口
      */
-    public static final String COMPUTE_SPECIAL_SIZE =  "goods/getRecommendClothingSize.json";
-    public static String RELEASE_COMPUTE_SPECIAL_SIZE = "";
+    public static  String COMPUTE_SPECIAL_SIZE =  "goods/getRecommendClothingSize.json";
 
     /**
      * 获取特体尺码接口
      */
-    public static final String SPECIAL_SIZE =  "goods/selectByTypeIdValue.json";
-    public static String RELEASE_SPECIAL_SIZE = "";
+    public static  String SPECIAL_SIZE =  "goods/selectByTypeIdValue.json";
 
     /**
      * 改变图片的路径
      */
-    public static final String CHANGE_IMG= "user/updateUserInfoDetail.json";
-    public static  String RELEASE_CHANGE_IMG= "";
+    public static  String CHANGE_IMG= "user/updateUserInfoDetail.json";
 
     /**
      * 上传图片
      */
-    public static final String UPLOAD_PICTURE =  "appUpload/uploadFtp.json";
-    public static String RELEASE_UPLOAD_PICTURE = "";
+    public static  String UPLOAD_PICTURE =  "appUpload/uploadFtp.json";
 
     /**
      * 代替购买的查询代买信息列表接口
      */
-    public static final String SEARCH_INSTEAD_LIST= "notice/selectRepresentBuyList.json";
-    public static  String RELEASE_INSTEAD_LIST= "";
+    public static  String SEARCH_INSTEAD_LIST= "notice/selectRepresentBuyList.json";
 
     /**
      * 添加代买
      */
-    public static final String SEARCH_INSTEAD_ADD= "notice/addRepresentBuy.json";
-    public static  String RELEASE_INSTEAD_ADD= "";
+    public static  String SEARCH_INSTEAD_ADD= "notice/addRepresentBuy.json";
 
     /**
      * 代买查询单个公告
      */
-    public static final String SEARCH_INSTEAD_SEARCH_SINGLE= "notice/selectByRepresentId.json";
-    public static  String RELEASE_INSTEAD_SQUERY= "";
+    public static  String SEARCH_INSTEAD_SEARCH_SINGLE= "notice/selectByRepresentId.json";
 
     /**
      * 代买的删除
      */
-    public static final String SEARCH_INSTEAD_DEL= "notice/deleteByRepresentId.json";
-    public static  String RELEASE_SEARCH_INSTEAD_DEL= "";
+    public static  String SEARCH_INSTEAD_DEL= "notice/deleteByRepresentId.json";
 
     /**
      * 增加代购信息时，查询出公告下的信息数据
      */
-    public static final String SEARCH_INSTEAD_INFO= "notice/selectGoodsHelpBuy.json";
-    public static  String RELEASE_INSTEAD_INFO= "";
+    public static  String SEARCH_INSTEAD_INFO= "notice/selectGoodsHelpBuy.json";
 
     /**
      * 代买信息的保存，添加和修改使用
      */
-    public static final String INSTEAD_SAVE= "notice/saveRepresentBuy.json";
-    public static  String RELEASE_INSTEAD_SAVE= "";
+    public static  String INSTEAD_SAVE= "notice/saveRepresentBuy.json";
 
     /**
      * 代买提交订单
      */
-    public static final String INSTEAD_PAY= "order/submitBatchGroupBuyOrder.json";
-    public static  String RELEASE_INSTEAD_PAY= "";
+    public static  String INSTEAD_PAY= "order/submitBatchGroupBuyOrder.json";
 
     /**
      * 判断公告是否下架
      */
-    public static final String NOTICE_IS_OFF= "notice/findNoticeById.json";
-    public static  String RELEASE_NOTICE_IS_OFF= "";
+    public static  String NOTICE_IS_OFF= "notice/findNoticeById.json";
 
     /**
      * 关于智园页
      */
-    public static final String ABOUT_ZHIYUAN =  "aboutsunsoft/aboutsunsoft.shtml";
-    public static String RELEASE_ABOUT_ZHIYUAN =  "";
+    public static  String ABOUT_ZHIYUAN =  "aboutsunsoft/aboutsunsoft.shtml";
 
     /**
      * 在线客服
      */
-    public static final String ONLINE_SERVICE= "main/customerService.json";
-    public static  String RELEASE_ONLINE_SERVICE= "";
+    public static  String ONLINE_SERVICE= "main/customerService.json";
 
     /**
      * 阳光客服
      */
-    public static final String SUNLIGHT_SERVICE =   "main/sunservices.shtml";
-    public static String RELEASE_SUNLIGHT_SERVICE = "";
+    public static  String SUNLIGHT_SERVICE =   "main/sunservices.shtml";
 
     /**
      * 客服电话
      */
-    public static String RELEASE_SERVICE_TELEPHONE = "http://call.phone.shtml";
+    public static String SERVICE_TELEPHONE = "http://call.phone.shtml";
 
 }

@@ -51,15 +51,14 @@ public class GetSpInsance {
      * @param spName
      * @param key
      * @param defauleValue
-     * @param type
      * @param <T>
      * @return
      */
-    public static <T> Object getSpValue(String spName,String key,T  defauleValue,T type){
+    public static <T> Object getSpValue(String spName,String key,T  defauleValue){
         final SharedPreferences sp = getSp(spName);
-            if(type instanceof String){
+            if(defauleValue instanceof String){
                return  sp.getString(key,(String) defauleValue);
-            }else if(type instanceof Boolean){
+            }else if(defauleValue instanceof Boolean){
                 return sp.getBoolean(key,(Boolean) defauleValue);
             }
         return null;

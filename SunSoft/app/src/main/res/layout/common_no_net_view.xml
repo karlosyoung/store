@@ -50,7 +50,7 @@
                 />
 
             <TextView
-                android:id="@+id/bt_load_again"
+                android:id="@+id/no_net_bt_load_again"
                 android:layout_width="110dp"
                 android:layout_height="38dp"
                 android:layout_gravity="center_horizontal"

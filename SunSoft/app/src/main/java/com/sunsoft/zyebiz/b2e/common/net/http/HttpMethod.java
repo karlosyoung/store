@@ -4,6 +4,7 @@ import android.os.Handler;
 
 import com.sunsoft.zyebiz.b2e.application.MyApplication;
 import com.sunsoft.zyebiz.b2e.common.Manager.AppManager;
+import com.sunsoft.zyebiz.b2e.common.api.ApiUrl;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,7 +26,6 @@ import okhttp3.Response;
  * Created by MJX on 2017/1/8.
  */
 public abstract class HttpMethod {
-
     private static OkHttpClient client;
     private static Request request;
     private static Handler handler = new Handler();
@@ -58,7 +58,11 @@ public abstract class HttpMethod {
      * OkHttp的post请求
      */
     public  static void OkHttpPost(String url, HashMap<String, String> paramsMap, final OnDataFinish onDataFinish) {
-//        request = new Request.Builder().url(url).post(body).build();
+        if("".equals(ApiUrl.BASE_URL) || ApiUrl.BASE_URL == null){
+            return;
+        }else{
+            url = ApiUrl.BASE_URL + url;
+        }
         StringBuilder tempParams = new StringBuilder();
         int pos = 0;
         for (String key : paramsMap.keySet()) {

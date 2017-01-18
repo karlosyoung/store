@@ -6,9 +6,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.common.Manager.AppManager;
@@ -21,93 +19,46 @@ import butterknife.InjectView;
 import de.greenrobot.event.EventBus;
 
 /**
+ * 设置子页面标题名称
+ * 初始化子界面
+ * 初始化子界面需要的数据
+ * 绑定Presenter
  * Activity的异常退出
  * Activity的销毁
  * Created by MJX on 2017/1/4.
  */
 
 
-
-
 public abstract class BaseActivity extends FragmentActivity {
 
-    @InjectView(R.id.notice)
-    TextView notice;
-    @InjectView(R.id.top_title_left)
-    RelativeLayout topTitleLeft;
-    @InjectView(R.id.mid_title)
-    TextView midTitle;
-    @InjectView(R.id.right_title)
-    TextView rightTitle;
-    @InjectView(R.id.top_title_right)
-    RelativeLayout topTitleRight;
-    @InjectView(R.id.base_title)
-    RelativeLayout baseTitle;
+    /**
+     * 使用Fragment来替换
+     */
     @InjectView(R.id.base_framelayout)
     FrameLayout baseFramelayout;
-    @InjectView(R.id.no_net_rl)
-    RelativeLayout noNetRl;
+    /**
+     * 无网的标题展示
+     */
     @InjectView(R.id.no_net_title_view)
     RelativeLayout noNetTitleView;
-    @InjectView(R.id.title_back)
-    ImageView titleBack;
-    @InjectView(R.id.red_round_tv)
-    TextView redRoundTv;
-    public String currentNmae = "";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.base_activity);
+        initFragment();
         ButterKnife.inject(this);
-        initTitleFeature();
-        setCurrentName();
         checkNet();
-        initSubView();
         handleActivityKilledException();
         AppManager.getAppManager().addActivity(this);
     }
 
 
-
-
     /**
-     * 左边是返回键，中间标题，右边不显示
+     * 返回帧布局的id
+     * @return
      */
-    public void showCommonTitle() {
-        topTitleLeft.setVisibility(View.VISIBLE);
-        titleBack.setVisibility(View.VISIBLE);
-        topTitleRight.setVisibility(View.GONE);
-    }
-
-
-    /**
-     * 统购标题的显示
-     */
-    public void showGroupBuyTitle() {
-        topTitleLeft.setVisibility(View.VISIBLE);
-        titleBack.setVisibility(View.GONE);
-        notice.setVisibility(View.VISIBLE);
-        redRoundTv.setVisibility(View.VISIBLE);
-        topTitleRight.setVisibility(View.GONE);
-
-    }
-
-    public void showOnlyRight(){
-        topTitleLeft.setVisibility(View.GONE);
-        topTitleRight.setVisibility(View.VISIBLE);
-        rightTitle.setVisibility(View.VISIBLE);
-    }
-
-    /**
-     * 只显示中间标题
-     */
-    public void showOnlyMidTitle(){
-        topTitleLeft.setVisibility(View.GONE);
-        topTitleRight.setVisibility(View.GONE);
-    }
-
-    protected int getBaseFragmeLayout() {
+    public int getBaseFrameLayoutId(){
         return R.id.base_framelayout;
     }
 
@@ -121,9 +72,9 @@ public abstract class BaseActivity extends FragmentActivity {
 
     public void onEventMainThread(NetEvent event) {
         boolean netFlag = event.getMsg();
-        if (netFlag) {
+        if(netFlag){
             noNetTitleView.setVisibility(View.GONE);
-        } else {
+        }else{
             noNetTitleView.setVisibility(View.VISIBLE);
         }
     }
@@ -140,19 +91,16 @@ public abstract class BaseActivity extends FragmentActivity {
         return super.onKeyDown(keyCode, event);
     }
 
-
-
     @Override
-    protected void onPostResume() {
-        super.onPostResume();
-        MobclickAgent.onPageStart(getCurrentName());
+    protected void onResume() {
+        super.onResume();
         MobclickAgent.onResume(this);
     }
+
 
     @Override
     protected void onPause() {
         super.onPause();
-        MobclickAgent.onPageEnd(getCurrentName());
         MobclickAgent.onPause(this);
     }
 
@@ -167,14 +115,20 @@ public abstract class BaseActivity extends FragmentActivity {
     }
 
     /**
+     * 界面展示使用Fragment
+     */
+    protected abstract void initFragment();
+
+    /**
      * Activity异常情况被杀死杀死
      */
     protected abstract void handleActivityKilledException();
 
+
     /**
-     * Activity中的Fragment的使用
+     * 子界面的初始化数据
      */
-    protected abstract void initSubView();
+    protected abstract void initSubData();
 
     /**
      * Activity销毁时，清除数据
@@ -185,23 +139,5 @@ public abstract class BaseActivity extends FragmentActivity {
      * 是否关闭Activity
      */
     protected abstract void isFinishCurrentActivity();
-
-    /**
-     * 实现标题栏的回退和显示文字
-     */
-    protected abstract void initTitleFeature();
-
-    /**
-     *设置当前页面的称呼
-     */
-    protected abstract void setCurrentName();
-
-    /**
-     * 得到当前页面的称呼
-     * @return
-     */
-    protected  String getCurrentName(){
-        return currentNmae;
-    }
 
 }

@@ -12,14 +12,12 @@
         android:gravity="center"
         >
         <ImageView
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:id="@+id/title_back"
             style="@style/wrap"
             android:background="@drawable/title_main_back"
-            android:visibility="visible"
+            android:visibility="gone"
             />
             <TextView
                 android:id="@+id/notice"

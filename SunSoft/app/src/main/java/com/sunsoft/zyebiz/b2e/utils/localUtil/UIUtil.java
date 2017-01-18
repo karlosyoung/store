@@ -26,6 +26,7 @@ public class UIUtil {
         return getContext().getResources().getString(id);
     }
 
+
     /**
      * dp和px的转换关系
      * @param dip
@@ -46,8 +47,11 @@ public class UIUtil {
         return (int)(px/density+0.5);
     }
 
+
     public static View inflate(int id){
         return View.inflate(getContext(), id, null);
     }
+
+
 
 }

@@ -29,8 +29,6 @@ public class SplashActivity extends Activity implements SplashContrct.ISplashVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         ButterKnife.inject(this);
-        SplashPresenter splashPresenter = new SplashPresenter();
-        splashPresenter.initServerUrl();
     }
 
     @Override

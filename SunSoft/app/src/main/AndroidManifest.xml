@@ -25,7 +25,6 @@
         <activity android:name="com.sunsoft.zyebiz.b2e.mvp.guide.GuideActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             ></activity>
-        <activity android:name="com.sunsoft.zyebiz.b2e.mvp.login.LoginActivity"></activity>
     </application>
 
 

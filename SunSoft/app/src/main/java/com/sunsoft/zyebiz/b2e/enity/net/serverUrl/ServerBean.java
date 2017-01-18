@@ -1,4 +1,4 @@
-package com.sunsoft.zyebiz.b2e.bean.net.serverUrl;
+package com.sunsoft.zyebiz.b2e.enity.net.serverUrl;
 
 /**
  * Created by MJX on 2017/1/6.
