@@ -15,7 +15,7 @@ import butterknife.InjectView;
  * 闪屏页面
  * Created by MJX on 2017/1/12.
  */
-public class SplashActivity extends Activity implements SplashContrct.ISplashView {
+public class SplashActivity extends Activity implements SplashContract.ISplashView {
 
     @InjectView(R.id.home_tv_title)
     TextView homeTvTitle;

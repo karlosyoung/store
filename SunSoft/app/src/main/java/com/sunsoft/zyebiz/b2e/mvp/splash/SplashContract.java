@@ -3,7 +3,7 @@ package com.sunsoft.zyebiz.b2e.mvp.splash;
 /**
  * Created by MJX on 2017/1/12.
  */
-public interface SplashContrct {
+public interface SplashContract {
     interface ISplashView{
         /**
          * 展示闪屏页进度条
