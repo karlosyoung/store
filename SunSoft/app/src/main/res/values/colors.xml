@@ -5,8 +5,6 @@
     <color name="colorPrimary">#24cf5f</color>
     <color name="colorPrimaryDark">#24cf5f</color>
     <color name="colorAccent">#FF4081</color>
-    <!--安卓2.0登录颜色-->
-    <color name="login_text_hint_color">#cacacc</color>
 
     <color name="translucence">#80000000</color>
     <!--按钮的蓝  -->
@@ -54,4 +52,8 @@
     <color name="green_title">#4CB050</color>
     <!--透明色-->
     <color name="Transparent_color">#00000000</color>
+    <!--tab的字体颜色-->
+    <color name="tab_text_normal">#878787</color>
+    <!-- 深蓝 -->
+    <color name="tab_text_click">#4CB050</color>
 </resources>

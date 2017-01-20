@@ -35,7 +35,7 @@ public abstract class BaseActivity extends FragmentActivity {
      * 使用Fragment来替换
      */
     @InjectView(R.id.base_framelayout)
-    FrameLayout baseFramelayout;
+   protected   FrameLayout baseFramelayout;
     /**
      * 无网的标题展示
      */
