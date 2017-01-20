@@ -3,10 +3,12 @@ package com.sunsoft.zyebiz.b2e.mvp.base;
 import com.google.gson.Gson;
 import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
 
+import java.util.HashMap;
+
 /**
  * Created by MJX on 2017/1/18.
  */
-public abstract class BaseModel {
+public class BaseModel {
     protected ISecondaryCallBackData iSecondaryCallBackData;
     protected Gson gson;
     public BaseModel(ISecondaryCallBackData iSecondaryCallBackData){
@@ -14,5 +16,19 @@ public abstract class BaseModel {
         if(gson == null){
           gson  = new Gson();
         }
+    }
+
+    /**
+     * 提供HashMap集合
+     * @param
+     * @return
+     */
+    protected  HashMap<String,String> getHashMap(){
+        HashMap<String,String> hashMap = null;
+        if(hashMap == null){
+            hashMap = new HashMap<String,String>();
+            hashMap.clear();
+        }
+        return hashMap;
     }
 }

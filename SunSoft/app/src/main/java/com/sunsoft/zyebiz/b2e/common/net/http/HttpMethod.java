@@ -43,13 +43,15 @@ public abstract class HttpMethod {
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                final String result = response.body().string();
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        onDataFinish.OnSuccess(result);
-                    }
-                });
+                if(response.isSuccessful()){
+                    final String result = response.body().string();
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            onDataFinish.OnSuccess(result);
+                        }
+                    });
+                }
             }
         });
     }
@@ -59,7 +61,7 @@ public abstract class HttpMethod {
      */
     public  static void OkHttpPost(String url, HashMap<String, String> paramsMap, final OnDataFinish onDataFinish) {
         if("".equals(ApiUrl.BASE_URL) || ApiUrl.BASE_URL == null){
-            return;
+
         }else{
             url = ApiUrl.BASE_URL + url;
         }

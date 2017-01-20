@@ -13,7 +13,7 @@ android {
         targetSdkVersion 23
         versionCode 14
         /*开发版本*/
-        versionName "2.3.7"
+        versionName "102.3.7"
 
 
         ndk {

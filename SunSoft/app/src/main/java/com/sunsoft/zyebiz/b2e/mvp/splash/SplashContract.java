@@ -55,6 +55,11 @@ public interface SplashContract {
         void splashRequestServerUrl();
 
         /**
+         * 请求服务器是否需要更新Bundle
+         */
+        void splashRequesetIsUpdateBundle();
+
+        /**
          * 请求下载apk
          */
         void splashRequestDownLoadApk();

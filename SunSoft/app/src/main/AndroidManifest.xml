@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!--闪屏页-->
-        <activity android:name="com.sunsoft.zyebiz.b2e.mvp.tab.mainTab.TabActivity">
+        <activity android:name=".mvp.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
