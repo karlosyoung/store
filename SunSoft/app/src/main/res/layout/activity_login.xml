@@ -5,10 +5,6 @@
                 android:background="@drawable/login_bg"
                 android:id="@+id/login_root">
 
-    <!--<include android:id="@+id/toolbar_out_root"-->
-             <!--android:layout_width="match_parent"-->
-             <!--android:layout_height="wrap_content"-->
-             <!--layout="@layout/register_title_bar" />-->
 
     <LinearLayout
         android:id="@+id/slogan"
@@ -55,14 +51,14 @@
 
         <com.sunsoft.zyebiz.b2e.widget.myView.MyUserNameEdit
             android:id="@+id/username"
-            android:layout_width="200dp"
+            android:layout_width="@dimen/dimen_200"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/login_username"
             android:drawablePadding="20dp"
             android:background="@null"
             android:maxLines="1"
             android:textColor="@color/white"
-            android:textColorHint="@color/text_white"
+            android:textColorHint="@color/text_hint"
             android:hint="@string/login_name_hint"
             android:drawableLeft="@drawable/login_clean" />
     </FrameLayout>
@@ -99,14 +95,14 @@
 
         <com.sunsoft.zyebiz.b2e.widget.myView.MyPasswordEdit
             android:id="@+id/edt_passwd"
-            android:layout_width="200dp"
+            android:layout_width="@dimen/dimen_200"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/login_userpas"
             android:drawablePadding="20dp"
             android:background="@null"
             android:maxLines="1"
             android:textColor="@color/white"
-            android:textColorHint="@color/text_white"
+            android:textColorHint="@color/text_hint"
             android:hint="@string/login_phone_hint"
             android:drawableLeft="@drawable/auxiliary_view_normal" />
     </FrameLayout>
