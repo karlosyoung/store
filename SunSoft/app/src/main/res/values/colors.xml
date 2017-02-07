@@ -12,6 +12,7 @@
     <color name="cart_bg">#80ffffff</color>
     <color name="white">#FFFFFF</color>
     <color name="text_white">#fffeff</color>
+    <color name="text_hint">#b8b7b8</color>
 
     <!-- 内容文字 -->
     <color name="common_content_gray">#5e5a57</color>

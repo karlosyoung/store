@@ -41,6 +41,12 @@
         >
        <TextView
            android:id="@+id/mid_title"
+           android:maxLines="1"
+           android:text=""
+           android:layout_centerHorizontal="true"
+           android:layout_gravity="center_horizontal"
+           android:textColor="@color/white"
+           android:textSize="@dimen/size_15"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:textSize="@dimen/size_18"
