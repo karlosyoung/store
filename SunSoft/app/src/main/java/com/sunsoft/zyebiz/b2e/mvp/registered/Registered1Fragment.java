@@ -1,6 +1,7 @@
 package com.sunsoft.zyebiz.b2e.mvp.registered;
 
 import android.view.View;
+import android.widget.TextView;
 
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
@@ -34,7 +35,8 @@ public class Registered1Fragment extends BaseFragment{
       CommonPag commonPag =  new CommonPag(getActivity()) {
             @Override
             protected View onCreateSuccessedView() {
-                return null;
+                TextView textView = new TextView(getActivity());
+                return textView;
             }
 
             @Override
@@ -54,7 +56,7 @@ public class Registered1Fragment extends BaseFragment{
 
             @Override
             protected void setMidText() {
-
+                midTitleTv.setText("注册");
             }
 
             @Override
