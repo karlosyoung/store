@@ -1,24 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/login_bg"
+                android:id="@+id/login_root">
 
-    <com.sunsoft.zyebiz.b2e.widget.myView.MyUserNameEdit
-        android:id="@+id/username"
+    <!--<include android:id="@+id/toolbar_out_root"-->
+             <!--android:layout_width="match_parent"-->
+             <!--android:layout_height="wrap_content"-->
+             <!--layout="@layout/register_title_bar" />-->
+
+    <LinearLayout
+        android:id="@+id/slogan"
+        android:layout_marginTop="@dimen/dimen_150"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        ></com.sunsoft.zyebiz.b2e.widget.myView.MyUserNameEdit>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TextView
+            android:background="@drawable/login_text_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
-
-    <com.sunsoft.zyebiz.b2e.widget.myView.MyPasswordEdit
-        android:id="@+id/password"
+    <FrameLayout
+        android:focusableInTouchMode="true"
+        android:id="@+id/username_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        ></com.sunsoft.zyebiz.b2e.widget.myView.MyPasswordEdit>
+        android:layout_marginRight="@dimen/dimen_30"
+        android:layout_marginLeft="@dimen/dimen_30"
+        android:gravity="center"
+        android:layout_marginTop="55dp"
+        android:layout_below="@+id/slogan"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/bt_username_clear"
+            android:layout_width="@dimen/dimen_28"
+            android:layout_height="@dimen/dimen_28"
+            android:background="@drawable/login_clean"
+            android:layout_gravity="end|center_vertical"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:layout_marginRight="@dimen/dimen_30"
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="#b0b0b0"
+            android:layout_marginTop="@dimen/dimen_33" />
+
+        <com.sunsoft.zyebiz.b2e.widget.myView.MyUserNameEdit
+            android:id="@+id/username"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/login_username"
+            android:drawablePadding="20dp"
+            android:background="@null"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorHint="@color/text_white"
+            android:hint="@string/login_name_hint"
+            android:drawableLeft="@drawable/login_clean" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:focusableInTouchMode="true"
+        android:id="@+id/pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dimen_30"
+        android:layout_marginLeft="@dimen/dimen_30"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_below="@id/username_layout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/img_pass_show"
+            android:layout_width="@dimen/dimen_28"
+            android:layout_height="@dimen/dimen_28"
+            android:background="@drawable/auxiliary_view_normal"
+            android:layout_gravity="end|center_vertical"
+            android:visibility="invisible"
+            />
+
+        <TextView
+            android:layout_marginRight="@dimen/dimen_30"
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="#b0b0b0"
+            android:layout_marginTop="@dimen/dimen_33"
+            />
+
+        <com.sunsoft.zyebiz.b2e.widget.myView.MyPasswordEdit
+            android:id="@+id/edt_passwd"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/login_userpas"
+            android:drawablePadding="20dp"
+            android:background="@null"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textColorHint="@color/text_white"
+            android:hint="@string/login_phone_hint"
+            android:drawableLeft="@drawable/auxiliary_view_normal" />
+    </FrameLayout>
+
 
     <com.sunsoft.zyebiz.b2e.widget.myView.MyButton
-        android:id="@+id/login_bt"
+        android:id="@+id/tv_login"
+        android:layout_width="@dimen/dimen_267"
+        android:layout_height="@dimen/dimen_38"
+        android:background="@drawable/login_btn_new_selector"
+        android:gravity="center"
+        android:text="@string/login"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/size_15"
+        android:layout_below="@+id/pwd"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp" />
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        ></com.sunsoft.zyebiz.b2e.widget.myView.MyButton>
-</LinearLayout>
+        android:id="@+id/switch_type"
+        android:layout_below="@+id/tv_login"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/dimen_10">
+
+        <View
+            android:id="@+id/center"
+            android:layout_width="1dp"
+            android:layout_height="10dp"
+            android:background="@color/text_white"
+            android:layout_centerInParent="true"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="68dp"
+            android:text="@string/register_account"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/size_15"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/center"
+            android:layout_toStartOf="@+id/center"
+            android:layout_marginEnd="70dp" />
+
+        <TextView
+            android:id="@+id/forget_pas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forget_psd"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/size_15"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="43dp"
+            android:layout_marginEnd="43dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>
