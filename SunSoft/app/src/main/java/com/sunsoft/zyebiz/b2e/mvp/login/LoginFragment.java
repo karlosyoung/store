@@ -8,6 +8,8 @@ import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
 
+import static u.aly.x.R;
+
 /**
  * Created by Amoly.
  * Data：2017/2/7.
