@@ -42,7 +42,10 @@
        <TextView
            android:id="@+id/mid_title"
            android:layout_width="wrap_content"
-           android:layout_height="wrap_content" />
+           android:layout_height="wrap_content"
+           android:textSize="@dimen/size_18"
+           android:textColor="@color/common_text_white"
+           />
     </RelativeLayout>
     <RelativeLayout
         android:layout_alignParentRight="true"

@@ -14,15 +14,17 @@
     <color name="text_white">#fffeff</color>
 
     <!-- 内容文字 -->
-    <color name="common_Content_gray">#5e5a57</color>
+    <color name="common_content_gray">#5e5a57</color>
+    <!--文字白色-->
+    <color name="common_text_white">#FFFFFF</color>
     <!-- 公共背景 -->
-    <color name="common_content_bg">#f7f7f7</color>
+    <color name="common_white_bg">#f7f7f7</color>
     <!--公共边界线颜色-->
     <color name="border_line">#f7f7f7</color>
     <!--没有网络的背景色-->
     <color name="no_net_bg">#FFF2C8</color>
-
-    
+<!--按钮点击颜色加深-->
+    <color name="orange_button_click">#dc9400</color>
     <!--引用颜色-->
     <color name="color_323232">#323232</color>
     <color name="color_696969">#696969</color>
@@ -51,7 +53,7 @@
     <!--标题栏的颜色-->
     <color name="green_title">#4CB050</color>
     <!--透明色-->
-    <color name="Transparent_color">#00000000</color>
+    <color name="transparent_color">#00000000</color>
     <!--tab的字体颜色-->
     <color name="tab_text_normal">#878787</color>
     <!-- 深蓝 -->

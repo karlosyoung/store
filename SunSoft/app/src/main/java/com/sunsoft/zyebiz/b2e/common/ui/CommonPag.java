@@ -16,7 +16,7 @@ import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
  * Created by MJX on 2017/1/9.
  */
 public abstract class CommonPag extends FrameLayout {
-    protected View loadingView, noNetView, emptyView, successedView;
+    protected View loadingView, noNetView, emptyView, successedView,noTouchView;
     protected RelativeLayout commonParent;
     protected TextView noDataLoadAgain;
     protected RelativeLayout commonTitleParent;
@@ -44,15 +44,25 @@ public abstract class CommonPag extends FrameLayout {
         addView(commonParent);
         commonTitleParent = (RelativeLayout) findViewById(R.id.common_title_rl);
         commonContentParent = (FrameLayout) findViewById(R.id.common_content);
-        loadingView = onCreateLoadingView();
-        commonContentParent.addView(loadingView);
+        emptyView = onCreateEmptyView();
+        commonContentParent.addView(emptyView);
         noNetView = onCreateNoNetView();
         commonContentParent.addView(noNetView);
         successedView = onCreateSuccessedView();
         commonContentParent.addView(successedView);
-        emptyView = onCreateEmptyView();
-        commonContentParent.addView(emptyView);
+        loadingView = onCreateLoadingView();
+        commonContentParent.addView(loadingView);
+        noTouchView =  onCreateNoTouchView();
+        commonContentParent.addView(noTouchView);
+        showLoadigView();
         initChildView();
+    }
+
+    /**
+     * 拦截触摸事件的View
+     */
+    private View onCreateNoTouchView() {
+        return UIUtil.inflate(R.layout.common_loading_view);
     }
 
     protected void initChildView() {
@@ -73,7 +83,9 @@ public abstract class CommonPag extends FrameLayout {
     }
 
 
-
+    /**
+     * 正常的标题栏
+     */
     public void initSubCommonTitle(){
         titleLeftParent.setVisibility(View.VISIBLE);
         titleBack.setVisibility(View.VISIBLE);
@@ -91,6 +103,9 @@ public abstract class CommonPag extends FrameLayout {
         setMidText();
     }
 
+    /**
+     * 统购特殊的标题栏
+     */
     public void initSubTgTitle(){
         titleLeftParent.setVisibility(View.VISIBLE);
         titleBack.setVisibility(View.VISIBLE);
@@ -108,6 +123,9 @@ public abstract class CommonPag extends FrameLayout {
         setMidText();
     }
 
+    /**
+     * 支付类型的标题栏
+     */
     public void initSubPayTitle(){
         titleLeftParent.setVisibility(View.VISIBLE);
         titleBack.setVisibility(View.VISIBLE);
@@ -188,6 +206,7 @@ public abstract class CommonPag extends FrameLayout {
             successedView.setVisibility(View.GONE);
             emptyView.setVisibility(View.GONE);
             loadingView.setVisibility(View.VISIBLE);
+            noTouchView.setVisibility(View.VISIBLE);
         }
     }
 
@@ -200,6 +219,7 @@ public abstract class CommonPag extends FrameLayout {
             successedView.setVisibility(View.GONE);
             emptyView.setVisibility(View.VISIBLE);
             loadingView.setVisibility(View.GONE);
+            noTouchView.setVisibility(View.GONE);
         }
     }
 
@@ -212,6 +232,7 @@ public abstract class CommonPag extends FrameLayout {
             successedView.setVisibility(View.VISIBLE);
             emptyView.setVisibility(View.GONE);
             loadingView.setVisibility(View.GONE);
+            noTouchView.setVisibility(View.GONE);
         }
     }
 
@@ -224,6 +245,7 @@ public abstract class CommonPag extends FrameLayout {
             successedView.setVisibility(View.GONE);
             emptyView.setVisibility(View.GONE);
             loadingView.setVisibility(View.GONE);
+            noTouchView.setVisibility(View.GONE);
         }
     }
 
