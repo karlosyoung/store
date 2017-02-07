@@ -19,16 +19,16 @@ public abstract class CommonPag extends FrameLayout {
     protected View loadingView, noNetView, emptyView, successedView;
     protected RelativeLayout commonParent;
     protected TextView noDataLoadAgain;
-    private RelativeLayout commonTitleParent;
-    private FrameLayout commonContentParent;
-    public Context context;
-    private RelativeLayout titleLeftParent;
-    private ImageView titleBack;
-    private TextView noticeTv;
-    private TextView redRoundTv;
-    private TextView midTitleTv;
-    private RelativeLayout titleRightParent;
-    private TextView rifhtTitleTv;
+    protected RelativeLayout commonTitleParent;
+    protected FrameLayout commonContentParent;
+    protected Context context;
+    protected RelativeLayout titleLeftParent;
+    protected ImageView titleBack;
+    protected TextView noticeTv;
+    protected TextView redRoundTv;
+    protected TextView midTitleTv;
+    protected RelativeLayout titleRightParent;
+    protected TextView rifhtTitleTv;
 
     public CommonPag(Context context) {
         super(context);

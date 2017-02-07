@@ -3,6 +3,7 @@ package com.sunsoft.zyebiz.b2e.mvp.registered;
 import java.util.HashMap;
 
 /**
+ * 注册
  * Created by MJX on 2017/1/12.
  */
 public interface RegistContract {
