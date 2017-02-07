@@ -1,10 +1,11 @@
 package com.sunsoft.zyebiz.b2e.mvp.registered;
 
 import android.view.View;
-import android.widget.TextView;
 
+import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
+import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
 
 /**
  * Created by MJX on 2017/2/7.
@@ -35,8 +36,8 @@ public class Registered1Fragment extends BaseFragment{
       CommonPag commonPag =  new CommonPag(getActivity()) {
             @Override
             protected View onCreateSuccessedView() {
-                TextView textView = new TextView(getActivity());
-                return textView;
+                View regist1View = UIUtil.inflate(R.layout.fragment_registered1);
+                return regist1View;
             }
 
             @Override
@@ -46,7 +47,7 @@ public class Registered1Fragment extends BaseFragment{
 
             @Override
             protected void leftBackTo() {
-
+                getActivity().finish();
             }
 
             @Override
@@ -61,9 +62,10 @@ public class Registered1Fragment extends BaseFragment{
 
             @Override
             protected void initSubTitle() {
-
+                initSubCommonTitle();
             }
         };
+        commonPag.showSuccessedView();
         return commonPag;
     }
 
