@@ -1,5 +1,6 @@
 package com.sunsoft.zyebiz.b2e.mvp.login;
 
+import com.sunsoft.zyebiz.b2e.common.Manager.MyFragmentManager;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseActivity;
 
 /**
@@ -9,7 +10,8 @@ import com.sunsoft.zyebiz.b2e.mvp.base.BaseActivity;
 public class LoginActivity extends BaseActivity {
     @Override
     protected void initFragment() {
-
+        LoginFragment loginFragment = new LoginFragment();
+        MyFragmentManager.addFragmentForBack(this,getBaseFrameLayoutId(),loginFragment,"loginFragment");
     }
 
     @Override

@@ -18,6 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--登录页-->
+        <activity
+            android:name=".mvp.login.LoginActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysVisible">
+        </activity>
         <!--有无网络和刷新页面-->
         <service android:name=".common.net.checkNet.NetAndRefreshService"></service>
         <!--引导页-->
