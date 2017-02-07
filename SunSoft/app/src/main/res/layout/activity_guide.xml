@@ -16,7 +16,7 @@
               android:id="@+id/intoLoginBt"
               android:layout_width="match_parent"
               android:layout_height="@dimen/dimen_90"
-              android:background="@color/Transparent_color"
+              android:background="@color/transparent_color"
               android:visibility="gone"
               />
       </RelativeLayout>

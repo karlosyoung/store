@@ -11,6 +11,14 @@
     <string name="push_notification">消息推送设置</string>
     <string name="wipe_cache">清除缓存</string>
     <string name="quit_login">退出登录</string>
+    <!--注册-->
+    <string name="username">用户名</string>
+    <string name="phonenumber">手机号</string>
+    <string name="verification_code">验证码</string>
+    <string name="hint_username">请输入姓名+手机号</string>
+    <string name="hint_phonenumber">请输入注册手机号</string>
+    <string name="hint_verification_code">验证码</string>
+    <string name="for_one">换一张</string>
 
 
 </resources>

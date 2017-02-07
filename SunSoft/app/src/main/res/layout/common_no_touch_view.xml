@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Transparent_color"
+    android:background="@color/transparent_color"
     >
      <com.sunsoft.zyebiz.b2e.view.MyRelativelayout
          android:id="@+id/loading_can_not_touch"
          android:layout_width="match_parent"
          android:layout_height="match_parent"
-         android:background="@color/Transparent_color"
+         android:background="@color/transparent_color"
          >
      </com.sunsoft.zyebiz.b2e.view.MyRelativelayout>
 

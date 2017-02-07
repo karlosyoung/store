@@ -18,6 +18,12 @@
     <color name="common_content_gray">#5e5a57</color>
     <!--文字白色-->
     <color name="common_text_white">#FFFFFF</color>
+    <!--文字黑色-->
+    <color name="common_text_black">#72706b</color>
+    <!--提示语字体颜色-->
+    <color name="common_text_hint">#bebebe</color>
+    <!--公共灰色背景-->
+    <color name="common_gray_bg">#f9f9f9</color>
     <!-- 公共背景 -->
     <color name="common_white_bg">#f7f7f7</color>
     <!--公共边界线颜色-->

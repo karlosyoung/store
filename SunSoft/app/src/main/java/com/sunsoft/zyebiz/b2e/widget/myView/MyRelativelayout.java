@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 /**
- * Created by Administrator on 2016/8/5.
+ * Created by MJX on 2016/8/5.
  */
 public class MyRelativelayout extends View {
     public MyRelativelayout(Context context) {

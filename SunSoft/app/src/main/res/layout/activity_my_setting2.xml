@@ -34,7 +34,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dimen_15"
             android:text="@string/push_notification"
-            android:textColor="@color/common_Content_gray"
+            android:textColor="@color/common_content_gray"
             android:textSize="@dimen/dimen_15"
             />
 
@@ -67,7 +67,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dimen_15"
             android:text="@string/wipe_cache"
-            android:textColor="@color/common_Content_gray"
+            android:textColor="@color/common_content_gray"
             android:textSize="@dimen/dimen_15"
             />
 
@@ -102,7 +102,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dimen_15"
             android:text="新版本检测"
-            android:textColor="@color/common_Content_gray"
+            android:textColor="@color/common_content_gray"
             android:textSize="@dimen/dimen_15"
             />
 
@@ -122,7 +122,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/dimen_05"
             android:hint="v1.2.1版"
-            android:textColor="@color/common_Content_gray"
+            android:textColor="@color/common_content_gray"
             android:textSize="@dimen/dimen_15"
             />
         
@@ -160,7 +160,7 @@
         android:background="@drawable/denglumoren"
         android:clickable="true"
         android:text="@string/quit_login"
-        android:textColor="@color/common_Content_gray"
+        android:textColor="@color/common_content_gray"
         android:textSize="@dimen/dimen_15"
         android:layout_alignParentBottom="true"
        android:layout_marginBottom="40dp"
@@ -172,7 +172,7 @@
         android:id="@+id/login_exit"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:background="@color/common_content_bg" />
+        android:background="@color/common_content_gray" />
     <!--<RelativeLayout-->
         <!--android:id="@+id/have_no_net"-->
         <!--android:layout_width="match_parent"-->
