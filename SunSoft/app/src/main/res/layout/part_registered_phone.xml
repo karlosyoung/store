@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:focusableInTouchMode="true"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginBottom="@dimen/dimen_20"
+        android:layout_marginRight="@dimen/dimen_25"
+        android:layout_marginLeft="@dimen/dimen_25"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phonenumber"
+            android:textColor="@color/common_text_black"
+            android:textSize="@dimen/size_15" />
+        <EditText
+            android:id="@+id/regist_phonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="@string/hint_phonenumber"
+            android:singleLine="true"
+            android:textColor="@color/common_text_black"
+            android:textColorHint="@color/common_text_hint"
+            android:textSize="@dimen/size_15"
+            android:layout_marginLeft="@dimen/dimen_20"
+            />
+    </LinearLayout>
+    <include layout="@layout/common_line"></include>
+</LinearLayout>

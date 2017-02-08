@@ -22,6 +22,8 @@
     <color name="common_text_black">#72706b</color>
     <!--提示语字体颜色-->
     <color name="common_text_hint">#bebebe</color>
+    <!--公共的线条的颜色-->
+    <color name="common_line_bg">#bebebe</color>
     <!--公共灰色背景-->
     <color name="common_gray_bg">#f9f9f9</color>
     <!-- 公共背景 -->
