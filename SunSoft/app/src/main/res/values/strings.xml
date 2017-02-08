@@ -19,6 +19,7 @@
     <string name="hint_phonenumber">请输入注册手机号</string>
     <string name="hint_verification_code">请输入验证码</string>
     <string name="for_one">换一张</string>
+    <string name="next_step">下一步</string>
 
 
 </resources>
