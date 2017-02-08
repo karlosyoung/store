@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_gray_bg"
+    >
+
+    <RelativeLayout
+        android:id="@+id/register2_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/dimen_15"
+        >
+    <TextView
+        android:id="@+id/phone_number_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dimen_25"
+        android:paddingRight="@dimen/dimen_25"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginBottom="@dimen/dimen_20"
+        android:text="我们已经向手机15210732807发送验证码，请查收。"
+        android:textSize="@dimen/size_15"
+        android:background="@color/white"
+        />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_below="@id/register2_rl"
+        android:id="@+id/regist1_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/common_white_bg"
+        android:layout_marginTop="@dimen/dimen_15"
+        android:orientation="vertical"
+        >
+
+        <!--手机验证码-->
+        <include layout="@layout/part_phone_verification_code"></include>
+        <!--设置密码-->
+        <include layout="@layout/part_set_password"></include>
+        <!--确认密码-->
+        <include layout="@layout/part_confirm_password"></include>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dimen_25"
+            android:paddingRight="@dimen/dimen_25"
+            android:paddingBottom="@dimen/dimen_20"
+            android:background="@color/white"
+            />
+    </LinearLayout>
+    <!--下一步-->
+    <RelativeLayout
+        android:layout_below="@id/regist1_rl"
+        android:id="@+id/next_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_50"
+        >
+        <include layout="@layout/common_button"></include>
+    </RelativeLayout>
+    <!--图片-->
+    <ImageView
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/regist2_guide"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dimen_50"
+        />
+</RelativeLayout>

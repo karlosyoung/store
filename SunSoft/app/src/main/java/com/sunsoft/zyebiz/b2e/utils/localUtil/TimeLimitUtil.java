@@ -12,12 +12,12 @@ public class TimeLimitUtil {
      * 防止点击过快
      * @return
      */
-    public synchronized static boolean isFastClick() {
+    public synchronized static boolean isResponseClick() {
         long time = System.currentTimeMillis();
         if ( time - lastClickTime < MIN_CLICK_DELAY_TIME) {
-            return true;
+            return false;
         }
         lastClickTime = time;
-        return false;
+        return true;
     }
 }

@@ -36,6 +36,8 @@ public abstract class CommonPag extends FrameLayout {
         initView();
     }
 
+
+
     /**
      * 初始化：加载中的loading,加载失败，加载成功的view
      */

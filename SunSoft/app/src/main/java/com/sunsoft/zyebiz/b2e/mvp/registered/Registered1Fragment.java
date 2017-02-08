@@ -7,15 +7,18 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sunsoft.zyebiz.b2e.R;
+import com.sunsoft.zyebiz.b2e.common.Manager.AppManager;
+import com.sunsoft.zyebiz.b2e.common.Manager.MyFragmentManager;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
+import com.sunsoft.zyebiz.b2e.utils.localUtil.TimeLimitUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
 
 /**
  * 注册1页
  * Created by MJX on 2017/2/7.
  */
-public class Registered1Fragment extends BaseFragment implements RegistContract.IRegist1View,{
+public class Registered1Fragment extends BaseFragment implements RegistContract.IRegist1View,View.OnClickListener{
     private View regist1View;
     private EditText registUserName;
     private EditText registPhone;
@@ -62,7 +65,7 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
 
             @Override
             protected void leftBackTo() {
-                getActivity().finish();
+                AppManager.getAppManager().finishActivity();
             }
 
             @Override
@@ -72,7 +75,7 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
 
             @Override
             protected void setMidText() {
-                midTitleTv.setText("注册");
+                midTitleTv.setText(R.string.register);
             }
 
             @Override
@@ -84,7 +87,7 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
         return commonPag;
     }
 
-    private void initSubView(){
+    private void initSubView() {
         registUserName = (EditText) regist1View.findViewById(R.id.regist_userName);
         registPhone = (EditText) regist1View.findViewById(R.id.regist_phonenumber);
         registVerficationEt = (EditText) regist1View.findViewById(R.id.regist_verfication_et);
@@ -93,7 +96,10 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
         registNext = (RelativeLayout) regist1View.findViewById(R.id.next_bt);
         registTv = (TextView) regist1View.findViewById(R.id.common_text);
         registTv.setText(getString(R.string.next_step));
-
+        registNext.setOnClickListener(this);
+        registChangeVerfica.setOnClickListener(this);
+        registVerficationIv.setOnClickListener(this);
+    }
 
     @Override
     protected void initSubData() {
@@ -102,23 +108,39 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
 
     @Override
     public String getUserName() {
-        return null;
+        return registUserName.getText().toString();
     }
 
     @Override
     public String getMobile() {
-        return null;
+        return registPhone.getText().toString();
     }
 
     @Override
     public String getCheckNum() {
-        return null;
+        return registChangeVerfica.getText().toString();
     }
 
-    @Override
-    public void onNoDoubleClick(View v) {
-        switch (v.getId()){
 
+    /**
+     * 图片验证码刷新
+     * 下一步
+     * @param v
+     */
+    @Override
+    public void onClick(View v) {
+        if(!TimeLimitUtil.isResponseClick()){
+            return;
+        }
+        switch (v.getId()){
+            case R.id.change_verfication_pic:
+            case R.id.verification_code_image:
+
+                break;
+            case R.id.next_bt:
+                Registered2Fragment registered2Fragment = new Registered2Fragment();
+                MyFragmentManager.addFragmentForBack();
+                break;
         }
     }
 }

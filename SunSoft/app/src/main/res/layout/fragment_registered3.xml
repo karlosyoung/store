@@ -12,12 +12,7 @@
     android:layout_marginTop="@dimen/dimen_15"
     android:orientation="vertical"
     >
-    <!--用户名-->
-    <include layout="@layout/part_registered_username"></include>
-    <!--手机号-->
-    <include layout="@layout/part_registered_phone"></include>
-    <!--验证码-->
-    <include layout="@layout/part_image_verification_code"></include>
+
 </LinearLayout>
     <!--下一步-->
 <RelativeLayout
@@ -34,7 +29,7 @@
         android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/regist1_guide"
+        android:background="@drawable/regist3_guide"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/dimen_50"
         />

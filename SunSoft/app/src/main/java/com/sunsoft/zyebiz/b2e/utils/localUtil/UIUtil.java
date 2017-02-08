@@ -2,6 +2,7 @@ package com.sunsoft.zyebiz.b2e.utils.localUtil;
 
 import android.content.Context;
 import android.view.View;
+import android.widget.EditText;
 
 import com.sunsoft.zyebiz.b2e.application.MyApplication;
 
@@ -52,6 +53,9 @@ public class UIUtil {
         return View.inflate(getContext(), id, null);
     }
 
+    public static String getEditStr(EditText editText){
+        return editText.getText().toString();
+    }
 
 
 }
