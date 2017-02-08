@@ -51,7 +51,7 @@ public class LoginFragment extends BaseFragment {
 
     @Override
     protected View onSubView() {
-        CommonPag commonPag = new CommonPag(getActivity()) {
+        final CommonPag commonPag = new CommonPag(getActivity()) {
             @Override
             protected View onCreateSuccessedView() {
                 mLoginView = UIUtil.inflate(R.layout.fragment_login);
@@ -76,12 +76,11 @@ public class LoginFragment extends BaseFragment {
 
             @Override
             protected void setMidText() {
-                midTitleTv.setText("登录");
             }
 
             @Override
             protected void initSubTitle() {
-
+                midTitleTv.setText("登录");
             }
         };
         commonPag.showSuccessedView();
@@ -105,4 +104,5 @@ public class LoginFragment extends BaseFragment {
     protected void initSubData() {
 
     }
+
 }

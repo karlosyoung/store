@@ -1,4 +1,4 @@
-package com.sunsoft.zyebiz.b2e.mvp.forgetPassword;
+package com.sunsoft.zyebiz.b2e.mvp.forgetPwd;
 
 /**
  * Created by MJX on 2017/1/13.

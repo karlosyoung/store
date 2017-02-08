@@ -1,5 +1,6 @@
 package com.sunsoft.zyebiz.b2e.mvp.base;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
@@ -35,7 +36,7 @@ public abstract class BaseActivity extends FragmentActivity {
      * 使用Fragment来替换
      */
     @InjectView(R.id.base_framelayout)
-   protected   FrameLayout baseFramelayout;
+    protected FrameLayout baseFramelayout;
     /**
      * 无网的标题展示
      */
@@ -56,9 +57,10 @@ public abstract class BaseActivity extends FragmentActivity {
 
     /**
      * 返回帧布局的id
+     *
      * @return
      */
-    public int getBaseFrameLayoutId(){
+    public int getBaseFrameLayoutId() {
         return R.id.base_framelayout;
     }
 
@@ -72,9 +74,9 @@ public abstract class BaseActivity extends FragmentActivity {
 
     public void onEventMainThread(NetEvent event) {
         boolean netFlag = event.getMsg();
-        if(netFlag){
+        if (netFlag) {
             noNetTitleView.setVisibility(View.GONE);
-        }else{
+        } else {
             noNetTitleView.setVisibility(View.VISIBLE);
         }
     }
@@ -90,6 +92,34 @@ public abstract class BaseActivity extends FragmentActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
+    /**
+     * 关闭当前的activity
+     */
+    protected void closeActivity() {
+        AppManager.getAppManager().finishActivity();
+    }
+
+    /**
+     * 页面跳转
+     */
+    protected void intentTo(Intent intent, boolean isClose) {
+        startActivity(intent);
+        if (isClose) {
+            closeActivity();
+        } else {
+            CloseKeyBoard.hideInputMethod(BaseActivity.this);
+        }
+    }
+
+    /**
+     * 携带数据跳转
+     */
+    protected void intentToResult(Intent intent, int tag) {
+        CloseKeyBoard.hideInputMethod(BaseActivity.this);
+        startActivityForResult(intent, tag);
+    }
+
 
     @Override
     protected void onResume() {
