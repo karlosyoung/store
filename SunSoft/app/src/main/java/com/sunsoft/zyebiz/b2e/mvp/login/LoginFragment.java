@@ -1,14 +1,19 @@
 package com.sunsoft.zyebiz.b2e.mvp.login;
 
+import android.text.InputFilter;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
+import com.sunsoft.zyebiz.b2e.utils.localUtil.StringUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
 
 /**
@@ -28,6 +33,9 @@ public class LoginFragment extends BaseFragment {
     private Button mTv_login;
     private TextView mTv_register;
     private TextView mForget_pas;
+    private Button mLogin_change;
+    private ImageView mChecknum;
+    private EditText mLogin_et_checknum;
 
     @Override
     protected void clearData() {
@@ -46,6 +54,7 @@ public class LoginFragment extends BaseFragment {
 
     @Override
     protected void bindPresent() {
+
 
     }
 
@@ -97,11 +106,34 @@ public class LoginFragment extends BaseFragment {
         mTv_login = (Button) mLoginView.findViewById(R.id.tv_login);
         mTv_register = (TextView) mLoginView.findViewById(R.id.tv_register);
         mForget_pas = (TextView) mLoginView.findViewById(R.id.forget_pas);
+        mLogin_change = (Button) mLoginView.findViewById(R.id.login_bt_change);
+        mChecknum = (ImageView) mLoginView.findViewById(R.id.login_iv_checknum);
+        mLogin_et_checknum = (EditText) mLoginView.findViewById(R.id.login_et_checknum);
     }
 
 
     @Override
     protected void initSubData() {
+        String editUser = mUsename.getText().toString();
+        String editName = mEdt_passwd.getText().toString();
+        mUsename.setText(StringUtil.replaceBlank(editUser));
+        mEdt_passwd.setFilters(new InputFilter[] {StringUtil.stringFilter(), new InputFilter.LengthFilter(18)});
+
+        mEdt_passwd.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    //去登录
+                    gotoLogin();
+                }
+
+                return false;
+            }
+        });
+
+    }
+
+    private void gotoLogin() {
 
     }
 

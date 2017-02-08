@@ -22,10 +22,10 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/login_text_bg"
-                android:id="@+id/textView"/>
+                android:background="@drawable/login_text_bg"/>
         </LinearLayout>
 
         <FrameLayout
@@ -41,24 +41,15 @@
             android:focusableInTouchMode="true"
             android:gravity="center">
 
-            <Button
-                android:id="@+id/bt_username_clear"
-                android:layout_width="@dimen/dimen_28"
-                android:layout_height="@dimen/dimen_28"
-                android:layout_gravity="end|center_vertical"
-                android:background="@drawable/login_clean"
-                android:visibility="invisible"/>
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginRight="@dimen/dimen_30"
                 android:layout_marginTop="@dimen/dimen_33"
                 android:background="#b0b0b0"/>
 
             <EditText
                 android:id="@+id/username"
-                android:layout_width="@dimen/dimen_200"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:drawableLeft="@drawable/login_clean"
@@ -69,6 +60,14 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/text_hint"
                 android:textSize="15sp"/>
+
+            <Button
+                android:id="@+id/bt_username_clear"
+                android:layout_width="@dimen/dimen_28"
+                android:layout_height="@dimen/dimen_28"
+                android:layout_gravity="end|center_vertical"
+                android:background="@drawable/login_clean"
+                android:visibility="invisible"/>
         </FrameLayout>
 
         <FrameLayout
@@ -96,14 +95,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginRight="@dimen/dimen_30"
                 android:layout_marginTop="@dimen/dimen_33"
                 android:background="#b0b0b0"
                 />
 
             <EditText
                 android:id="@+id/edt_passwd"
-                android:layout_width="@dimen/dimen_200"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:drawableLeft="@drawable/auxiliary_view_normal"
@@ -117,20 +115,86 @@
         </FrameLayout>
 
 
+        <!--验证码  -->
+        <RelativeLayout
+            android:id="@+id/login__rl_checknum"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dimen_20"
+            android:layout_alignEnd="@+id/pwd_layout"
+            android:layout_alignLeft="@+id/pwd_layout"
+            android:layout_alignRight="@+id/pwd_layout"
+            android:layout_alignStart="@+id/pwd_layout"
+            android:layout_below="@+id/pwd_layout"
+            android:layout_marginTop="@dimen/dimen_25"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/login_tv_checknum"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="bottom"
+                android:text="@string/verification_code"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dimen_15"
+                />
+
+
+            <EditText
+                android:id="@+id/login_et_checknum"
+                android:layout_width="@dimen/dimen_90"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/login_tv_checknum"
+                android:background="@null"
+                android:drawableBottom="@drawable/login_checknum_et"
+                android:gravity="center"
+                android:hint="@string/hint_verification_code"
+                android:inputType="number"
+                android:longClickable="false"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textColorHint="@color/common_text_hint"
+                android:textSize="@dimen/dimen_15"
+                />
+
+            <Button
+                android:id="@+id/login_bt_change"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:text="@string/for_one"
+                android:textColor="@color/common_text_hint"
+                android:textSize="@dimen/dimen_15"/>
+
+            <ImageView
+                android:id="@+id/login_iv_checknum"
+                android:layout_width="@dimen/dimen_80"
+                android:layout_height="@dimen/dimen_25"
+                android:scaleType="fitXY"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/login_bt_change"
+                android:layout_toStartOf="@+id/login_bt_change"/>
+        </RelativeLayout>
+
         <Button
             android:id="@+id/tv_login"
             android:layout_width="@dimen/dimen_267"
             android:layout_height="@dimen/dimen_38"
-            android:layout_below="@+id/pwd_layout"
+            android:layout_below="@+id/login__rl_checknum"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="38dp"
+            android:layout_marginTop="@dimen/dimen_35"
             android:background="@drawable/login_btn_new_selector"
             android:gravity="center"
             android:text="@string/login"
             android:textColor="@color/text_white"
             android:textSize="@dimen/size_15"/>
 
-
+        <!--注册和忘记密码-->
         <RelativeLayout
             android:id="@+id/switch_type"
             android:layout_width="match_parent"
@@ -155,8 +219,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginEnd="70dp"
-                android:layout_marginRight="68dp"
+                android:layout_marginEnd="@dimen/dimen_68"
+                android:layout_marginRight="@dimen/dimen_68"
                 android:layout_toLeftOf="@+id/center"
                 android:layout_toStartOf="@+id/center"
                 android:text="@string/register_account"
@@ -170,8 +234,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginEnd="43dp"
-                android:layout_marginRight="43dp"
+                android:layout_marginEnd="@dimen/dimen_40"
+                android:layout_marginRight="@dimen/dimen_40"
                 android:text="@string/forget_psd"
                 android:textColor="@color/text_white"
                 android:textSize="@dimen/size_15"/>
