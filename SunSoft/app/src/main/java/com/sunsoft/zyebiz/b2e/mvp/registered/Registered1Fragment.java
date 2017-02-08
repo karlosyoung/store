@@ -11,6 +11,7 @@ import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
  * Created by MJX on 2017/2/7.
  */
 public class Registered1Fragment extends BaseFragment{
+    private View regist1View;
     @Override
     protected void clearData() {
 
@@ -36,7 +37,8 @@ public class Registered1Fragment extends BaseFragment{
       CommonPag commonPag =  new CommonPag(getActivity()) {
             @Override
             protected View onCreateSuccessedView() {
-                View regist1View = UIUtil.inflate(R.layout.fragment_registered1);
+                regist1View = UIUtil.inflate(R.layout.fragment_registered1);
+                initSubView();
                 return regist1View;
             }
 
@@ -67,6 +69,10 @@ public class Registered1Fragment extends BaseFragment{
         };
         commonPag.showSuccessedView();
         return commonPag;
+    }
+
+    private void initSubView(){
+
     }
 
     @Override

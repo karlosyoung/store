@@ -5,7 +5,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/common_gray_bg"
+        android:background="@color/common_line_bg"
         android:layout_marginLeft="@dimen/dimen_25"
         android:layout_marginRight="@dimen/dimen_25"
         />

@@ -4,20 +4,21 @@
     android:layout_height="match_parent"
     android:background="@color/common_gray_bg"
     >
-<RelativeLayout
+<LinearLayout
     android:id="@+id/regist1_rl"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/common_white_bg"
     android:layout_marginTop="@dimen/dimen_15"
-    android:paddingBottom="@dimen/dimen_20"
+    android:orientation="vertical"
     >
     <!--用户名-->
-    <include layout="@layout/registered_username_part"></include>
+    <include layout="@layout/part_registered_username"></include>
     <!--手机号-->
-    <include layout="@layout/registered_username_part"></include>
+    <include layout="@layout/part_registered_phone"></include>
     <!--验证码-->
-</RelativeLayout>
+    <include layout="@layout/part_verification_code"></include>
+</LinearLayout>
     <!--下一步-->
 <RelativeLayout
     android:layout_below="@id/regist1_rl"
