@@ -27,7 +27,7 @@
             android:textSize="@dimen/size_15" />
         <EditText
             android:layout_toRightOf="@id/verification_code_tv"
-            android:id="@+id/regist_phonenumber"
+            android:id="@+id/regist_verfication_et"
             android:layout_width="@dimen/dimen_120"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -40,7 +40,7 @@
             android:inputType="number"
             />
         <LinearLayout
-            android:layout_toRightOf="@id/regist_phonenumber"
+            android:layout_toRightOf="@id/regist_verfication_et"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -58,7 +58,7 @@
             android:layout_marginRight="@dimen/dimen_05"
             />
         <TextView
-            android:id="@+id/change_pic"
+            android:id="@+id/change_verfication_pic"
             android:layout_width="@dimen/dimen_160"
             android:layout_height="wrap_content"
             android:text="@string/for_one"
