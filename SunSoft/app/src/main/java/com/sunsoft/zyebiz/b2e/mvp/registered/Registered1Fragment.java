@@ -7,7 +7,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sunsoft.zyebiz.b2e.R;
-import com.sunsoft.zyebiz.b2e.common.NoDoubleClickListener;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
@@ -16,7 +15,7 @@ import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
  * 注册1页
  * Created by MJX on 2017/2/7.
  */
-public class Registered1Fragment extends BaseFragment implements RegistContract.IRegist1View,NoDoubleClickListener{
+public class Registered1Fragment extends BaseFragment implements RegistContract.IRegist1View,{
     private View regist1View;
     private EditText registUserName;
     private EditText registPhone;
@@ -94,7 +93,7 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
         registNext = (RelativeLayout) regist1View.findViewById(R.id.next_bt);
         registTv = (TextView) regist1View.findViewById(R.id.common_text);
         registTv.setText(getString(R.string.next_step));
-    }
+
 
     @Override
     protected void initSubData() {
@@ -118,6 +117,8 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
 
     @Override
     public void onNoDoubleClick(View v) {
+        switch (v.getId()){
 
+        }
     }
 }
