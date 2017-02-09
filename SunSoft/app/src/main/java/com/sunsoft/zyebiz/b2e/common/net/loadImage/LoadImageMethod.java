@@ -44,16 +44,16 @@ public class LoadImageMethod {
 
     /**
      * 裁剪圆角图片
-     * @param fragment
+     * @param activity
      * @param url
      * @param defaultId
      * @param imageView
      */
-    public static void loadCropCircleCorner(Fragment fragment,String url,int defaultId,ImageView imageView){
-        Glide.with(fragment).load(url)
+    public static void loadCropCircleCorner(FragmentActivity activity,String url,int defaultId,ImageView imageView){
+        Glide.with(activity).load(url)
                 .placeholder(defaultId)
                 .error(defaultId)
-                .bitmapTransform(new RoundedCornersTransformation(fragment,30,0, RoundedCornersTransformation.CornerType.ALL))
+                .bitmapTransform(new RoundedCornersTransformation(activity,30,0, RoundedCornersTransformation.CornerType.ALL))
                 .skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE).into(imageView);
     }
 
