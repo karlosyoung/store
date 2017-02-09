@@ -4,6 +4,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name=".application.MyApplication"
         android:largeHeap="true"
@@ -12,8 +13,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--有无网络和刷新页面-->
+        <service android:name=".common.net.checkNet.NetAndRefreshService">
+        </service>
         <!--闪屏页-->
-        <activity android:name="com.sunsoft.zyebiz.b2e.mvp.registered.RegisteredActivity">
+        <activity android:name="com.sunsoft.zyebiz.b2e.mvp.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -26,12 +30,18 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustUnspecified|stateAlwaysVisible">
         </activity>
-        <!--有无网络和刷新页面-->
-        <service android:name=".common.net.checkNet.NetAndRefreshService"></service>
         <!--引导页-->
         <activity android:name="com.sunsoft.zyebiz.b2e.mvp.guide.GuideActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            ></activity>
+            >
+        </activity>
+        <!--注册页-->
+        <activity
+            android:name="com.sunsoft.zyebiz.b2e.mvp.registered.RegisteredActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysVisible">
+        </activity>
     </application>
 
 

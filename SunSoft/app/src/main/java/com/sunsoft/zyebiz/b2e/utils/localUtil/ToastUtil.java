@@ -7,8 +7,11 @@ import android.widget.Toast;
  * Created by MJX on 2017/2/9.
  */
 public class ToastUtil {
-    //各种提示
-    public static void toastDes(String str){
-        Toast.makeText(UIUtil.getContext(),str,Toast.LENGTH_SHORT).show();
+    /**
+     *Toast
+     * @param strId
+     */
+    public static void toastDes(int strId){
+        Toast.makeText(UIUtil.getContext(),UIUtil.getContext().getString(strId),Toast.LENGTH_SHORT).show();
     }
 }

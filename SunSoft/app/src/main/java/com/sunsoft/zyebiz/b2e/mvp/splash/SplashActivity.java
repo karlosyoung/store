@@ -1,12 +1,14 @@
 package com.sunsoft.zyebiz.b2e.mvp.splash;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sunsoft.zyebiz.b2e.R;
+import com.sunsoft.zyebiz.b2e.mvp.login.LoginActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -46,6 +48,11 @@ public class SplashActivity extends Activity implements SplashContract.ISplashVi
     @Override
     public void showUpDateDesDialog() {
 
+    }
+
+    @Override
+    public void jump() {
+        startActivity(new Intent(this,LoginActivity.class));
     }
 
 }

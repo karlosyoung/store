@@ -5,13 +5,13 @@ package com.sunsoft.zyebiz.b2e.mvp.base;
  * Created by MJX on 2017/1/4.
  */
 public abstract class BasePresenter<T> {
-    protected T view;
+    protected T mvpView;
 
     public BasePresenter(){
 
     }
-    public BasePresenter(T view){
-        this.view = view;
+    public BasePresenter(T mvpView){
+        this.mvpView = mvpView;
          createModel();
     }
 

@@ -25,7 +25,7 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
     private EditText registUserName;
     private EditText registPhone;
     private EditText registVerficationEt;
-    private ImageView registVerficationIv;
+    public ImageView registVerficationIv;
     private TextView registChangeVerfica;
     private RelativeLayout registNext;
     private TextView registTv;
@@ -56,7 +56,6 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
             @Override
             protected View onCreateSuccessedView() {
                 regist1View = UIUtil.inflate(R.layout.fragment_registered1);
-                initSubView();
                 return regist1View;
             }
 
@@ -89,7 +88,8 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
         return commonPag;
     }
 
-    private void initSubView() {
+    @Override
+    protected void initSubView() {
         registUserName = (EditText) regist1View.findViewById(R.id.regist_userName);
         registPhone = (EditText) regist1View.findViewById(R.id.regist_phonenumber);
         registVerficationEt = (EditText) regist1View.findViewById(R.id.regist_verfication_et);
@@ -103,9 +103,11 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
         registVerficationIv.setOnClickListener(this);
     }
 
+
+
     @Override
     protected void initSubData() {
-
+        registerd1Presenter.getImageVerificationCode();
     }
 
     @Override

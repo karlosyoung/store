@@ -1,20 +1,18 @@
 package com.sunsoft.zyebiz.b2e.mvp.splash;
 
-import android.app.Activity;
-
 import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
-import com.sunsoft.zyebiz.b2e.enity.net.serverUrl.ServerBean;
+import com.sunsoft.zyebiz.b2e.enity.net.splash.ServerBean;
 import com.sunsoft.zyebiz.b2e.mvp.base.BasePresenter;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.EmptyUtil;
 
 /**
  * Created by MJX on 2017/1/12.
  */
-public class SplashPresenter extends BasePresenter<Activity> implements SplashContract.ISplashPresener {
+public class SplashPresenter extends BasePresenter<SplashActivity> implements SplashContract.ISplashPresener {
 
     private SplashModel splashModel;
 
-    public SplashPresenter(Activity view) {
+    public SplashPresenter(SplashActivity view) {
         super(view);
     }
 
@@ -53,7 +51,9 @@ public class SplashPresenter extends BasePresenter<Activity> implements SplashCo
                        if("1".equals(serverBean.getBody().getObj().getIsUpdate())){  /*强制更新*/
 
                        }else{
-                         splashModel.splashRequesetIsUpdateBundle();
+                           //TODO
+                           //Bundle的更新调整 splashModel.splashRequesetIsUpdateBundle();
+                           mvpView.jump();
                        }
                    }
                }

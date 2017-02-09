@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.text.TextUtils;
 import android.view.View;
 
+import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.mvp.base.BasePresenter;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.ToastUtil;
 
@@ -28,16 +29,11 @@ public class LoginPresenter  extends BasePresenter<Activity> implements LoginCon
 
     private boolean checkParams(String userName, String password, View v) {
 
-
         if (TextUtils.isEmpty(userName)) {
-            ToastUtil.toastDes("请输入用户名");
+            ToastUtil.toastDes(R.string.input_username);
             return false;
         }
 
-//        if (!AppManager.getInstance().checkUser(userName)) {
-//
-//            return false;
-//        }
         return true;
     }
 

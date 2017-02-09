@@ -1,6 +1,9 @@
 package com.sunsoft.zyebiz.b2e.mvp.registered.presenter;
 
+import com.sunsoft.zyebiz.b2e.R;
+import com.sunsoft.zyebiz.b2e.common.api.ApiUrl;
 import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
+import com.sunsoft.zyebiz.b2e.common.net.loadImage.LoadImageMethod;
 import com.sunsoft.zyebiz.b2e.mvp.base.BasePresenter;
 import com.sunsoft.zyebiz.b2e.mvp.registered.RegistContract;
 import com.sunsoft.zyebiz.b2e.mvp.registered.Registered1Fragment;
@@ -34,7 +37,14 @@ public class Registerd1Presenter extends BasePresenter<Registered1Fragment> impl
     };
 
     @Override
-    public void checkRegistStepOneMsg() {
+    public void getImageVerificationCode() {
+        LoadImageMethod.loadWithNoCache(mvpView, ApiUrl.BASE_URL + ApiUrl.VERIFICATION_CODE, R.drawable.verficate_code_bg,mvpView.registVerficationIv);
+    }
+
+    @Override
+    public void nextStep() {
 
     }
+
+
 }

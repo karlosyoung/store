@@ -19,6 +19,12 @@ public interface SplashContract {
          * 展示闪屏页更新的内容的dialog
          */
         void showUpDateDesDialog();
+
+        /**
+         * 跳转页面
+         */
+        void jump();
+
     }
 
     interface ISplashPresener{

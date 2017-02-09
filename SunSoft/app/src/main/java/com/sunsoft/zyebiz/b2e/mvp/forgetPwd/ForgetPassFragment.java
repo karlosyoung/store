@@ -53,7 +53,6 @@ public class ForgetPassFragment extends BaseFragment implements View.OnClickList
             @Override
             protected View onCreateSuccessedView() {
                 forgetPass = UIUtil.inflate(R.layout.fragment_forgetpass1);
-                initSubView();
                 return forgetPass;
             }
 
@@ -86,12 +85,12 @@ public class ForgetPassFragment extends BaseFragment implements View.OnClickList
         return commonPag;
     }
 
-    private void initSubView() {
+    @Override
+    protected void initSubView() {
         mInput_username = (EditText) forgetPass.findViewById(R.id.input_username);
         mNext_step = (TextView) forgetPass.findViewById(R.id.common_text);
         mNext_bt = (RelativeLayout) forgetPass.findViewById(R.id.next_bt);
         mNext_step.setText(R.string.next_step);
-
         mNext_bt.setOnClickListener(this);
     }
 

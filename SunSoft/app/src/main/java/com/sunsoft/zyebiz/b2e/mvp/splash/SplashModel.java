@@ -4,7 +4,7 @@ import com.sunsoft.zyebiz.b2e.common.api.ApiUrl;
 import com.sunsoft.zyebiz.b2e.common.constants.GetVersion;
 import com.sunsoft.zyebiz.b2e.common.net.http.HttpMethod;
 import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
-import com.sunsoft.zyebiz.b2e.enity.net.serverUrl.ServerBean;
+import com.sunsoft.zyebiz.b2e.enity.net.splash.ServerBean;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseModel;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.LogUtil;
 
@@ -28,7 +28,7 @@ public class SplashModel extends BaseModel implements SplashContract.ISplashModu
             public void OnSuccess(String result) {
                 ServerBean serverBean = gson.fromJson(result, ServerBean.class);
                 ApiUrl.BASE_URL = serverBean.getBody().getObj().getServerUrl();
-                LogUtil.logMsg("服务器地址请求成功");
+                LogUtil.logMsg("服务器地址请求成功："+ApiUrl.BASE_URL);
                 iSecondaryCallBackData.OnSuccess(serverBean);
             }
 

@@ -81,7 +81,8 @@ public class ForgetPass2Fragment extends BaseFragment implements View.OnClickLis
         return commonPag;
     }
 
-    private void initSubView() {
+    @Override
+    protected void initSubView() {
         mPhone_number = (TextView) forgetPass.findViewById(R.id.edt_phone_number);
         mVerification_code = (EditText) forgetPass.findViewById(R.id.edt_forget_code);
         mGet_code = (Button) forgetPass.findViewById(R.id.forget_check_num);

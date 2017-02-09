@@ -26,7 +26,9 @@ public class LoadImageMethod {
         Glide.with(fragment).load(url)
                 .placeholder(defaultId)
                 .error(defaultId)
-                .skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE).into(imageView);
+                .diskCacheStrategy(DiskCacheStrategy.NONE).into(imageView);
+
+    /*    .skipMemoryCache(true)*/
     }
 
     /**
