@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 
 import com.sunsoft.zyebiz.b2e.mvp.base.BasePresenter;
+import com.sunsoft.zyebiz.b2e.utils.localUtil.ToastUtil;
 
 /**
  * Created by MJX on 2017/1/9.
@@ -29,6 +30,7 @@ public class LoginPresenter  extends BasePresenter<Activity> implements LoginCon
 
 
         if (TextUtils.isEmpty(userName)) {
+            ToastUtil.toastDes("请输入用户名");
             return false;
         }
 

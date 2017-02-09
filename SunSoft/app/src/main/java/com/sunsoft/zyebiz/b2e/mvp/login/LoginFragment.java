@@ -2,13 +2,10 @@ package com.sunsoft.zyebiz.b2e.mvp.login;
 
 import android.content.Intent;
 import android.text.Editable;
-import android.text.InputFilter;
 import android.text.InputType;
 import android.text.Selection;
 import android.text.TextUtils;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -21,7 +18,6 @@ import com.sunsoft.zyebiz.b2e.common.constants.Constants;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
 import com.sunsoft.zyebiz.b2e.mvp.login.ForgetPwd.ForgetPassActivity;
-import com.sunsoft.zyebiz.b2e.utils.localUtil.StringUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.TimeLimitUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
 
@@ -120,6 +116,12 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
         mLogin_change = (Button) mLoginView.findViewById(R.id.login_bt_change);
         mChecknum = (ImageView) mLoginView.findViewById(R.id.login_iv_checknum);
         mLogin_et_checknum = (EditText) mLoginView.findViewById(R.id.login_et_checknum);
+
+        mTv_login.setOnClickListener(this);                 //登录
+        mTv_register.setOnClickListener(this);              //注册
+        mBt_usename_clear.setOnClickListener(this);         //清除账户
+        mImg_pass_show.setOnClickListener(this);            // 显示密码
+        mForget_pas.setOnClickListener(this);               //忘记密码
     }
 
 
@@ -129,24 +131,20 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
 //        String editName = mEdt_passwd.getText().toString();
 //        mUsename.setText(StringUtil.replaceBlank(editUser));
         //密码检测验证
-        mEdt_passwd.setFilters(new InputFilter[] {StringUtil.stringFilter(), new InputFilter.LengthFilter(18)});
+//        mEdt_passwd.setFilters(new InputFilter[] {StringUtil.stringFilter(), new InputFilter.LengthFilter(18)});
 
-        mEdt_passwd.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    //去登录
-                    gotoLogin();
-                }
+//        mEdt_passwd.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//            @Override
+//            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+//                if (actionId == EditorInfo.IME_ACTION_DONE) {
+//                    //去登录
+//                    gotoLogin();
+//                }
+//
+//                return false;
+//            }
+//        });
 
-                return false;
-            }
-        });
-        mTv_login.setOnClickListener(this);                 //登录
-        mTv_register.setOnClickListener(this);              //注册
-        mBt_usename_clear.setOnClickListener(this);         //清除账户
-        mImg_pass_show.setOnClickListener(this);            // 显示密码
-        mForget_pas.setOnClickListener(this);               //忘记密码
 
     }
 
