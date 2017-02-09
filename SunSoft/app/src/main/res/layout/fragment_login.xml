@@ -114,6 +114,7 @@
                 android:maxLines="1"
                 android:textColor="@color/white"
                 android:textColorHint="@color/text_hint"
+                android:inputType="textPassword"
                 android:textSize="15sp"/>
         </FrameLayout>
 
@@ -131,7 +132,7 @@
             android:layout_marginTop="@dimen/dimen_25"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/login_tv_checknum"
