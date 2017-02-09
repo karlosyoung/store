@@ -20,6 +20,7 @@ import com.sunsoft.zyebiz.b2e.mvp.tab.singleBuy.SingleBuyFragment;
 import de.greenrobot.event.EventBus;
 
 /**
+ * 控制统购，零售，购物车，我的智园的Activity
  * Created by MJX on 2017/1/12.
  */
 public class TabActivity extends FragmentActivity {

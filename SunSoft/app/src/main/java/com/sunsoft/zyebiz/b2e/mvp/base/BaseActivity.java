@@ -141,7 +141,6 @@ public abstract class BaseActivity extends FragmentActivity {
         clearData();
         CloseKeyBoard.hideInputMethod(this);
         EventBus.getDefault().unregister(this);
-        AppManager.getAppManager().finishActivity();
     }
 
     /**
