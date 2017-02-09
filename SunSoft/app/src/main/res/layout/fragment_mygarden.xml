@@ -44,6 +44,7 @@
                     android:textSize="@dimen/size_16"
                     android:layout_marginLeft="@dimen/dimen_13"
                     android:textStyle="bold"
+                    android:singleLine="true"
                     />
                 </RelativeLayout>
             </LinearLayout>
@@ -80,7 +81,7 @@
                             android:textSize="@dimen/size_15"
                             />
                         <TextView
-                            android:id="@+id/Charge_count"
+                            android:id="@+id/pendingPayennt_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/new_version_red"
@@ -119,7 +120,7 @@
                             android:textSize="@dimen/size_15"
                             />
                         <TextView
-                            android:id="@+id/receive_goods_count"
+                            android:id="@+id/received_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/new_version_red"
@@ -155,12 +156,12 @@
                             android:layout_height="wrap_content"
                             android:drawableTop="@drawable/completed"
                             android:gravity="center"
-                            android:text="@string/cancelled"
+                            android:text="@string/completed"
                             android:textColor="@color/white"
                             android:textSize="@dimen/size_15"
                             />
                         <TextView
-                            android:id="@+id/order_finish_tv"
+                            android:id="@+id/completed_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/new_version_red"
@@ -200,7 +201,7 @@
                             android:textSize="@dimen/size_15"
                             />
                         <TextView
-                            android:id="@+id/cancel_tv"
+                            android:id="@+id/cancel_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/new_version_red"
@@ -255,9 +256,164 @@
             </LinearLayout>
         </LinearLayout>
         <!--售后服务-->
+        <RelativeLayout
+            android:id="@+id/after_service_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_52"
+            android:layout_marginTop="@dimen/dimen_15"
+            android:background="@drawable/select_list_item"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_10"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_15"
+                android:text="@string/after_sale_service"
+                android:textColor="@color/common_text_black"
+                android:textSize="@dimen/size_15"
+                android:drawableLeft="@drawable/after_service"
+                android:drawablePadding="@dimen/dimen_15"
+                android:gravity="center_vertical"
+                />
+
+            <ImageView
+                android:id="@+id/my_garden_img_chakan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/buy_account_back" />
+        </RelativeLayout>
+        <include layout="@layout/common_full_line"></include>
         <!--订购反馈-->
+        <RelativeLayout
+            android:id="@+id/address_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_52"
+            android:background="@drawable/select_list_item"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_10"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_15"
+                android:text="@string/order_feedback"
+                android:textColor="@color/common_text_black"
+                android:textSize="@dimen/size_15"
+                android:drawableLeft="@drawable/feedback"
+                android:drawablePadding="@dimen/dimen_15"
+                android:gravity="center_vertical"
+                />
+
+            <ImageView
+                android:id="@+id/my_garden_img_chakan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/buy_account_back" />
+        </RelativeLayout>
+        <include layout="@layout/common_full_line"></include>
+
+
         <!--阳光客服-->
+        <RelativeLayout
+            android:id="@+id/sunshine_service_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_52"
+            android:background="@drawable/select_list_item"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_10"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_15"
+                android:text="@string/sunshine_service"
+                android:textColor="@color/common_text_black"
+                android:textSize="@dimen/size_15"
+                android:drawableLeft="@drawable/people_service"
+                android:drawablePadding="@dimen/dimen_15"
+                android:gravity="center_vertical"
+                />
+
+            <ImageView
+                android:id="@+id/my_garden_img_chakan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/buy_account_back" />
+        </RelativeLayout>
+
         <!--关于智园-->
+        <RelativeLayout
+            android:id="@+id/about_guarden_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_52"
+            android:background="@drawable/select_list_item"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_10"
+            android:layout_marginTop="@dimen/dimen_15"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_15"
+                android:text="@string/about_guarden"
+                android:textColor="@color/common_text_black"
+                android:textSize="@dimen/size_15"
+                android:drawableLeft="@drawable/about_us"
+                android:drawablePadding="@dimen/dimen_15"
+                android:gravity="center_vertical"
+                />
+
+            <ImageView
+                android:id="@+id/my_garden_img_chakan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/buy_account_back" />
+        </RelativeLayout>
+        <include layout="@layout/common_full_line"></include>
         <!--意见反馈-->
+        <RelativeLayout
+            android:id="@+id/feedback_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_52"
+            android:background="@drawable/select_list_item"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_10"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_15"
+                android:text="@string/feedback"
+                android:textColor="@color/common_text_black"
+                android:textSize="@dimen/size_15"
+                android:drawableLeft="@drawable/advice"
+                android:drawablePadding="@dimen/dimen_15"
+                android:gravity="center_vertical"
+                />
+
+            <ImageView
+                android:id="@+id/my_garden_img_chakan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/buy_account_back" />
+        </RelativeLayout>
     </LinearLayout>
 </ScrollView>

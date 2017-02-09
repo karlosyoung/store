@@ -12,6 +12,7 @@ import com.sunsoft.zyebiz.b2e.common.Manager.MyFragmentManager;
 import com.sunsoft.zyebiz.b2e.common.constants.Constants;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
+import com.sunsoft.zyebiz.b2e.mvp.registered.presenter.Registerd1Presenter;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.TimeLimitUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
 
@@ -28,7 +29,7 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
     private TextView registChangeVerfica;
     private RelativeLayout registNext;
     private TextView registTv;
-
+    private Registerd1Presenter registerd1Presenter;
     @Override
     protected void clearData() {
 
@@ -46,7 +47,7 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
 
     @Override
     protected void bindPresent() {
-
+         registerd1Presenter = new Registerd1Presenter(this);
     }
 
     @Override

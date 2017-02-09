@@ -6,6 +6,7 @@ import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
 import java.util.HashMap;
 
 /**
+ * model的基类
  * Created by MJX on 2017/1/18.
  */
 public class BaseModel {

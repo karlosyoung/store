@@ -7,7 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
+import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
 
 /**
  * 我的智园
@@ -20,8 +22,8 @@ public class MyGardenFragment extends Fragment {
         CommonPag commonPag = new CommonPag(getActivity()) {
             @Override
             protected View onCreateSuccessedView() {
-
-                return null;
+                View mygrdenView = UIUtil.inflate(R.layout.fragment_mygarden);
+                return mygrdenView;
             }
 
             @Override
@@ -49,6 +51,7 @@ public class MyGardenFragment extends Fragment {
 
             }
         };
+        commonPag.showSuccessedView();
         return commonPag;
     }
 }
