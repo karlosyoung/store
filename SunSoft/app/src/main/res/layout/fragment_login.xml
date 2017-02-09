@@ -61,13 +61,15 @@
                 android:textColorHint="@color/text_hint"
                 android:textSize="15sp"/>
 
-            <Button
+            <ImageButton
                 android:id="@+id/bt_username_clear"
-                android:layout_width="@dimen/dimen_28"
-                android:layout_height="@dimen/dimen_28"
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
                 android:layout_gravity="end|center_vertical"
-                android:background="@drawable/login_clean"
-                android:visibility="invisible"/>
+                android:background="null"
+                android:visibility="invisible"
+                android:src="@drawable/login_clean"
+                />
         </FrameLayout>
 
         <FrameLayout
@@ -83,13 +85,14 @@
             android:focusableInTouchMode="true"
             android:gravity="center">
 
-            <Button
+            <ImageButton
                 android:id="@+id/img_pass_show"
                 android:layout_width="@dimen/dimen_28"
                 android:layout_height="@dimen/dimen_28"
                 android:layout_gravity="end|center_vertical"
-                android:background="@drawable/auxiliary_view_normal"
-                android:visibility="invisible"
+               android:background="@null"
+                android:visibility="visible"
+                android:src="@drawable/auxiliary_view_normal"
                 />
 
             <TextView
@@ -120,11 +123,11 @@
             android:id="@+id/login__rl_checknum"
             android:layout_width="fill_parent"
             android:layout_height="@dimen/dimen_20"
-            android:layout_alignEnd="@+id/pwd_layout"
-            android:layout_alignLeft="@+id/pwd_layout"
-            android:layout_alignRight="@+id/pwd_layout"
-            android:layout_alignStart="@+id/pwd_layout"
-            android:layout_below="@+id/pwd_layout"
+            android:layout_alignEnd="@id/pwd_layout"
+            android:layout_alignLeft="@id/pwd_layout"
+            android:layout_alignRight="@id/pwd_layout"
+            android:layout_alignStart="@id/pwd_layout"
+            android:layout_below="@id/pwd_layout"
             android:layout_marginTop="@dimen/dimen_25"
             android:focusable="true"
             android:focusableInTouchMode="true"
@@ -177,8 +180,8 @@
                 android:layout_height="@dimen/dimen_25"
                 android:scaleType="fitXY"
                 android:layout_alignParentTop="true"
-                android:layout_toLeftOf="@+id/login_bt_change"
-                android:layout_toStartOf="@+id/login_bt_change"/>
+                android:layout_toLeftOf="@id/login_bt_change"
+                android:layout_toStartOf="@id/login_bt_change"/>
         </RelativeLayout>
 
         <Button
@@ -201,7 +204,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/tv_login"
+            android:layout_below="@id/tv_login"
             android:layout_marginTop="@dimen/dimen_10"
             android:padding="@dimen/dimen_20">
 

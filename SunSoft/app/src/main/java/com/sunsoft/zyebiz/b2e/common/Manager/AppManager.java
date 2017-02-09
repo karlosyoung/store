@@ -28,6 +28,22 @@ public class AppManager {
     return instance;
   }
 
+  private static AppManager validate;
+
+
+  public synchronized static AppManager getInstance() {
+    if (validate == null) {
+      synchronized (AppManager.class) {
+        if (validate == null) {
+          validate = new AppManager();
+        }
+      }
+    }
+
+    return validate;
+  }
+
+
   /**
    * 添加Activity到堆栈
    */
