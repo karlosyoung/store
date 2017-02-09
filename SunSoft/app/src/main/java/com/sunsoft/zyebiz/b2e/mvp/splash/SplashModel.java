@@ -9,7 +9,7 @@ import com.sunsoft.zyebiz.b2e.mvp.base.BaseModel;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.LogUtil;
 
 /**
- *
+ *闪屏页
  * Created by MJX on 2017/1/12.
  */
 public class SplashModel extends BaseModel implements SplashContract.ISplashModule {
