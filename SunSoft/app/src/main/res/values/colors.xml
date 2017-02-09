@@ -32,8 +32,11 @@
     <color name="border_line">#f7f7f7</color>
     <!--没有网络的背景色-->
     <color name="no_net_bg">#FFF2C8</color>
-<!--按钮点击颜色加深-->
+    <!--按钮点击颜色加深-->
     <color name="orange_button_click">#dc9400</color>
+    <!--手机号显示颜色-->
+    <color name="color_phone_red">#F88989</color>
+
     <!--引用颜色-->
     <color name="color_323232">#323232</color>
     <color name="color_696969">#696969</color>

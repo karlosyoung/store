@@ -191,7 +191,7 @@
             android:layout_below="@+id/login__rl_checknum"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/dimen_35"
-            android:background="@drawable/login_btn_new_selector"
+            android:background="@drawable/shape_login_selector"
             android:gravity="center"
             android:text="@string/login"
             android:textColor="@color/text_white"
