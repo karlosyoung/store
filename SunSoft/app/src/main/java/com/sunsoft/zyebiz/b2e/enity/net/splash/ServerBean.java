@@ -1,6 +1,7 @@
-package com.sunsoft.zyebiz.b2e.enity.net.serverUrl;
+package com.sunsoft.zyebiz.b2e.enity.net.splash;
 
 /**
+ * 获取服务器信息
  * Created by MJX on 2017/1/6.
  */
 public class ServerBean {

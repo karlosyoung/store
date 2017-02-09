@@ -18,10 +18,9 @@ import com.sunsoft.zyebiz.b2e.common.constants.Constants;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
 import com.sunsoft.zyebiz.b2e.mvp.forgetPwd.ForgetPassActivity;
+import com.sunsoft.zyebiz.b2e.mvp.registered.RegisteredActivity;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.TimeLimitUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
-
-import static com.sunsoft.zyebiz.b2e.R.id.img_pass_show;
 
 /**
  * Created by Amoly.
@@ -103,12 +102,13 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
         return commonPag;
     }
 
-    private void initSubView() {
+    @Override
+    protected void initSubView() {
         mUsename_layout = (FrameLayout) mLoginView.findViewById(R.id.username_layout);
         mBt_usename_clear = (ImageButton) mLoginView.findViewById(R.id.bt_username_clear);
         mUsename = (EditText) mLoginView.findViewById(R.id.username);
         mPwd_layout = (FrameLayout) mLoginView.findViewById(R.id.pwd_layout);
-        mImg_pass_show = (ImageButton) mLoginView.findViewById(img_pass_show);
+        mImg_pass_show = (ImageButton) mLoginView.findViewById(R.id.img_pass_show);
         mEdt_passwd = (EditText) mLoginView.findViewById(R.id.edt_passwd);      // 密码输入
         mTv_login = (Button) mLoginView.findViewById(R.id.tv_login);
         mTv_register = (TextView) mLoginView.findViewById(R.id.tv_register);
@@ -149,9 +149,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
 
     }
 
-    private void gotoLogin() {
 
-    }
 
     private void setPwdInputType() {
         int type = mEdt_passwd.getInputType();
@@ -182,13 +180,13 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
         }
         switch (v.getId()) {
             case R.id.tv_login:
-                gotoLogin();
+                jumpToLogin();
                 break;
             case R.id.tv_register:
-//                gotoRegisterForResult();  //跳转到注册页面
+                jumpToRegister();  //跳转到注册页面
                 break;
             case R.id.forget_pas:
-                gotoForgetPwd();            //跳转到忘记密码页面
+                jumpToForgetpassword();            //跳转到忘记密码页面
                 break;
 
             case R.id.img_pass_show:
@@ -201,14 +199,17 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
         }
     }
 
+    private void jumpToLogin() {
 
+    }
 
-
-
+    private void jumpToRegister(){
+        startActivity(new Intent(getActivity(), RegisteredActivity.class));
+    }
     /***
      * 跳转忘记密码页面
      */
-    private void gotoForgetPwd() {
+    private void jumpToForgetpassword() {
         Intent intent = new Intent(getActivity(), ForgetPassActivity.class);
         intent.putExtra(Constants.DEFAULT_TITLE_KEY, R.string.forget_psd);
         startActivity(intent);
@@ -229,4 +230,6 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
     public void getCheckNum() {
 
     }
+
+
 }

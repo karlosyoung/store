@@ -1,6 +1,7 @@
 package com.sunsoft.zyebiz.b2e.mvp.forgetPwd;
 
 import android.view.View;
+import android.widget.TextView;
 
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
 
@@ -32,7 +33,14 @@ public class ForgetPass2Fragment extends BaseFragment {
 
     @Override
     protected View onSubView() {
-        return null;
+        //TODO
+        TextView textView = new TextView(getActivity());
+        return textView;
+    }
+
+    @Override
+    protected void initSubView() {
+
     }
 
     @Override

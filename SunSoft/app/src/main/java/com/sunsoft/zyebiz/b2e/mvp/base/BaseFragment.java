@@ -16,13 +16,15 @@ import com.umeng.analytics.MobclickAgent;
  */
 public abstract class BaseFragment extends Fragment{
     protected String currentNmae = "";
-
+    protected View subView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        subView = onSubView();
         bindPresent();
+        initSubView();
         initSubData();
-        return  onSubView();
+        return  subView;
     }
 
 
@@ -83,6 +85,11 @@ public abstract class BaseFragment extends Fragment{
      * @return
      */
     protected abstract View onSubView();
+
+    /**
+     * 初始化子类的控件
+     */
+    protected abstract void initSubView();
 
     /**
      * 初始化的数据

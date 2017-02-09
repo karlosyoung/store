@@ -54,7 +54,6 @@ public class Registered2Fragment extends BaseFragment implements RegistContract.
             @Override
             protected View onCreateSuccessedView() {
                 registered2View = UIUtil.inflate(R.layout.fragment_registered2);
-                initSubView();
                 return registered2View;
             }
 
@@ -88,11 +87,7 @@ public class Registered2Fragment extends BaseFragment implements RegistContract.
     }
 
     @Override
-    protected void initSubData() {
-
-    }
-
-    private void initSubView(){
+    protected void initSubView() {
         phoneNumTv = (TextView) registered2View.findViewById(R.id.phone_number_tv);
         phoneVerficationEt = (EditText) registered2View.findViewById(R.id.regist_phone_verfication_et);
         changePhoneVerficationTv = (TextView) registered2View.findViewById(R.id.change_phone_verfication);
@@ -106,6 +101,26 @@ public class Registered2Fragment extends BaseFragment implements RegistContract.
         isSeeSetPasswordIv.setOnClickListener(this);
         isSeeConfirmPasswordIv.setOnClickListener(this);
     }
+
+    @Override
+    protected void initSubData() {
+
+    }
+
+//    private void initSubView(){
+//        phoneNumTv = (TextView) registered2View.findViewById(R.id.phone_number_tv);
+//        phoneVerficationEt = (EditText) registered2View.findViewById(R.id.regist_phone_verfication_et);
+//        changePhoneVerficationTv = (TextView) registered2View.findViewById(R.id.change_phone_verfication);
+//        setPasswordEt = (EditText) registered2View.findViewById(R.id.set_password_et);
+//        isSeeSetPasswordIv = (ImageView) registered2View.findViewById(R.id.is_see_set_password_iv);
+//        confirmPasswordEt = (EditText) registered2View.findViewById(R.id.confrim_password_et);
+//        isSeeConfirmPasswordIv = (ImageView) registered2View.findViewById(R.id.is_see_confirm_password_iv);
+//        nextStep = (RelativeLayout) registered2View.findViewById(R.id.next_bt);
+//        nextStep.setOnClickListener(this);
+//        changePhoneVerficationTv.setOnClickListener(this);
+//        isSeeSetPasswordIv.setOnClickListener(this);
+//        isSeeConfirmPasswordIv.setOnClickListener(this);
+//    }
 
     @Override
     public String getPassword() {

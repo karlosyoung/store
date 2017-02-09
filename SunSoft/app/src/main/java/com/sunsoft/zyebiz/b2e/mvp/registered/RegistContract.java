@@ -8,13 +8,35 @@ import java.util.HashMap;
  */
 public interface RegistContract {
     interface IRegist1View{
+        /**
+         * 获取用户名
+         * @return 用户名
+         */
         String getUserName();
+
+        /**
+         * 获取手机号
+         * @return 手机号
+         */
         String getMobile();
+
+        /**
+         * 获取图片验证码
+         * @return 图片验证码
+         */
         String getCheckNum();
     }
 
     interface IRegist1Presenter{
-        void checkRegistStepOneMsg();
+        /**
+         * 获取图片验证码
+         */
+        void getImageVerificationCode();
+
+        /**
+         * 下一步
+         */
+        void nextStep();
     }
 
     interface IRegist1Module{

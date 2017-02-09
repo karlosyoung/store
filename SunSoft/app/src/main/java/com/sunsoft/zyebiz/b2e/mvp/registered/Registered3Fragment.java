@@ -72,6 +72,11 @@ public class Registered3Fragment extends BaseFragment{
     }
 
     @Override
+    protected void initSubView() {
+
+    }
+
+    @Override
     protected void initSubData() {
 
     }
