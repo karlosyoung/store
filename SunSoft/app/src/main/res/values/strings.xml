@@ -38,4 +38,13 @@
     <string name="sunshine_service">阳光客服</string>
     <string name="about_guarden">关于智园</string>
     <string name="feedback">意见反馈</string>
+    <!--修改密码-->
+    <string name="old_password">旧密码</string>
+    <string name="new_password">新密码</string>
+    <string name="save">保存</string>
+    <string name="hint_old_password">请输入旧密码</string>
+    <string name="hint_new_password">请输入新密码</string>
+    <string name="hint_confirm_new_password">请再次输入新密码</string>
+    <!--忘记密码-->
+    <string name="forget_password">忘记密码</string>
 </resources>
