@@ -9,9 +9,9 @@ import android.view.View;
 public interface LoginContract {
 
     interface ILoginView{
-        void getUserName();
-        void getPassword();
-        void monitoView();
+        String getUserName();
+        String getPassword();
+        void getCheckNum();
     }
 
     interface ILoginPresenter{

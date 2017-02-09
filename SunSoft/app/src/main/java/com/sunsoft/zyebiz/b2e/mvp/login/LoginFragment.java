@@ -17,7 +17,7 @@ import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.common.constants.Constants;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
-import com.sunsoft.zyebiz.b2e.mvp.login.ForgetPwd.ForgetPassActivity;
+import com.sunsoft.zyebiz.b2e.mvp.forgetPwd.ForgetPassActivity;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.TimeLimitUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
 
@@ -122,6 +122,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
         mBt_usename_clear.setOnClickListener(this);         //清除账户
         mImg_pass_show.setOnClickListener(this);            // 显示密码
         mForget_pas.setOnClickListener(this);               //忘记密码
+        mLogin_change.setOnClickListener(this);             //切换验证码
     }
 
 
@@ -215,17 +216,17 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
 
 
     @Override
-    public void getUserName() {
-
+    public String getUserName() {
+      return mUsename.getText().toString().trim();
     }
 
     @Override
-    public void getPassword() {
-
+    public String getPassword() {
+        return mEdt_passwd.getText().toString().trim();
     }
 
     @Override
-    public void monitoView() {
+    public void getCheckNum() {
 
     }
 }

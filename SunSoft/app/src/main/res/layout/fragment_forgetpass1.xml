@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/common_white_bg">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_20"
+        android:background="@drawable/text_field"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10">
+
+        <EditText
+            android:id="@+id/input_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="@string/input_username"
+            android:maxLines="1"
+            android:textColor="@color/common_content_gray"
+            android:textColorHint="@color/text_hint"
+            android:textSize="@dimen/size_15"
+            />
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_below="@id/linearLayout"
+        android:id="@+id/next_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10">
+        <include
+            layout="@layout/common_button"
+            />
+    </RelativeLayout>
+</RelativeLayout>

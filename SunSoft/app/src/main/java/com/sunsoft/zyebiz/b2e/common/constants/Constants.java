@@ -17,4 +17,8 @@ public class Constants {
     public static final String FRAGMENT_REGISTERED1_TAG = "fragment_registered1";
     public static final String FRAGMENT_REGISTERED2_TAG = "fragment_registered2";
     public static final String FRAGMENT_REGISTERED3_TAG = "fragment_registered3";
+    public static final String FRAGMENT_FORGETPASS_TAG = "fragment_forgetpass1";
+    public static final String FRAGMENT_FORGETPASS2_TAG = "fragment_forgetpass2";
+
+
 }

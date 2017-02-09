@@ -5,6 +5,6 @@ package com.sunsoft.zyebiz.b2e.mvp.forgetPwd;
  */
 public interface ForgetPasswordContract {
     interface IForgetPassword1{
-
+        String getUserName();
     }
 }
