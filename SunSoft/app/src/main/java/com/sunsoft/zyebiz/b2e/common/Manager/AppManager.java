@@ -3,6 +3,7 @@ package com.sunsoft.zyebiz.b2e.common.Manager;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.support.v4.app.FragmentActivity;
 
 import java.util.Stack;
 
@@ -12,7 +13,7 @@ import java.util.Stack;
  */
 public class AppManager {
 
-  private static Stack<Activity> activityStack;
+  private static Stack<FragmentActivity> activityStack;
   private static AppManager instance;
 
   private AppManager() {
@@ -31,9 +32,9 @@ public class AppManager {
   /**
    * 添加Activity到堆栈
    */
-  public void addActivity(Activity activity) {
+  public void addActivity(FragmentActivity activity) {
     if (activityStack == null) {
-      activityStack = new Stack<Activity>();
+      activityStack = new Stack<FragmentActivity>();
     }
     activityStack.add(activity);
   }
@@ -50,14 +51,14 @@ public class AppManager {
    * 结束当前Activity（堆栈中最后一个压入的）
    */
   public void finishActivity() {
-    Activity activity = activityStack.lastElement();
+    FragmentActivity activity = activityStack.lastElement();
     finishActivity(activity);
   }
 
   /**
    * 结束指定的Activity
    */
-  public void finishActivity(Activity activity) {
+  public void finishActivity(FragmentActivity activity) {
     if (activity != null) {
       activityStack.remove(activity);
       activity.finish();
@@ -69,7 +70,7 @@ public class AppManager {
    * 结束指定类名的Activity
    */
   public void finishActivity(Class<?> cls) {
-    for (Activity activity : activityStack) {
+    for (FragmentActivity activity : activityStack) {
       if (activity.getClass().equals(cls)) {
         finishActivity(activity);
       }

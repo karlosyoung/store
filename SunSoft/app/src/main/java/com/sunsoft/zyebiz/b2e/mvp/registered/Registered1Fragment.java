@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.common.Manager.AppManager;
 import com.sunsoft.zyebiz.b2e.common.Manager.MyFragmentManager;
+import com.sunsoft.zyebiz.b2e.common.constants.Constants;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.TimeLimitUtil;
@@ -65,7 +66,7 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
 
             @Override
             protected void leftBackTo() {
-                AppManager.getAppManager().finishActivity();
+                AppManager.getAppManager().finishActivity(getActivity());
             }
 
             @Override
@@ -139,7 +140,7 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
                 break;
             case R.id.next_bt:
                 Registered2Fragment registered2Fragment = new Registered2Fragment();
-                MyFragmentManager.addFragmentForBack();
+                MyFragmentManager.addFragmentForBack(getActivity(),((RegisteredActivity)getActivity()).getBaseFrameLayoutId(),registered2Fragment, Constants.FRAGMENT_REGISTERED2_TAG);
                 break;
         }
     }

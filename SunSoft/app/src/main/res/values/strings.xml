@@ -27,6 +27,15 @@
     <string name="hint_input_phone">请输入手机验证码</string>
     <string name="hint_input_password">请输入注册密码</string>
     <string name="hint_input_confirm_password">请再次输入密码</string>
-
-
+    <!--我的智园-->
+    <string name="pending_payment">待付款</string>
+    <string name="received">待收货</string>
+    <string name="completed">已完成</string>
+    <string name="cancelled">已取消</string>
+    <string name="all_order">全部订单</string>
+    <string name="after_sale_service">售后服务</string>
+    <string name="order_feedback">订购反馈</string>
+    <string name="sunshine_service">阳光客服</string>
+    <string name="about_guarden">关于智园</string>
+    <string name="feedback">意见反馈</string>
 </resources>
