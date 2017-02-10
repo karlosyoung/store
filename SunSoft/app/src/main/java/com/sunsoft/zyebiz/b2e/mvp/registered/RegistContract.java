@@ -40,7 +40,12 @@ public interface RegistContract {
     }
 
     interface IRegist1Module{
-        void requestRegist1(String url, HashMap<String, String> map);
+        /**
+         * 下一步请求网络
+         * @param url
+         * @param map
+         */
+        void requestRegist1NextStep(String url, HashMap<String, String> map);
     }
     interface IRegist2View{
         String getPassword();

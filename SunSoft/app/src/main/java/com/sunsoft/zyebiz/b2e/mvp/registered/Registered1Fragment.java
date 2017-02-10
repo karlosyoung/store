@@ -13,6 +13,7 @@ import com.sunsoft.zyebiz.b2e.common.constants.Constants;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
 import com.sunsoft.zyebiz.b2e.mvp.registered.presenter.Registerd1Presenter;
+import com.sunsoft.zyebiz.b2e.utils.localUtil.EmptyUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.TimeLimitUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
 
@@ -22,9 +23,9 @@ import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
  */
 public class Registered1Fragment extends BaseFragment implements RegistContract.IRegist1View,View.OnClickListener{
     private View regist1View;
-    private EditText registUserName;
-    private EditText registPhone;
-    private EditText registVerficationEt;
+    public EditText registUserName;
+    public EditText registPhone;
+    public EditText registVerficationEt;
     public ImageView registVerficationIv;
     private TextView registChangeVerfica;
     private RelativeLayout registNext;
@@ -101,6 +102,37 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
         registNext.setOnClickListener(this);
         registChangeVerfica.setOnClickListener(this);
         registVerficationIv.setOnClickListener(this);
+        //用户名规则
+        registUserName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus){
+                    String str = getUserName();
+                    if(EmptyUtil.isNotEmpty(str)){
+                        str = str.trim();
+                        String regex = "\\s+";
+                        str = str.replaceAll(regex, " ");
+                        registUserName.setText(str);
+                    }
+                }
+            }
+        });
+
+
+        registPhone.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(!hasFocus){
+                    String str = getMobile();
+                    if(EmptyUtil.isNotEmpty(str)){
+                        str =  str.replaceAll(" ","");
+                        registPhone.setText(str);
+                    }
+                }
+            }
+        });
     }
 
 
@@ -139,12 +171,16 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
         switch (v.getId()){
             case R.id.change_verfication_pic:
             case R.id.verification_code_image:
-
+                registerd1Presenter.getImageVerificationCode();
                 break;
             case R.id.next_bt:
-                Registered2Fragment registered2Fragment = new Registered2Fragment();
-                MyFragmentManager.addFragmentForBack(getActivity(),((RegisteredActivity)getActivity()).getBaseFrameLayoutId(),registered2Fragment, Constants.FRAGMENT_REGISTERED2_TAG);
+                registerd1Presenter.nextStep();
                 break;
         }
+    }
+
+    private void jumpToNext(){
+        Registered2Fragment registered2Fragment = new Registered2Fragment();
+        MyFragmentManager.addFragmentForBack(getActivity(),((RegisteredActivity)getActivity()).getBaseFrameLayoutId(),registered2Fragment, Constants.FRAGMENT_REGISTERED2_TAG);
     }
 }

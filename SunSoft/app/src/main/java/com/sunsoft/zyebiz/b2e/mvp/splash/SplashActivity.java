@@ -53,6 +53,7 @@ public class SplashActivity extends Activity implements SplashContract.ISplashVi
     @Override
     public void jump() {
         startActivity(new Intent(this,LoginActivity.class));
+        finish();
     }
 
 }

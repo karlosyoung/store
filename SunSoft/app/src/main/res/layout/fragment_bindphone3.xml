@@ -5,29 +5,27 @@
     android:background="@color/common_gray_bg"
     >
 
+    <RelativeLayout
+        android:id="@+id/register2_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/dimen_15"
+        >
+        <!--手机号-->
+        <include layout="@layout/part_registered_phone"></include>
+    </RelativeLayout>
     <LinearLayout
         android:layout_below="@id/register2_rl"
         android:id="@+id/regist2_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/common_white_bg"
-        android:layout_marginTop="@dimen/dimen_15"
         android:orientation="vertical"
         >
         <!--手机验证码-->
         <include layout="@layout/part_phone_verification_code"></include>
-        <!--设置密码-->
-        <include layout="@layout/part_set_password"></include>
-        <!--确认密码-->
-        <include layout="@layout/part_confirm_password"></include>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/dimen_25"
-            android:paddingRight="@dimen/dimen_25"
-            android:paddingBottom="@dimen/dimen_20"
-            android:background="@color/white"
-            />
+
     </LinearLayout>
     <!--下一步-->
     <RelativeLayout
@@ -39,13 +37,5 @@
         >
         <include layout="@layout/common_button"></include>
     </RelativeLayout>
-    <!--图片-->
-    <ImageView
-        android:layout_alignParentBottom="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/regist2_guide"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/dimen_50"
-        />
+
 </RelativeLayout>

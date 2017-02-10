@@ -26,10 +26,15 @@ public class SplashModel extends BaseModel implements SplashContract.ISplashModu
         HttpMethod.OkHttpGet(ApiUrl.REQUEST_SERVER_URL, new HttpMethod.OnDataFinish() {
             @Override
             public void OnSuccess(String result) {
-                ServerBean serverBean = gson.fromJson(result, ServerBean.class);
-                ApiUrl.BASE_URL = serverBean.getBody().getObj().getServerUrl();
-                LogUtil.logMsg("服务器地址请求成功："+ApiUrl.BASE_URL);
-                iSecondaryCallBackData.OnSuccess(serverBean);
+                try{
+                    ServerBean serverBean = gson.fromJson(result, ServerBean.class);
+                    ApiUrl.BASE_URL = serverBean.getBody().getObj().getServerUrl();
+                    LogUtil.logMsg("服务器地址请求成功："+ApiUrl.BASE_URL);
+                    iSecondaryCallBackData.OnSuccess(null,serverBean);
+                }catch (NullPointerException e){
+                    //查询数据出错的问题
+                    return;
+                }
             }
 
             @Override

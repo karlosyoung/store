@@ -1,10 +1,7 @@
-package com.sunsoft.zyebiz.b2e.common.module.imageVerificationModule;
+package com.sunsoft.zyebiz.b2e.common.module;
 
 import android.widget.TextView;
 
-import com.sunsoft.zyebiz.b2e.common.module.CommonObservable;
-import com.sunsoft.zyebiz.b2e.common.module.CommonObserver;
-import com.sunsoft.zyebiz.b2e.common.module.IVerficationCodeListener;
 import com.sunsoft.zyebiz.b2e.common.net.http.HttpMethod;
 
 /**

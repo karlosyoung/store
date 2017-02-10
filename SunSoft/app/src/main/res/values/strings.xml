@@ -30,6 +30,11 @@
     <string name="hint_input_phone">请输入手机验证码</string>
     <string name="hint_input_password">请输入注册密码</string>
     <string name="hint_input_confirm_password">请再次输入密码</string>
+    <string name="toast_input_username">请输入用户名</string>
+    <string name="toast_over_username_lenth">用户名超过限制长度</string>
+    <string name="toast_input_effective_phonenum">请输入有效的手机号</string>
+    <string name="toast_input_verificate">请输入验证码</string>
+
     <!--我的智园-->
     <string name="pending_payment">待付款</string>
     <string name="received">待收货</string>
@@ -50,4 +55,11 @@
     <string name="hint_confirm_new_password">请再次输入新密码</string>
     <!--忘记密码-->
     <string name="forget_password">忘记密码</string>
+    <!--绑定手机号-->
+    <string name="password">密码</string>
+    <string name="hint_input_bindphone2_password">请输入密码</string>
+    <string name="hint_input_new_phonenum">请输入新手机号</string>
+    <string name="hint_input_verfication_code">请输入验证码</string>
+    <string name="get_verification_code">获取验证码</string>
+
 </resources>

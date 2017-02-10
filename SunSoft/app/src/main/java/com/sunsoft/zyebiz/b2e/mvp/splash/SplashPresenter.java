@@ -44,9 +44,9 @@ public class SplashPresenter extends BasePresenter<SplashActivity> implements Sp
     @Override
     protected void createModel() {
         splashModel = new SplashModel(new ISecondaryCallBackData() {
-               @Override
-               public void OnSuccess(Object result) {
-                  ServerBean serverBean =  ((ServerBean)result);
+            @Override
+            public void OnSuccess(String tag, Object result) {
+                   ServerBean serverBean =  ((ServerBean)result);
                    if(EmptyUtil.isNotEmpty(serverBean.getBody().getObj().getIsUpdate())){
                        if("1".equals(serverBean.getBody().getObj().getIsUpdate())){  /*强制更新*/
 
@@ -56,12 +56,12 @@ public class SplashPresenter extends BasePresenter<SplashActivity> implements Sp
                            mvpView.jump();
                        }
                    }
-               }
+            }
 
-               @Override
-               public void OnError(String error) {
+            @Override
+            public void OnError(String tag, String error) {
 
-               }
-           });
+            }
+        });
     }
 }
