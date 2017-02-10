@@ -27,6 +27,8 @@ public class Registered2Fragment extends BaseFragment implements RegistContract.
     private EditText confirmPasswordEt;
     private ImageView isSeeConfirmPasswordIv;
     private RelativeLayout nextStep;
+    private String username;
+    private String mobilePhoneNum;
 
     @Override
     protected void clearData() {
@@ -104,23 +106,12 @@ public class Registered2Fragment extends BaseFragment implements RegistContract.
 
     @Override
     protected void initSubData() {
+        username = getArguments().getString("username");
+        mobilePhoneNum = getArguments().getString("phoneNum");
 
     }
 
-//    private void initSubView(){
-//        phoneNumTv = (TextView) registered2View.findViewById(R.id.phone_number_tv);
-//        phoneVerficationEt = (EditText) registered2View.findViewById(R.id.regist_phone_verfication_et);
-//        changePhoneVerficationTv = (TextView) registered2View.findViewById(R.id.change_phone_verfication);
-//        setPasswordEt = (EditText) registered2View.findViewById(R.id.set_password_et);
-//        isSeeSetPasswordIv = (ImageView) registered2View.findViewById(R.id.is_see_set_password_iv);
-//        confirmPasswordEt = (EditText) registered2View.findViewById(R.id.confrim_password_et);
-//        isSeeConfirmPasswordIv = (ImageView) registered2View.findViewById(R.id.is_see_confirm_password_iv);
-//        nextStep = (RelativeLayout) registered2View.findViewById(R.id.next_bt);
-//        nextStep.setOnClickListener(this);
-//        changePhoneVerficationTv.setOnClickListener(this);
-//        isSeeSetPasswordIv.setOnClickListener(this);
-//        isSeeConfirmPasswordIv.setOnClickListener(this);
-//    }
+
 
     @Override
     public String getPassword() {
@@ -134,6 +125,11 @@ public class Registered2Fragment extends BaseFragment implements RegistContract.
 
     @Override
     public String getMobileNum() {
+        return mobilePhoneNum;
+    }
+
+    @Override
+    public String getVerificationNum() {
         return phoneVerficationEt.getText().toString();
     }
 

@@ -46,12 +46,17 @@ public class SplashPresenter extends BasePresenter<SplashActivity> implements Sp
         splashModel = new SplashModel(new ISecondaryCallBackData() {
             @Override
             public void OnSuccess(String tag, Object result) {
+                  //TODO 测使用，需要删除
+                    if(result == null){
+                        mvpView.jump();
+                        return;
+                    }
                    ServerBean serverBean =  ((ServerBean)result);
                    if(EmptyUtil.isNotEmpty(serverBean.getBody().getObj().getIsUpdate())){
                        if("1".equals(serverBean.getBody().getObj().getIsUpdate())){  /*强制更新*/
 
                        }else{
-                           //TODO
+                           //TODO  测试使用，需要删除
                            //Bundle的更新调整 splashModel.splashRequesetIsUpdateBundle();
                            mvpView.jump();
                        }

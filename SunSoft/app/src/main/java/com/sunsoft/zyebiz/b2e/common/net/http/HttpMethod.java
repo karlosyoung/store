@@ -2,9 +2,9 @@ package com.sunsoft.zyebiz.b2e.common.net.http;
 
 import android.os.Handler;
 
-import com.sunsoft.zyebiz.b2e.application.MyApplication;
 import com.sunsoft.zyebiz.b2e.common.Manager.AppManager;
 import com.sunsoft.zyebiz.b2e.common.api.ApiUrl;
+import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -61,7 +61,7 @@ public abstract class HttpMethod {
      */
     public  static void OkHttpPost(String url, HashMap<String, String> paramsMap, final OnDataFinish onDataFinish) {
         if("".equals(ApiUrl.BASE_URL) || ApiUrl.BASE_URL == null){
-
+            return;
         }else{
             url = ApiUrl.BASE_URL + url;
         }
@@ -102,7 +102,7 @@ public abstract class HttpMethod {
                                 if(jsonObject1.has("msgCode")){
                                     String msgCode = jsonObject1.getString("msgCode");
                                     if("99".equals(msgCode)){
-                                        AppManager.getAppManager().AppExit(MyApplication.context);
+                                        AppManager.getAppManager().AppExit(UIUtil.getContext());
                                     }else{
                                         handler.post(new Runnable() {
                                             @Override
@@ -117,7 +117,7 @@ public abstract class HttpMethod {
                         if(jsonObject.has("msgCode")){
                             String msgCode = jsonObject.getString("msgCode");
                             if("99".equals(msgCode)){
-                                AppManager.getAppManager().AppExit(MyApplication.context);
+                                AppManager.getAppManager().AppExit(UIUtil.getContext());
                             }else{
                                 handler.post(new Runnable() {
                                     @Override

@@ -6,17 +6,17 @@
     >
 
     <RelativeLayout
-        android:id="@+id/register2_rl"
+        android:id="@+id/bindphone3_rl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:layout_marginTop="@dimen/dimen_15"
         >
         <!--手机号-->
-        <include layout="@layout/part_registered_phone"></include>
+        <include layout="@layout/part_bindphone3_phone"></include>
     </RelativeLayout>
     <LinearLayout
-        android:layout_below="@id/register2_rl"
+        android:layout_below="@id/bindphone3_rl"
         android:id="@+id/regist2_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

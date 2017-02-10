@@ -67,6 +67,5 @@
 
         </RelativeLayout>
     </LinearLayout>
-    <include layout="@layout/common_line"></include>
 
 </LinearLayout>
