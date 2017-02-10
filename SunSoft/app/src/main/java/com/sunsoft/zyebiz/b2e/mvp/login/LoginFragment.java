@@ -75,7 +75,6 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
             @Override
             protected View onCreateSuccessedView() {
                 mLoginView = UIUtil.inflate(R.layout.fragment_login);
-                initSubView();
                 return mLoginView;
             }
 
@@ -96,11 +95,12 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
 
             @Override
             protected void setMidText() {
+                midTitleTv.setText("登录");
             }
 
             @Override
             protected void initSubTitle() {
-                midTitleTv.setText("登录");
+                initSubNoBackTitle();
             }
         };
         commonPag.showSuccessedView();

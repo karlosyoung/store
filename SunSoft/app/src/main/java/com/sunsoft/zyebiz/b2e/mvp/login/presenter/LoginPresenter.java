@@ -32,6 +32,7 @@ public class LoginPresenter  extends BasePresenter<LoginFragment> implements Log
         LoginModule loginmodule = new LoginModule(new ISecondaryCallBackData() {
             @Override
             public void OnSuccess(String tag, Object result) {
+
                 GetSpInsance.saveSp(userName, Constants.LOGIN_TYPE_KEY,MODE_PRIVATE);
 
             }

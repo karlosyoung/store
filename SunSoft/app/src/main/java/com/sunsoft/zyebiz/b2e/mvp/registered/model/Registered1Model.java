@@ -42,4 +42,9 @@ public class Registered1Model extends BaseModel implements RegistContract.IRegis
             }
         });
     }
+
+    @Override
+    public void requestPhoneVerificationCode(String url, HashMap<String, String> map) {
+
+    }
 }

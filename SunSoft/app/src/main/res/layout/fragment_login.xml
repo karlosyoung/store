@@ -37,7 +37,7 @@
             android:layout_below="@id/slogan"
             android:layout_marginLeft="@dimen/dimen_30"
             android:layout_marginRight="@dimen/dimen_30"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="@dimen/dimen_50"
             android:focusableInTouchMode="true"
             android:gravity="center">
 
@@ -81,7 +81,7 @@
             android:layout_below="@id/username_layout"
             android:layout_marginLeft="@dimen/dimen_30"
             android:layout_marginRight="@dimen/dimen_30"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="@dimen/dimen_40"
             android:focusableInTouchMode="true"
             android:gravity="center">
 

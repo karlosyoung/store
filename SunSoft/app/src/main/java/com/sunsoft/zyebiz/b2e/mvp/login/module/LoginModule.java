@@ -2,6 +2,7 @@ package com.sunsoft.zyebiz.b2e.mvp.login.module;
 
 import com.sunsoft.zyebiz.b2e.common.net.http.HttpMethod;
 import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
+import com.sunsoft.zyebiz.b2e.mvp.base.BaseModel;
 import com.sunsoft.zyebiz.b2e.mvp.login.LoginContract;
 
 import java.util.HashMap;
@@ -9,10 +10,11 @@ import java.util.HashMap;
 /**
  * Created by MJX on 2017/1/9.
  */
-public class LoginModule implements LoginContract.ILoginModule {
+public class LoginModule extends BaseModel implements LoginContract.ILoginModule {
+
 
     public LoginModule(ISecondaryCallBackData iSecondaryCallBackData) {
-
+        super(iSecondaryCallBackData);
     }
 
     @Override
