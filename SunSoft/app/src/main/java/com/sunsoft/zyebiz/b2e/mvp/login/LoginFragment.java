@@ -202,7 +202,9 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
     private void jumpToLogin() {
 
     }
-
+    /***
+     * 跳转注册页面
+     */
     private void jumpToRegister(){
         startActivity(new Intent(getActivity(), RegisteredActivity.class));
     }

@@ -23,6 +23,6 @@ public class Constants {
     public static final String FRAGMENT_REGISTERED3_TAG = "fragment_registered3";
     public static final String FRAGMENT_FORGETPASS_TAG = "fragment_forgetpass1";
     public static final String FRAGMENT_FORGETPASS2_TAG = "fragment_forgetpass2";
-
+    public static final String FRAGMENT_FORGETPASS3_TAG = "fragment_forgetpass3";
 
 }

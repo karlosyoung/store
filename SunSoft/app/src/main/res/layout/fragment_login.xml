@@ -114,6 +114,7 @@
                 android:maxLines="1"
                 android:textColor="@color/white"
                 android:textColorHint="@color/text_hint"
+                android:inputType="textPassword"
                 android:textSize="15sp"/>
         </FrameLayout>
 
@@ -131,7 +132,7 @@
             android:layout_marginTop="@dimen/dimen_25"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/login_tv_checknum"
@@ -191,7 +192,7 @@
             android:layout_below="@+id/login__rl_checknum"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/dimen_35"
-            android:background="@drawable/login_btn_new_selector"
+            android:background="@drawable/shape_login_selector"
             android:gravity="center"
             android:text="@string/login"
             android:textColor="@color/text_white"
