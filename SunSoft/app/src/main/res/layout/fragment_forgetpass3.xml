@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/common_white_bg">
+
+    <!--设置密码-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:padding="@dimen/dimen_10"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/phone_verification_code_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_password"
+            android:textColor="@color/common_text_black"
+            android:textSize="@dimen/size_15" />
+
+        <ImageButton
+            android:id="@+id/see_set_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/close_eye"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:layout_marginRight="@dimen/dimen_10"
+            android:layout_alignParentRight="true">
+        </ImageButton>
+
+        <EditText
+            android:id="@+id/new_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="@string/hint_new_password"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            android:textColor="@color/common_text_black"
+            android:textColorHint="@color/common_text_hint"
+            android:textSize="@dimen/size_15"
+            android:layout_marginLeft="@dimen/dimen_40"
+            android:layout_marginStart="@dimen/dimen_40"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/phone_verification_code_tv"
+            android:layout_toEndOf="@+id/phone_verification_code_tv"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/common_line_bg"
+        android:id="@+id/common_line"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
+        android:padding="@dimen/dimen_10"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/dimen_20"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/confirm_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm_password"
+            android:textColor="@color/common_text_black"
+            android:textSize="@dimen/size_15" />
+
+        <ImageButton
+            android:id="@+id/is_see_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/close_eye"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:layout_marginRight="@dimen/dimen_10"
+            android:layout_alignParentRight="true">
+        </ImageButton>
+
+        <EditText
+            android:id="@+id/re_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="@string/hint_confirm_new_password"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            android:textColor="@color/common_text_black"
+            android:textColorHint="@color/common_text_hint"
+            android:textSize="@dimen/size_15"
+            android:layout_marginLeft="@dimen/dimen_25"
+            android:layout_marginStart="@dimen/dimen_25"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/confirm_password"
+            android:layout_toEndOf="@+id/confirm_password"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/next_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20">
+        <include
+            layout="@layout/common_button"
+            />
+    </RelativeLayout>
+</LinearLayout>
