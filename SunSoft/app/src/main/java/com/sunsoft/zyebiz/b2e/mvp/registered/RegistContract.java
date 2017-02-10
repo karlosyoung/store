@@ -39,25 +39,48 @@ public interface RegistContract {
         void nextStep();
     }
 
-    interface IRegist1Module{
+    interface IRegist1Model{
         /**
          * 下一步请求网络
          * @param url
          * @param map
          */
         void requestRegist1NextStep(String url, HashMap<String, String> map);
+
+        /**
+         * 获取手机验证码
+         * @param url
+         * @param map
+         */
+        void requestPhoneVerificationCode(String url, HashMap<String, String> map);
     }
     interface IRegist2View{
         String getPassword();
         String getSurePassword();
         String getMobileNum();
+        String getVerificationNum();
     }
 
     interface IRegist2Presenter{
+        /**
+         * 获取手机验证码
+         * @param type
+         */
         void getMobileNum(String type);
+
+        /**
+         * 下一步
+         * @param phoneNum
+         * @param setPassword
+         * @param confirmPassword
+         */
+        void nextStep(String phoneNum,String setPassword,String confirmPassword);
     }
 
     interface IRegist2Module{
+        /**
+         * 网络请求手机验证码
+         */
         void requestRegist2MobileNum();
     }
     interface IRegist3View{

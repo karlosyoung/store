@@ -37,6 +37,14 @@
     <string name="toast_over_username_lenth">用户名超过限制长度</string>
     <string name="toast_input_effective_phonenum">请输入有效的手机号</string>
     <string name="toast_input_verificate">请输入验证码</string>
+    <string name="toast_verificate_code_failure">验证码已失效，请重新获取</string>
+    <string name="toast_get_verificate_code">请点击获取验证码</string>
+    <string name="toast_input_correct_verificate_code">请输入正确的验证码</string>
+    <string name="toast_null_correct_verificate_code">密码不能为空</string>
+    <string name="toast_password_rule1">由6-20个字符组成，支持字母，数字，特殊字符</string>
+    <string name="toast_password_rule2">请使用字母、数字和符号两种及以上组合</string>
+    <string name="toast_diff_password">两次输入的密码不一致</string>
+    <string name="toast_diff_password_and_username">密码不能与用户名相同</string>
 
     <!--我的智园-->
     <string name="pending_payment">待付款</string>

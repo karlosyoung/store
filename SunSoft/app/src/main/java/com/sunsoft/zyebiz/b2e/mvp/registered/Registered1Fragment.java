@@ -1,5 +1,6 @@
 package com.sunsoft.zyebiz.b2e.mvp.registered;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -181,6 +182,10 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
 
     public void jumpToNext(){
         Registered2Fragment registered2Fragment = new Registered2Fragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("username",getUserName());
+        bundle.putString("phoneNum",getMobile());
+        registered2Fragment.setArguments(bundle);
         MyFragmentManager.addFragmentForBack(getActivity(),((RegisteredActivity)getActivity()).getBaseFrameLayoutId(),registered2Fragment, Constants.FRAGMENT_REGISTERED2_TAG);
     }
 }

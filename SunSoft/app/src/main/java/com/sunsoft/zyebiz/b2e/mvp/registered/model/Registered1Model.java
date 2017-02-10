@@ -13,7 +13,7 @@ import java.util.HashMap;
  * 注册1页
  * Created by MJX on 2017/2/9.
  */
-public class Registered1Model extends BaseModel implements RegistContract.IRegist1Module{
+public class Registered1Model extends BaseModel implements RegistContract.IRegist1Model{
     public Registered1Model(ISecondaryCallBackData iSecondaryCallBackData) {
         super(iSecondaryCallBackData);
     }
