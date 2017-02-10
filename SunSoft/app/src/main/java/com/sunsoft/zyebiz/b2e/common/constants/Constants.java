@@ -16,6 +16,7 @@ public class Constants {
 
     public static final String DEFAULT_TITLE_KEY = "title_key";
     public static final String LOGIN_TYPE_KEY = "login_type_key";
+
     //Fragment的tag
     public static final String FRAGMENT_LOGIN_TAG = "fragment_login";
     public static final String FRAGMENT_REGISTERED1_TAG = "fragment_registered1";
@@ -24,5 +25,6 @@ public class Constants {
     public static final String FRAGMENT_FORGETPASS_TAG = "fragment_forgetpass1";
     public static final String FRAGMENT_FORGETPASS2_TAG = "fragment_forgetpass2";
     public static final String FRAGMENT_FORGETPASS3_TAG = "fragment_forgetpass3";
+
 
 }

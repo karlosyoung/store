@@ -18,7 +18,9 @@ import com.sunsoft.zyebiz.b2e.common.constants.Constants;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
 import com.sunsoft.zyebiz.b2e.mvp.forgetPwd.ForgetPassActivity;
+import com.sunsoft.zyebiz.b2e.mvp.login.presenter.LoginPresenter;
 import com.sunsoft.zyebiz.b2e.mvp.registered.RegisteredActivity;
+import com.sunsoft.zyebiz.b2e.utils.localUtil.CloseKeyBoard;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.TimeLimitUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
 
@@ -40,9 +42,12 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
     private TextView mTv_register;
     private TextView mForget_pas;
     private Button mLogin_change;
-    private ImageView mChecknum;
+    public ImageView mChecknum;
     private EditText mLogin_et_checknum;
     private LoginPresenter mLoginPresenter;
+    private String userName;
+    private String password;
+
 
     @Override
     protected void clearData() {
@@ -61,7 +66,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
 
     @Override
     protected void bindPresent() {
-        mLoginPresenter = new LoginPresenter(getActivity());
+        mLoginPresenter = new LoginPresenter(this);
     }
 
     @Override
@@ -160,6 +165,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
 
     private void setPwdImgGone(boolean flag) {
         setPwdGone(flag, flag);
+
     }
 
     private void setPwdGone(boolean flag, boolean isPwdShow) {
@@ -183,7 +189,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
                 jumpToLogin();
                 break;
             case R.id.tv_register:
-                jumpToRegister();  //跳转到注册页面
+                jumpToRegister();                   //跳转到注册页面
                 break;
             case R.id.forget_pas:
                 jumpToForgetpassword();            //跳转到忘记密码页面
@@ -195,12 +201,18 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
                 }
                 setPwdInputType();
                 break;
-
+            case R.id.login_bt_change:
+            case R.id.login_iv_checknum:
+                mLoginPresenter.refreshVerificationCode();
+            case R.id.bt_username_clear:
+                mUsename.setText("");
         }
     }
 
     private void jumpToLogin() {
+        CloseKeyBoard.hideInputMethod(getActivity());
 
+        mLoginPresenter.login(userName,password);
     }
     /***
      * 跳转注册页面
@@ -229,9 +241,8 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
     }
 
     @Override
-    public void getCheckNum() {
-
+    public String getCheckNum() {
+          return mLogin_et_checknum.getText().toString().trim();
     }
-
 
 }

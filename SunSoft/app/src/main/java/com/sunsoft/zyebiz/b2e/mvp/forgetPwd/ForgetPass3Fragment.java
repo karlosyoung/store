@@ -60,7 +60,7 @@ public class ForgetPass3Fragment extends BaseFragment{
 
             @Override
             protected void leftBackTo() {
-
+                getFragmentManager().popBackStackImmediate();
             }
 
             @Override

@@ -1,6 +1,6 @@
 package com.sunsoft.zyebiz.b2e.mvp.login;
 
-import android.view.View;
+import java.util.HashMap;
 
 /**
  * 登录的契约类
@@ -11,19 +11,18 @@ public interface LoginContract {
     interface ILoginView{
         String getUserName();
         String getPassword();
-        void getCheckNum();
+        String getCheckNum();
     }
 
     interface ILoginPresenter{
-        void login(final String userName,
-                   final String password, final View v);
+        void login(final String userName, final String password);
         void saveUserInfo();
         void refreshVerificationCode();
-        void checkJumpView();
+        boolean checkJumpView();
     }
 
     interface ILoginModule{
-        void loginRequest();
+        void loginRequest(String url, HashMap<String, String> map);
         void loginRequestRefreshCode();
         void loginRequestJumpView();
     }

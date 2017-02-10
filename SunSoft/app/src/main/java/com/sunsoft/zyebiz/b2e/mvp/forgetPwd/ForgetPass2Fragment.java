@@ -63,7 +63,7 @@ public class ForgetPass2Fragment extends BaseFragment implements View.OnClickLis
 
             @Override
             protected void leftBackTo() {
-
+                getFragmentManager().popBackStackImmediate();
             }
 
             @Override

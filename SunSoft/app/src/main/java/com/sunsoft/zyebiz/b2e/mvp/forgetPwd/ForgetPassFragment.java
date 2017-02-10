@@ -6,6 +6,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sunsoft.zyebiz.b2e.R;
+import com.sunsoft.zyebiz.b2e.common.Manager.AppManager;
 import com.sunsoft.zyebiz.b2e.common.Manager.MyFragmentManager;
 import com.sunsoft.zyebiz.b2e.common.constants.Constants;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
@@ -63,7 +64,7 @@ public class ForgetPassFragment extends BaseFragment implements View.OnClickList
 
             @Override
             protected void leftBackTo() {
-
+                AppManager.getAppManager().finishActivity(getActivity());
             }
 
             @Override

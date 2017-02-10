@@ -1,14 +1,33 @@
 package com.sunsoft.zyebiz.b2e.mvp.login.module;
 
+import com.sunsoft.zyebiz.b2e.common.net.http.HttpMethod;
+import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
 import com.sunsoft.zyebiz.b2e.mvp.login.LoginContract;
+
+import java.util.HashMap;
 
 /**
  * Created by MJX on 2017/1/9.
  */
 public class LoginModule implements LoginContract.ILoginModule {
-    @Override
-    public void loginRequest() {
 
+    public LoginModule(ISecondaryCallBackData iSecondaryCallBackData) {
+
+    }
+
+    @Override
+    public void loginRequest(String url, HashMap<String, String> map) {
+        HttpMethod.OkHttpPost(url, map, new HttpMethod.OnDataFinish() {
+            @Override
+            public void OnSuccess(String result) {
+
+            }
+
+            @Override
+            public void OnError(String error) {
+
+            }
+        });
     }
 
     @Override
