@@ -29,6 +29,8 @@ public class BaseModel {
         if(hashMap == null){
             hashMap = new HashMap<String,String>();
             hashMap.clear();
+        }else{
+            hashMap.clear();
         }
         return hashMap;
     }

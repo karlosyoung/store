@@ -3,11 +3,9 @@ package com.sunsoft.zyebiz.b2e.application;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 
 import com.sunsoft.zyebiz.b2e.common.net.checkNet.NetAndRefreshService;
-import com.sunsoft.zyebiz.b2e.common.net.http.HttpMethod;
-
-import okhttp3.OkHttpClient;
 
 /**
  * 初始化：
@@ -16,11 +14,12 @@ import okhttp3.OkHttpClient;
  * Created by MJX on 2017/1/4.
  */
 public class MyApplication extends Application{
-    public static Context context;
+    private static Context context;
     @Override
     public void onCreate() {
         super.onCreate();
         initCommonFeature();
+        context = getApplicationContext();
     }
 
     public static Context getContext(){
@@ -39,4 +38,6 @@ public class MyApplication extends Application{
         Intent intent = new Intent(this, NetAndRefreshService.class);
         startService(intent);
     }
+
+
 }

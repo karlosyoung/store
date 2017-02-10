@@ -154,7 +154,7 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
 
     @Override
     public String getCheckNum() {
-        return registChangeVerfica.getText().toString();
+        return registVerficationEt.getText().toString();
     }
 
 
@@ -179,7 +179,7 @@ public class Registered1Fragment extends BaseFragment implements RegistContract.
         }
     }
 
-    private void jumpToNext(){
+    public void jumpToNext(){
         Registered2Fragment registered2Fragment = new Registered2Fragment();
         MyFragmentManager.addFragmentForBack(getActivity(),((RegisteredActivity)getActivity()).getBaseFrameLayoutId(),registered2Fragment, Constants.FRAGMENT_REGISTERED2_TAG);
     }

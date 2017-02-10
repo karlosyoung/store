@@ -33,6 +33,8 @@ public class SplashModel extends BaseModel implements SplashContract.ISplashModu
                     iSecondaryCallBackData.OnSuccess(null,serverBean);
                 }catch (NullPointerException e){
                     //查询数据出错的问题
+                    //TODO 测试用，需要删除
+                    iSecondaryCallBackData.OnSuccess(null,null);
                     return;
                 }
             }

@@ -33,4 +33,5 @@
             android:layout_marginLeft="@dimen/dimen_20"
             />
     </LinearLayout>
+    <include layout="@layout/common_full_line"></include>
 </LinearLayout>

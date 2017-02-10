@@ -14,4 +14,12 @@ public class ToastUtil {
     public static void toastDes(int strId){
         Toast.makeText(UIUtil.getContext(),UIUtil.getContext().getString(strId),Toast.LENGTH_SHORT).show();
     }
+
+    /**
+     * Toast
+     * @param str
+     */
+    public static void toastDes(String str){
+        Toast.makeText(UIUtil.getContext(),str,Toast.LENGTH_SHORT).show();
+    }
 }

@@ -19,6 +19,7 @@ public class PhoneUniqueUtil {
             uniqueStr = UUID.randomUUID().toString().trim().replaceAll("-", "");
             PhoneDataSp.savePhoneData(uniqueStr);
         }
+        LogUtil.logMsg("unique是"+uniqueStr);
         return uniqueStr;
     }
 }

@@ -5,13 +5,18 @@ import com.sunsoft.zyebiz.b2e.common.api.ApiUrl;
 import com.sunsoft.zyebiz.b2e.common.constants.Constants;
 import com.sunsoft.zyebiz.b2e.common.module.imageVerificationModule.ImageVerification;
 import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
+import com.sunsoft.zyebiz.b2e.enity.net.registered.registered1.Registered1Bean;
 import com.sunsoft.zyebiz.b2e.mvp.base.BasePresenter;
 import com.sunsoft.zyebiz.b2e.mvp.registered.RegistContract;
 import com.sunsoft.zyebiz.b2e.mvp.registered.Registered1Fragment;
 import com.sunsoft.zyebiz.b2e.mvp.registered.model.Registered1Model;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.EmptyUtil;
+import com.sunsoft.zyebiz.b2e.utils.localUtil.LogUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.PhoneNumUtil;
+import com.sunsoft.zyebiz.b2e.utils.localUtil.PhoneUniqueUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.ToastUtil;
+
+import java.util.HashMap;
 
 /**
  * 注册1页
@@ -31,7 +36,12 @@ public class Registerd1Presenter extends BasePresenter<Registered1Fragment> impl
         registered1Model = new Registered1Model(new ISecondaryCallBackData() {
             @Override
             public void OnSuccess(String tag, Object result) {
-
+                Registered1Bean  registered1Bean = (Registered1Bean)result;
+                if("0".equals(registered1Bean.getMsgCode())){ /*成功*/
+                        mvpView.jumpToNext();
+                }else if ("1".equals(registered1Bean.getMsgCode())){ /*失败*/
+                    ToastUtil.toastDes(registered1Bean.getObj().getTitle());
+                }
             }
 
             @Override
@@ -69,8 +79,13 @@ public class Registerd1Presenter extends BasePresenter<Registered1Fragment> impl
             ToastUtil.toastDes(R.string.toast_input_verificate);
             return;
         }
-
-//        registered1Model.requestRegist1NextStep(ApiUrl.BASE_URL + ApiUrl.REGISTER_FIRST);
+        HashMap<String,String> hashMap = getHashMap();
+        String userName = mvpView.getUserName().replace(" ", "");
+        hashMap.put("userName",userName);
+        hashMap.put("validateCode",mvpView.getCheckNum());
+        hashMap.put("uniqueNo", PhoneUniqueUtil.getUniqueStr());
+        LogUtil.logMsg("注册下一步传递的Unique："+ PhoneUniqueUtil.getUniqueStr());
+        registered1Model.requestRegist1NextStep(ApiUrl.REGISTER_FIRST,hashMap);
 
 
 
