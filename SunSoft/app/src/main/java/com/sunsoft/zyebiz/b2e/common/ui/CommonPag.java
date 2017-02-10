@@ -105,6 +105,23 @@ public abstract class CommonPag extends FrameLayout {
         setMidText();
     }
 
+
+    /**
+     * 不显示左右标题栏
+     */
+    public void initSubNoBackTitle(){
+        titleLeftParent.setVisibility(View.GONE);
+        titleBack.setVisibility(View.GONE);
+        noticeTv.setVisibility(View.GONE);
+        redRoundTv.setVisibility(View.GONE);
+        midTitleTv.setVisibility(View.VISIBLE);
+        titleRightParent.setVisibility(View.GONE);
+        rifhtTitleTv.setVisibility(View.GONE);
+        setMidText();
+    }
+
+
+
     /**
      * 统购特殊的标题栏
      */
