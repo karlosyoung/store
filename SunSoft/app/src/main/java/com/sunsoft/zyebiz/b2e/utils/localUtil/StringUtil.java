@@ -39,6 +39,26 @@ public class StringUtil {
     }
 
 
+    public static InputFilter getNameFilter() {
+
+        return new InputFilter() {
+
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+                for (int i = start; i < end; i++) {
+                    if (source != null) {
+                        Pattern p = Pattern.compile("\\s*|\t|\r|\n");
+                        Matcher m = p.matcher(source);
+                        source = m.replaceAll("");
+                    }
+                    return source;
+                }
+                return null;
+            }
+        };
+    }
+
+
     /**
      * 输入密码的验证
      * @return
@@ -81,4 +101,8 @@ public class StringUtil {
         }
         return dest.trim();
     }
+
+
+
+
 }
