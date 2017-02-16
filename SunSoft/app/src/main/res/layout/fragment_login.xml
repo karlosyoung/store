@@ -56,7 +56,7 @@
                 android:drawablePadding="20dp"
                 android:drawableStart="@drawable/login_username"
                 android:hint="@string/login_name_hint"
-                android:maxLines="1"
+                android:singleLine="true"
                 android:textColor="@color/white"
                 android:textColorHint="@color/text_hint"
                 android:textSize="15sp"/>
@@ -111,7 +111,7 @@
                 android:drawablePadding="20dp"
                 android:drawableStart="@drawable/login_userpas"
                 android:hint="@string/login_phone_hint"
-                android:maxLines="1"
+                android:singleLine="true"
                 android:textColor="@color/white"
                 android:textColorHint="@color/text_hint"
                 android:inputType="textPassword"
