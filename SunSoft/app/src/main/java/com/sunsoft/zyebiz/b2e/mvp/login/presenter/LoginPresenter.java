@@ -2,7 +2,6 @@ package com.sunsoft.zyebiz.b2e.mvp.login.presenter;
 
 
 import com.sunsoft.zyebiz.b2e.R;
-import com.sunsoft.zyebiz.b2e.common.constants.Constants;
 import com.sunsoft.zyebiz.b2e.common.module.imageVerificationModule.ImageVerification;
 import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
 import com.sunsoft.zyebiz.b2e.data.GetSpInsance;
@@ -12,8 +11,6 @@ import com.sunsoft.zyebiz.b2e.mvp.login.LoginFragment;
 import com.sunsoft.zyebiz.b2e.mvp.login.module.LoginModule;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.EmptyUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.ToastUtil;
-
-import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by MJX on 2017/1/9.
@@ -28,20 +25,21 @@ public class LoginPresenter  extends BasePresenter<LoginFragment> implements Log
 
     @Override
     public void login(final String userName, final String password) {
+        checkJumpView();
+        GetSpInsance.saveSp("spName","userInfo",userName);
 
-        LoginModule loginmodule = new LoginModule(new ISecondaryCallBackData() {
-            @Override
-            public void OnSuccess(String tag, Object result) {
-
-                GetSpInsance.saveSp(userName, Constants.LOGIN_TYPE_KEY,MODE_PRIVATE);
-
-            }
-
-            @Override
-            public void OnError(String tag, String error) {
-
-            }
-        });
+//        LoginModule loginmodule = new LoginModule(new ISecondaryCallBackData() {
+//            @Override
+//            public void OnSuccess(String tag, Object result) {
+//                GetSpInsance.saveSp("spName","userInfo",userName);
+//
+//            }
+//
+//            @Override
+//            public void OnError(String tag, String error) {
+//
+//            }
+//        });
 
     }
 
@@ -77,6 +75,16 @@ public class LoginPresenter  extends BasePresenter<LoginFragment> implements Log
 
     @Override
     protected void createModel() {
+        LoginModule loginmodule = new LoginModule(new ISecondaryCallBackData() {
+            @Override
+            public void OnSuccess(String tag, Object result) {
 
+            }
+
+            @Override
+            public void OnError(String tag, String error) {
+
+            }
+        });
     }
 }

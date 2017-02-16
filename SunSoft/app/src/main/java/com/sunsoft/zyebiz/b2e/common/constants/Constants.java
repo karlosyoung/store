@@ -26,5 +26,20 @@ public class Constants {
     public static final String FRAGMENT_FORGETPASS2_TAG = "fragment_forgetpass2";
     public static final String FRAGMENT_FORGETPASS3_TAG = "fragment_forgetpass3";
 
+    //常量数字
+    public static final int CONSTANT_ZERO = 0;
+    public static final int DOWNLOADFAILED = 1999;
+    public static final int DOWNLOADFINISHED = 2000;
+    public static final int DOWNLOADSTARTS = 2001;
+    public static final int DOWNLOADLOADING = 2002;
 
+
+
+
+
+
+
+
+    public static final String projectRootDir = "/SunSoft";
+    public static final String DOWNLOADDIR = projectRootDir + "/download/";
 }

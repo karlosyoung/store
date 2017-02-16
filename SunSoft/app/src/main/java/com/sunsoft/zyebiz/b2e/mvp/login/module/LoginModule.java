@@ -4,6 +4,7 @@ import com.sunsoft.zyebiz.b2e.common.net.http.HttpMethod;
 import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseModel;
 import com.sunsoft.zyebiz.b2e.mvp.login.LoginContract;
+import com.sunsoft.zyebiz.b2e.utils.localUtil.LogUtil;
 
 import java.util.HashMap;
 
@@ -22,7 +23,7 @@ public class LoginModule extends BaseModel implements LoginContract.ILoginModule
         HttpMethod.OkHttpPost(url, map, new HttpMethod.OnDataFinish() {
             @Override
             public void OnSuccess(String result) {
-
+                LogUtil.logMsg("登录："+result);
             }
 
             @Override
