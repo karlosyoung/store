@@ -95,5 +95,6 @@
     <dimen name="dimen_260">260dp</dimen>
     <dimen name="dimen_267">267dp</dimen>
     <dimen name="dimen_275">275dp</dimen>
+    <dimen name="dimen_295">295dp</dimen>
 
 </resources>

@@ -6,6 +6,7 @@ import android.text.InputFilter;
 import android.text.InputType;
 import android.text.Selection;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -38,7 +39,6 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
     private View mLoginView;
     private ImageButton mImg_pass_show;
     private FrameLayout mUsename_layout;
-    private ImageButton mBt_usename_clear;
     private EditText mUsename;
     private FrameLayout mPwd_layout;
     private EditText mEdt_passwd;
@@ -49,8 +49,8 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
     public ImageView mChecknum;
     private EditText mLogin_et_checknum;
     private LoginPresenter mLoginPresenter;
-    private String mEditUser;
-    private String mPassword;
+    public String mEditUser;
+    public String mPassword;
 
 
     @Override
@@ -114,7 +114,6 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
     @Override
     protected void initSubView() {
         mUsename_layout = (FrameLayout) mLoginView.findViewById(R.id.username_layout);
-        mBt_usename_clear = (ImageButton) mLoginView.findViewById(R.id.bt_username_clear);  //清除用户名
         mUsename = (EditText) mLoginView.findViewById(R.id.username);                       //用户名
         mPwd_layout = (FrameLayout) mLoginView.findViewById(R.id.pwd_layout);
         mImg_pass_show = (ImageButton) mLoginView.findViewById(R.id.img_pass_show);
@@ -128,7 +127,6 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
 
         mTv_login.setOnClickListener(this);                 //登录
         mTv_register.setOnClickListener(this);              //注册
-        mBt_usename_clear.setOnClickListener(this);         //清除账户
         mImg_pass_show.setOnClickListener(this);            // 显示密码
         mForget_pas.setOnClickListener(this);               //忘记密码
         mLogin_change.setOnClickListener(this);             //切换验证码
@@ -137,7 +135,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
 
     @Override
     protected void initSubData() {
-
+        mLoginPresenter.refreshVerificationCode();
     }
 
 
@@ -189,20 +187,27 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
             case R.id.login_bt_change:
             case R.id.login_iv_checknum:            //获取验证码
                 mLoginPresenter.refreshVerificationCode();
-            case R.id.bt_username_clear:
-                mUsename.setText("");
-        }
-    }
-
-    private void cleanUserName() {
-        if (mUsename.length()>Constants.CONSTANT_ZERO){
-            mBt_usename_clear.setVisibility(View.VISIBLE);
         }
     }
 
     private void jumpToLogin() {
-        CloseKeyBoard.hideInputMethod(getActivity());
+        mUsename.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        CloseKeyBoard.hideInputMethod(getActivity());
         mLoginPresenter.login(mEditUser, mPassword);
     }
 
@@ -252,5 +257,6 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
     public String getCheckNum() {
         return mLogin_et_checknum.getText().toString().trim();
     }
+
 
 }

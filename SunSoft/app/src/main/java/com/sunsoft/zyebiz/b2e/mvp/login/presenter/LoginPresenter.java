@@ -4,7 +4,6 @@ package com.sunsoft.zyebiz.b2e.mvp.login.presenter;
 import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.common.module.imageVerificationModule.ImageVerification;
 import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
-import com.sunsoft.zyebiz.b2e.data.GetSpInsance;
 import com.sunsoft.zyebiz.b2e.mvp.base.BasePresenter;
 import com.sunsoft.zyebiz.b2e.mvp.login.LoginContract;
 import com.sunsoft.zyebiz.b2e.mvp.login.LoginFragment;
@@ -16,7 +15,7 @@ import com.sunsoft.zyebiz.b2e.utils.localUtil.ToastUtil;
  * Created by MJX on 2017/1/9.
  *
  */
-public class LoginPresenter  extends BasePresenter<LoginFragment> implements LoginContract.ILoginPresenter {
+public class LoginPresenter extends BasePresenter<LoginFragment> implements LoginContract.ILoginPresenter {
 
 
     public LoginPresenter(LoginFragment view) {
@@ -26,7 +25,8 @@ public class LoginPresenter  extends BasePresenter<LoginFragment> implements Log
     @Override
     public void login(final String userName, final String password) {
         checkJumpView();
-        GetSpInsance.saveSp("spName","userInfo",userName);
+
+//        GetSpInsance.saveSp("spName","userInfo",userName);
 
 //        LoginModule loginmodule = new LoginModule(new ISecondaryCallBackData() {
 //            @Override
@@ -40,6 +40,7 @@ public class LoginPresenter  extends BasePresenter<LoginFragment> implements Log
 //
 //            }
 //        });
+
 
     }
 
