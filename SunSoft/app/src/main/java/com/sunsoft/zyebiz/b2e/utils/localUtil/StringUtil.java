@@ -51,9 +51,8 @@ public class StringUtil {
                         Matcher m = p.matcher(source);
                         source = m.replaceAll("");
                     }
-                    return source;
                 }
-                return null;
+                return source;
             }
         };
     }

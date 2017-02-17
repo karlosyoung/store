@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.sunsoft.zyebiz.b2e.R;
@@ -50,6 +51,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
     private LoginPresenter mLoginPresenter;
     public String mEditUser;
     public String mPassword;
+    private RelativeLayout mVerification_rl;
 
 
     @Override
@@ -113,20 +115,21 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
     @Override
     protected void initSubView() {
         mUsename_layout = (FrameLayout) mLoginView.findViewById(R.id.username_layout);
-        mUsename = (EditText) mLoginView.findViewById(R.id.username);                       //用户名
+        mUsename = (EditText) mLoginView.findViewById(R.id.username);                           //用户名
         mPwd_layout = (FrameLayout) mLoginView.findViewById(R.id.pwd_layout);
         mImg_pass_show = (ImageButton) mLoginView.findViewById(R.id.img_pass_show);
-        mEdt_passwd = (EditText) mLoginView.findViewById(R.id.edt_passwd);                  //密码输入
-        mTv_login = (Button) mLoginView.findViewById(R.id.tv_login);                        //输入
-        mTv_register = (TextView) mLoginView.findViewById(R.id.tv_register);                //注册
+        mEdt_passwd = (EditText) mLoginView.findViewById(R.id.edt_passwd);                      //密码输入
+        mTv_login = (Button) mLoginView.findViewById(R.id.tv_login);                            //输入
+        mTv_register = (TextView) mLoginView.findViewById(R.id.tv_register);                    //注册
         mForget_pas = (TextView) mLoginView.findViewById(R.id.forget_pas);
         mLogin_change = (Button) mLoginView.findViewById(R.id.login_bt_change);
-        mChecknum = (ImageView) mLoginView.findViewById(R.id.login_iv_checknum);            //显示验证码
-        mLogin_et_checknum = (EditText) mLoginView.findViewById(R.id.login_et_checknum);    //获取验证码
+        mVerification_rl = (RelativeLayout) mLoginView.findViewById(R.id.login__rl_checknum);
+        mChecknum = (ImageView) mLoginView.findViewById(R.id.login_iv_checknum);                //显示验证码
+        mLogin_et_checknum = (EditText) mLoginView.findViewById(R.id.login_et_checknum);        //获取验证码
 
 
         // 用户名验证
-        mUsename.setFilters(new InputFilter[] { StringUtil.getNameFilter(), new InputFilter.LengthFilter(20) });
+        mUsename.setFilters(new InputFilter[] { StringUtil.getNameFilter(), new InputFilter.LengthFilter(15) });
         // 密码检测验证
         mEdt_passwd.setFilters(new InputFilter[]{StringUtil.stringFilter(), new InputFilter.LengthFilter(18)});
 
@@ -203,18 +206,19 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
             case R.id.login_bt_change:
             case R.id.login_iv_checknum:            //获取验证码
                 mLoginPresenter.refreshVerificationCode();
+                break;
         }
     }
 
     private void jumpToLogin() {
         CloseKeyBoard.hideInputMethod(getActivity());
-        mLoginPresenter.login(mEditUser, mPassword);
+        mLoginPresenter.toLogin();
     }
 
     /***
      * 跳转注册页面
      */
-    private void jumpToRegister() {
+    public void jumpToRegister() {
         startActivity(new Intent(getActivity(), RegisteredActivity.class));
     }
 

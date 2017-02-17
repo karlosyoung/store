@@ -15,13 +15,11 @@ import android.widget.EditText;
 
 import com.sunsoft.zyebiz.b2e.R;
 
-
 /**
- * 自定义右侧有删除图片的搜索框
- * 
- * @author c.c
- *
+ * Created by Amoly.
+ * Data：2017/2/16.
  */
+
 public class CommunityEditText extends EditText implements
 		OnFocusChangeListener, TextWatcher {
 	
@@ -56,15 +54,8 @@ public class CommunityEditText extends EditText implements
 		// 获取EditText的DrawableRight,假如没有设置我们就使用默认的图片
 		mClearDrawable = getCompoundDrawables()[2];
 		if (mClearDrawable == null) {
-//			if(getContext().getClass().getSimpleName().equals("LoginActivity")){
-//				
-//				mClearDrawable = getResources().getDrawable(
-//						R.drawable.emotionstore_progresscancelbtn);
-//			}else{
-//				
 				mClearDrawable = getResources().getDrawable(
 						R.drawable.login_clean);
-//			}
 		}
 		mClearDrawable.setBounds(0, 0, mClearDrawable.getIntrinsicWidth(),
 				mClearDrawable.getIntrinsicHeight());

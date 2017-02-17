@@ -42,9 +42,11 @@ public class LoginModule extends BaseModel implements LoginContract.ILoginModule
     }
 
     @Override
-    public void loginRequestRefreshCode() {
+    public int checkUserValidity(String useName, String passWord) {
 
+        return 0;
     }
+
 
     @Override
     public void loginRequestJumpView() {

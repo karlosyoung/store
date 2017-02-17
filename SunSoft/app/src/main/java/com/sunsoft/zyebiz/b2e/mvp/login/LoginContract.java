@@ -15,7 +15,7 @@ public interface LoginContract {
     }
 
     interface ILoginPresenter{
-        void login(final String userName, final String password);
+        void toLogin();
         void saveUserInfo();
         void refreshVerificationCode();
         boolean checkJumpView();
@@ -23,7 +23,7 @@ public interface LoginContract {
 
     interface ILoginModule{
         void loginRequest(String url, HashMap<String, String> map);
-        void loginRequestRefreshCode();
+        int checkUserValidity(String useName, String passWord);
         void loginRequestJumpView();
     }
 }
