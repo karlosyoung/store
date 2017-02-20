@@ -64,17 +64,17 @@ public interface RegistContract {
     interface IRegist2Presenter{
         /**
          * 获取手机验证码
-         * @param type
          */
-        void getMobileNum(String type);
+        void getMobileNum();
 
         /**
          * 下一步
-         * @param phoneNum
+         * @param smsCode
          * @param setPassword
          * @param confirmPassword
+         * @param username
          */
-        void nextStep(String phoneNum,String setPassword,String confirmPassword);
+        void nextStep(String smsCode,String setPassword,String confirmPassword,String username);
     }
 
     interface IRegist2Module{
