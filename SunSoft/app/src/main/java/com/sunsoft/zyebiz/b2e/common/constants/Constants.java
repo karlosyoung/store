@@ -20,6 +20,7 @@ public class Constants {
 
     public static final String DEFAULT_TITLE_KEY = "title_key";
     public static final String LOGIN_TYPE_KEY = "login_type_key";
+    public static final String REQUEST_SUCCESSFUL = "request_successful";
 
     //Fragment的tag
     public static final String FRAGMENT_LOGIN_TAG = "fragment_login";
@@ -30,5 +31,20 @@ public class Constants {
     public static final String FRAGMENT_FORGETPASS2_TAG = "fragment_forgetpass2";
     public static final String FRAGMENT_FORGETPASS3_TAG = "fragment_forgetpass3";
 
+    //常量数字
+    public static final int CONSTANT_ZERO = 0;
+    public static final int DOWNLOADFAILED = 1999;
+    public static final int DOWNLOADFINISHED = 2000;
+    public static final int DOWNLOADSTARTS = 2001;
+    public static final int DOWNLOADLOADING = 2002;
 
+
+
+
+
+
+
+
+    public static final String projectRootDir = "/SunSoft";
+    public static final String DOWNLOADDIR = projectRootDir + "/download/";
 }

@@ -2,10 +2,10 @@ package com.sunsoft.zyebiz.b2e.mvp.login.presenter;
 
 
 import com.sunsoft.zyebiz.b2e.R;
-import com.sunsoft.zyebiz.b2e.common.constants.Constants;
+import com.sunsoft.zyebiz.b2e.common.api.ApiUrl;
 import com.sunsoft.zyebiz.b2e.common.module.imageVerificationModule.ImageVerification;
 import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
-import com.sunsoft.zyebiz.b2e.data.GetSpInsance;
+import com.sunsoft.zyebiz.b2e.enity.net.LoginBean;
 import com.sunsoft.zyebiz.b2e.mvp.base.BasePresenter;
 import com.sunsoft.zyebiz.b2e.mvp.login.LoginContract;
 import com.sunsoft.zyebiz.b2e.mvp.login.LoginFragment;
@@ -13,37 +13,31 @@ import com.sunsoft.zyebiz.b2e.mvp.login.module.LoginModule;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.EmptyUtil;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.ToastUtil;
 
-import static android.content.Context.MODE_PRIVATE;
+import java.util.HashMap;
 
 /**
  * Created by MJX on 2017/1/9.
  *
  */
-public class LoginPresenter  extends BasePresenter<LoginFragment> implements LoginContract.ILoginPresenter {
+public class LoginPresenter extends BasePresenter<LoginFragment> implements LoginContract.ILoginPresenter {
 
+
+    private LoginModule mLoginmodule;
 
     public LoginPresenter(LoginFragment view) {
        super(view);
     }
 
+
     @Override
-    public void login(final String userName, final String password) {
-
-        LoginModule loginmodule = new LoginModule(new ISecondaryCallBackData() {
-            @Override
-            public void OnSuccess(String tag, Object result) {
-                GetSpInsance.saveSp(userName, Constants.LOGIN_TYPE_KEY,MODE_PRIVATE);
-
-            }
-
-            @Override
-            public void OnError(String tag, String error) {
-
-            }
-        });
-
+    public void toLogin() {
+        checkJumpView();
+        HashMap<String,String> hashMap = getHashMap();
+        hashMap.put("userName",mvpView.getUserName());
+        hashMap.put("password",mvpView.getUserName());
+        hashMap.put("validateCode",mvpView.getCheckNum());
+        mLoginmodule.loginRequest(ApiUrl.LOGIN,hashMap);
     }
-
 
     @Override
     public void saveUserInfo() {
@@ -76,6 +70,21 @@ public class LoginPresenter  extends BasePresenter<LoginFragment> implements Log
 
     @Override
     protected void createModel() {
+        /*成功*//*失败*/
+        mLoginmodule = new LoginModule(new ISecondaryCallBackData() {
+            @Override
+            public void OnSuccess(String tag, Object result) {
+                LoginBean loginBean = (LoginBean)result;
+//                if("0".equals(loginBean.getMsgCode())){ /*成功*/
+//                }else if ("1".equals(loginBean.getMsgCode())){ /*失败*/
+//                    ToastUtil.toastDes(loginBean.getObj().getTitle());
+//                }
 
+            }
+            @Override
+            public void OnError(String tag, String error) {
+
+            }
+        });
     }
 }

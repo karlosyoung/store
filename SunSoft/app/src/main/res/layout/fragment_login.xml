@@ -37,7 +37,7 @@
             android:layout_below="@id/slogan"
             android:layout_marginLeft="@dimen/dimen_30"
             android:layout_marginRight="@dimen/dimen_30"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="@dimen/dimen_50"
             android:focusableInTouchMode="true"
             android:gravity="center">
 
@@ -47,29 +47,22 @@
                 android:layout_marginTop="@dimen/dimen_33"
                 android:background="#b0b0b0"/>
 
-            <EditText
+            <com.sunsoft.zyebiz.b2e.widget.myView.CommunityEditText
                 android:id="@+id/username"
-                android:layout_width="@dimen/dimen_200"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@null"
-                android:drawableLeft="@drawable/login_clean"
+                android:drawableLeft="@drawable/login_username"
                 android:drawablePadding="20dp"
                 android:drawableStart="@drawable/login_username"
                 android:hint="@string/login_name_hint"
-                android:maxLines="1"
+                android:paddingLeft="@dimen/dimen_02"
+                android:paddingRight="@dimen/dimen_02"
+                android:paddingTop="@dimen/dimen_05"
+                android:singleLine="true"
                 android:textColor="@color/white"
                 android:textColorHint="@color/text_hint"
                 android:textSize="15sp"/>
-
-            <ImageButton
-                android:id="@+id/bt_username_clear"
-                android:layout_width="@dimen/dimen_20"
-                android:layout_height="@dimen/dimen_20"
-                android:layout_gravity="end|center_vertical"
-                android:background="@null"
-                android:visibility="invisible"
-                android:src="@drawable/login_clean"
-                />
         </FrameLayout>
 
         <FrameLayout
@@ -81,19 +74,10 @@
             android:layout_below="@id/username_layout"
             android:layout_marginLeft="@dimen/dimen_30"
             android:layout_marginRight="@dimen/dimen_30"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="@dimen/dimen_30"
             android:focusableInTouchMode="true"
             android:gravity="center">
 
-            <ImageButton
-                android:id="@+id/img_pass_show"
-                android:layout_width="@dimen/dimen_28"
-                android:layout_height="@dimen/dimen_28"
-                android:layout_gravity="end|center_vertical"
-               android:background="@null"
-                android:visibility="visible"
-                android:src="@drawable/auxiliary_view_normal"
-                />
 
             <TextView
                 android:layout_width="match_parent"
@@ -102,20 +86,38 @@
                 android:background="#b0b0b0"
                 />
 
-            <EditText
+            <com.sunsoft.zyebiz.b2e.widget.myView.CommunityEditText
                 android:id="@+id/edt_passwd"
-                android:layout_width="@dimen/dimen_200"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/dimen_30"
+                android:layout_marginRight="@dimen/dimen_30"
                 android:background="@null"
-                android:drawableLeft="@drawable/auxiliary_view_normal"
+                android:drawableLeft="@drawable/login_userpas"
                 android:drawablePadding="20dp"
                 android:drawableStart="@drawable/login_userpas"
+                android:gravity="center_vertical"
                 android:hint="@string/login_phone_hint"
-                android:maxLines="1"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:paddingLeft="@dimen/dimen_02"
+                android:paddingRight="@dimen/dimen_02"
+                android:paddingTop="@dimen/dimen_05"
+                android:singleLine="true"
                 android:textColor="@color/white"
                 android:textColorHint="@color/text_hint"
-                android:inputType="textPassword"
                 android:textSize="15sp"/>
+
+            <ImageButton
+                android:id="@+id/img_pass_show"
+                android:layout_width="@dimen/dimen_30"
+                android:layout_height="@dimen/dimen_30"
+                android:layout_gravity="end|center_vertical"
+                android:background="@null"
+                android:paddingTop="@dimen/dimen_10"
+                android:src="@drawable/auxiliary_view_normal"
+                android:visibility="visible"
+                />
         </FrameLayout>
 
 
@@ -132,7 +134,7 @@
             android:layout_marginTop="@dimen/dimen_25"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/login_tv_checknum"
@@ -158,6 +160,7 @@
                 android:hint="@string/hint_verification_code"
                 android:inputType="number"
                 android:longClickable="false"
+                android:maxLength="4"
                 android:maxLines="1"
                 android:textColor="@color/white"
                 android:textColorHint="@color/common_text_hint"
@@ -178,12 +181,12 @@
 
             <ImageView
                 android:id="@+id/login_iv_checknum"
-                android:layout_width="@dimen/dimen_70"
+                android:layout_width="@dimen/dimen_60"
                 android:layout_height="@dimen/dimen_25"
-                android:scaleType="fitXY"
                 android:layout_alignParentTop="true"
-                android:layout_toLeftOf="@id/login_bt_change"
-                android:layout_toStartOf="@id/login_bt_change"/>
+                android:layout_toLeftOf="@+id/login_bt_change"
+                android:layout_toStartOf="@+id/login_bt_change"
+                android:scaleType="fitXY"/>
         </RelativeLayout>
 
         <Button
@@ -220,32 +223,32 @@
                 />
 
             <TextView
-                android:id="@+id/forget_pas"
+                android:id="@+id/tv_register"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginEnd="@dimen/dimen_60"
-                android:layout_marginRight="@dimen/dimen_60"
+                android:layout_marginLeft="60dp"
+                android:layout_marginStart="60dp"
                 android:padding="@dimen/dimen_15"
-                android:text="@string/forget_psd"
+                android:text="@string/register_account"
                 android:textColor="@color/text_white"
                 android:textSize="@dimen/size_15"/>
 
             <TextView
-                android:id="@+id/tv_register"
+                android:id="@+id/forget_pas"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:padding="@dimen/dimen_15"
-                android:text="@string/register_account"
-                android:textColor="@color/text_white"
-                android:textSize="@dimen/size_15"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="60dp"
-                android:layout_marginStart="60dp"/>
+                android:layout_marginLeft="37dp"
+                android:layout_marginStart="37dp"
+                android:layout_toEndOf="@+id/center"
+                android:layout_toRightOf="@+id/center"
+                android:padding="@dimen/dimen_15"
+                android:text="@string/forget_psd"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/size_15"/>
         </RelativeLayout>
     </RelativeLayout>
 </ScrollView>
