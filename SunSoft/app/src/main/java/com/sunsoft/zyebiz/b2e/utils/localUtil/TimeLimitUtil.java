@@ -5,7 +5,7 @@ package com.sunsoft.zyebiz.b2e.utils.localUtil;
  * Created by MJX on 2017/2/8.
  */
 public class TimeLimitUtil {
-    public static final int MIN_CLICK_DELAY_TIME = 1000;
+    public static final int MIN_CLICK_DELAY_TIME = 2000;
     private static long lastClickTime = 0;
 
     /**
@@ -15,9 +15,9 @@ public class TimeLimitUtil {
     public synchronized static boolean isResponseClick() {
         long time = System.currentTimeMillis();
         if ( time - lastClickTime < MIN_CLICK_DELAY_TIME) {
-            return true;
+            return false;
         }
         lastClickTime = time;
-        return false;
+        return true;
     }
 }
