@@ -7,9 +7,13 @@ public class Constants {
 
     //ReactNative的初始zip包
     public static String ZIP_NAME = "";
+    //密码最短位数
+    public static final int SHORTEST_PASSWORD = 6;
     //网络超时时间
     public static final int NET_TIME_OUT = 10;
     //用户名的长度限制
+    //密码最长位数
+    public static final int LONGEST_PASSWORD = 20;
     public static final int USERNAME_LONGEST = 30;
     //手机号长度
     public static final int PHONENUM_LENGTH = 11;
@@ -28,6 +32,7 @@ public class Constants {
     public static final String FRAGMENT_FORGETPASS3_TAG = "fragment_forgetpass3";
 
     //常量数字
+
     public static final int CONSTANT_ZERO = 0;
     public static final int DOWNLOADFAILED = 1999;
     public static final int DOWNLOADFINISHED = 2000;

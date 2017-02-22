@@ -1,5 +1,6 @@
 package com.sunsoft.zyebiz.b2e.mvp.registered;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -11,6 +12,7 @@ import com.sunsoft.zyebiz.b2e.common.Manager.MyFragmentManager;
 import com.sunsoft.zyebiz.b2e.common.constants.Constants;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
+import com.sunsoft.zyebiz.b2e.mvp.registered.presenter.Registered2Presenter;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.UIUtil;
 
 /**
@@ -21,8 +23,27 @@ public class Registered2Fragment extends BaseFragment implements RegistContract.
     private View registered2View;
     private TextView phoneNumTv;
     private EditText phoneVerficationEt;
+
+    public TextView getChangePhoneVerficationTv() {
+        return changePhoneVerficationTv;
+    }
+
     private TextView changePhoneVerficationTv;
     private EditText setPasswordEt;
+    private Registered2Presenter registered2Presenter;
+
+    public EditText getPhoneVerficationEt() {
+        return phoneVerficationEt;
+    }
+
+    public EditText getSetPasswordEt() {
+        return setPasswordEt;
+    }
+
+    public EditText getConfirmPasswordEt() {
+        return confirmPasswordEt;
+    }
+
     private ImageView isSeeSetPasswordIv;
     private EditText confirmPasswordEt;
     private ImageView isSeeConfirmPasswordIv;
@@ -37,7 +58,7 @@ public class Registered2Fragment extends BaseFragment implements RegistContract.
 
     @Override
     protected void unBindPresent() {
-
+        registered2Presenter = null;
     }
 
     @Override
@@ -47,7 +68,7 @@ public class Registered2Fragment extends BaseFragment implements RegistContract.
 
     @Override
     protected void bindPresent() {
-
+        registered2Presenter = new Registered2Presenter(this);
     }
 
     @Override
@@ -108,7 +129,7 @@ public class Registered2Fragment extends BaseFragment implements RegistContract.
     protected void initSubData() {
         username = getArguments().getString("username");
         mobilePhoneNum = getArguments().getString("phoneNum");
-
+        registered2Presenter.getMobileNum();
     }
 
 
@@ -139,9 +160,21 @@ public class Registered2Fragment extends BaseFragment implements RegistContract.
             case R.id.change_phone_verfication:
                 break;
             case R.id.next_bt:
-                Registered3Fragment registered3Fragment = new Registered3Fragment();
-                MyFragmentManager.addFragmentForBack(getActivity(),((RegisteredActivity)getActivity()).getBaseFrameLayoutId(),registered3Fragment, Constants.FRAGMENT_REGISTERED3_TAG);
+                registered2Presenter.nextStep(getVerificationNum(),getPassword(),getSurePassword(),username);
                 break;
         }
+    }
+
+    /**
+     * 跳转到下一页
+     */
+    public void jumpNextStep(){
+        Registered3Fragment registered3Fragment = new Registered3Fragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("username",username);
+        bundle.putString("password",getPassword());
+        bundle.putString("mobilePhone",mobilePhoneNum);
+        registered3Fragment.setArguments(bundle);
+        MyFragmentManager.addFragmentForBack(getActivity(),((RegisteredActivity)getActivity()).getBaseFrameLayoutId(),registered3Fragment, Constants.FRAGMENT_REGISTERED3_TAG);
     }
 }

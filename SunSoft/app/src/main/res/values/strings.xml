@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">阳光智园</string>
     <!--登录-->
     <string name="login_name_hint">请输入账号</string>
     <string name="login_phone_hint">请输入密码</string>
