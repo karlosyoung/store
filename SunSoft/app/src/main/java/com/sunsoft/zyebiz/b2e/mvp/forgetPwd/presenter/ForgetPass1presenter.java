@@ -55,7 +55,7 @@ public class ForgetPass1presenter extends BasePresenter<ForgetPassFragment>imple
         hashMap.put("userName",mvpView.getUserName());
         mForgetPass1Model.ForgetPassRequest(ApiUrl.FORGETPWD,hashMap);
     }
-
+ 
     @Override
     public boolean checkJumpView() {
         if(EmptyUtil.isEmpty(mvpView.getUserName())){
