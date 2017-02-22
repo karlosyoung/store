@@ -17,37 +17,37 @@
         <service android:name=".common.net.checkNet.NetAndRefreshService">
         </service>
         <!--闪屏页-->
-        <activity android:name="com.sunsoft.zyebiz.b2e.mvp.splash.SplashActivity">
+        <activity android:name=".mvp.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <!--登录页-->
-     <!--   <activity
-            android:name="com.sunsoft.zyebiz.b2e.mvp.login.LoginActivity"
+        <activity
+            android:name=".mvp.login.LoginActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustUnspecified|stateAlwaysVisible">
         </activity>
-        &lt;!&ndash;引导页&ndash;&gt;
-        <activity android:name="com.sunsoft.zyebiz.b2e.mvp.guide.GuideActivity"
+        <!--引导页-->
+        <activity android:name=".mvp.guide.GuideActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             >
         </activity>
-        &lt;!&ndash;注册页&ndash;&gt;
+        <!--注册页-->
         <activity
-            android:name="com.sunsoft.zyebiz.b2e.mvp.registered.RegisteredActivity"
+            android:name=".mvp.registered.RegisteredActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustUnspecified|stateAlwaysVisible">
         </activity>
-        &lt;!&ndash;忘记密码&ndash;&gt;
+        <!--忘记密码-->
         <activity android:name=".mvp.forgetPwd.ForgetPassActivity"
           android:configChanges="keyboardHidden|orientation"
           android:screenOrientation="portrait"
           android:windowSoftInputMode="adjustUnspecified|stateHidden" >
-        </activity>-->
+        </activity>
     </application>
 
 
