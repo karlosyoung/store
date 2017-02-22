@@ -39,7 +39,7 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
         HashMap<String,String> hashMap = getHashMap();
         hashMap.put("userName",mvpView.getUserName());
         hashMap.put("password",mvpView.getPassword());
-//        hashMap.put("validateCode",mvpView.getCheckNum());
+        hashMap.put("validateCode",mvpView.getCheckNum());
         hashMap.put("uniqueNo", PhoneUniqueUtil.getUniqueStr());    //通过获取手机唯一标识码确定输入三次错误后显示验证码
         mLoginmodule.loginRequest(ApiUrl.LOGIN,hashMap);
     }
@@ -66,10 +66,6 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
             ToastUtil.toastDes(R.string.login_phone_hint);
             return false;
         }
-//        if(EmptyUtil.isEmpty(mvpView.getCheckNum())){
-//            ToastUtil.toastDes(R.string.enter_verification_code);
-//            return false;
-//        }
         return true;
     }
 
@@ -89,12 +85,7 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
 //                        boolean b = --count == 0;
                     }if ("3".equals(loginBean.getMsgCode())){
                         ToastUtil.toastDes(loginBean.getObj().getMessage());
-                        boolean validateCodeIsEmpty = refreshVerificationCode();
-                        if(validateCodeIsEmpty){
-                            if(EmptyUtil.isEmpty(mvpView.getCheckNum())){
-                                ToastUtil.toastDes(R.string.enter_verification_code);
-                            }
-                        }
+                    refreshVerificationCode();
                     }
 //                }
 
