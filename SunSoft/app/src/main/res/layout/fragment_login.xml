@@ -123,7 +123,7 @@
 
         <!--验证码  -->
         <RelativeLayout
-            android:id="@+id/login__rl_checknum"
+            android:id="@+id/login_rl_checknum"
             android:layout_width="fill_parent"
             android:layout_height="@dimen/dimen_20"
             android:layout_alignEnd="@id/pwd_layout"
@@ -193,7 +193,7 @@
             android:id="@+id/tv_login"
             android:layout_width="@dimen/dimen_267"
             android:layout_height="@dimen/dimen_38"
-            android:layout_below="@+id/login__rl_checknum"
+            android:layout_below="@id/login_rl_checknum"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/dimen_30"
             android:background="@drawable/shape_login_selector"
