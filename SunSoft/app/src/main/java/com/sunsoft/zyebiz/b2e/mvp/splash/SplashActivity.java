@@ -29,6 +29,13 @@ public class SplashActivity extends Activity implements SplashContract.ISplashVi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
+
+
+
         setContentView(R.layout.activity_splash);
         ButterKnife.inject(this);
         SplashPresenter splashPresenter = new SplashPresenter(this);

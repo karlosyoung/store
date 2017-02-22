@@ -1,10 +1,10 @@
 package com.sunsoft.zyebiz.b2e.common.Manager;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+
 
 /**
  * 管理Fragment
@@ -20,7 +20,7 @@ public class MyFragmentManager {
      * @param fragment
      * @param tag
      */
-    public static void addFragmentForBack(FragmentActivity fragmentActivity, int id, Fragment fragment,String tag){
+    public static void addFragmentForBack(FragmentActivity fragmentActivity, int id, Fragment fragment, String tag){
         fgmentManager = fragmentActivity.getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fgmentManager.beginTransaction();
         fragmentTransaction.add(id,fragment,tag);
