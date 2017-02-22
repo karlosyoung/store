@@ -17,7 +17,7 @@ public interface LoginContract {
     interface ILoginPresenter{
         void toLogin();
         void saveUserInfo();
-        void refreshVerificationCode();
+        boolean refreshVerificationCode();
         boolean checkJumpView();
     }
 
