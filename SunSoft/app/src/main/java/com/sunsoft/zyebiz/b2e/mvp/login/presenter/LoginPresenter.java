@@ -27,7 +27,7 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
     private LoginModel mLoginmodule;
     private boolean validateCode = false;
     public LoginPresenter(LoginFragment view) {
-       super(view);
+        super(view);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
         HashMap<String,String> hashMap = getHashMap();
         hashMap.put("userName",mvpView.getUserName());
         hashMap.put("password",mvpView.getPassword());
-//        hashMap.put("validateCode",mvpView.getCheckNum());
+        hashMap.put("validateCode",mvpView.getCheckNum());
         hashMap.put("uniqueNo", PhoneUniqueUtil.getUniqueStr());    //通过获取手机唯一标识码确定输入三次错误后显示验证码
         mLoginmodule.loginRequest(ApiUrl.LOGIN,hashMap);
     }
@@ -51,7 +51,7 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
 
     @Override
     public boolean refreshVerificationCode() {
-       mvpView.mLogin_et_checknum.setText("");
+        mvpView.mLogin_et_checknum.setText("");
         mvpView.mVerification_rl.setVisibility(View.VISIBLE);
         ImageVerification.requestImageVerification(mvpView,mvpView.mChecknum);
         return true;
@@ -66,10 +66,6 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
             ToastUtil.toastDes(R.string.login_phone_hint);
             return false;
         }
-//        if(EmptyUtil.isEmpty(mvpView.getCheckNum())){
-//            ToastUtil.toastDes(R.string.enter_verification_code);
-//            return false;
-//        }
         return true;
     }
 
@@ -82,20 +78,15 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
             public void OnSuccess(String tag, Object result) {
                 LoginBean loginBean = (LoginBean)result;
 //                while (validateCode){
-                    if("0".equals(loginBean.getMsgCode())){ /*成功*/
+                if("0".equals(loginBean.getMsgCode())){ /*成功*/
 
-                    }else  if ("1".equals(loginBean.getMsgCode())){ /*失败*/
-                        ToastUtil.toastDes(loginBean.getObj().getMessage());
+                }else  if ("1".equals(loginBean.getMsgCode())){ /*失败*/
+                    ToastUtil.toastDes(loginBean.getObj().getMessage());
 //                        boolean b = --count == 0;
-                    }if ("3".equals(loginBean.getMsgCode())){
-                        ToastUtil.toastDes(loginBean.getObj().getMessage());
-                        boolean validateCodeIsEmpty = refreshVerificationCode();
-                        if(validateCodeIsEmpty){
-                            if(EmptyUtil.isEmpty(mvpView.getCheckNum())){
-                                ToastUtil.toastDes(R.string.enter_verification_code);
-                            }
-                        }
-                    }
+                }if ("3".equals(loginBean.getMsgCode())){
+                    ToastUtil.toastDes(loginBean.getObj().getMessage());
+                    refreshVerificationCode();
+                }
 //                }
 
 
