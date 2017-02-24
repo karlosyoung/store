@@ -101,7 +101,7 @@ public class ForgetPass2Fragment extends BaseFragment implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        if(!TimeLimitUtil.isResponseClick()){
+        if(!TimeLimitUtil.isFastClick()){
             return;
         }
         switch (v.getId()){

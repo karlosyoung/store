@@ -20,4 +20,17 @@ public class TimeLimitUtil {
         lastClickTime = time;
         return true;
     }
+
+    /**
+     * 防止重复点击
+     * @return
+     */
+    public synchronized static boolean isFastClick() {
+        long time = System.currentTimeMillis();
+        if (time - lastClickTime < 500) {
+            return true;
+        }
+        lastClickTime = time;
+        return false;
+    }
 }

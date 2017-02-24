@@ -183,7 +183,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
 
     @Override
     public void onClick(View v) {
-        if (TimeLimitUtil.isResponseClick()) {
+        if (TimeLimitUtil.isFastClick()) {
             return;
         }
         switch (v.getId()) {
