@@ -27,7 +27,7 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
     private LoginModel mLoginmodule;
     private boolean validateCode = false;
     public LoginPresenter(LoginFragment view) {
-       super(view);
+        super(view);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
 
     @Override
     public boolean refreshVerificationCode() {
-       mvpView.mLogin_et_checknum.setText("");
+        mvpView.mLogin_et_checknum.setText("");
         mvpView.mVerification_rl.setVisibility(View.VISIBLE);
         ImageVerification.requestImageVerification(mvpView,mvpView.mChecknum);
         return true;
@@ -78,15 +78,15 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
             public void OnSuccess(String tag, Object result) {
                 LoginBean loginBean = (LoginBean)result;
 //                while (validateCode){
-                    if("0".equals(loginBean.getMsgCode())){ /*成功*/
+                if("0".equals(loginBean.getMsgCode())){ /*成功*/
 
-                    }else  if ("1".equals(loginBean.getMsgCode())){ /*失败*/
-                        ToastUtil.toastDes(loginBean.getObj().getMessage());
+                }else  if ("1".equals(loginBean.getMsgCode())){ /*失败*/
+                    ToastUtil.toastDes(loginBean.getObj().getMessage());
 //                        boolean b = --count == 0;
-                    }if ("3".equals(loginBean.getMsgCode())){
-                        ToastUtil.toastDes(loginBean.getObj().getMessage());
+                }if ("3".equals(loginBean.getMsgCode())){
+                    ToastUtil.toastDes(loginBean.getObj().getMessage());
                     refreshVerificationCode();
-                    }
+                }
 //                }
 
 

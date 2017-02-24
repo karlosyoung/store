@@ -8,3 +8,5 @@
 /captures
 /node_modules
 /RniOS
+/.idea/gradle.xml
+/.idea/misc.xml
