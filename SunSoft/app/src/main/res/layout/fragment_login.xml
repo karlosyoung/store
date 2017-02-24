@@ -117,6 +117,7 @@
                 android:paddingTop="@dimen/dimen_10"
                 android:src="@drawable/auxiliary_view_normal"
                 android:visibility="visible"
+                android:contentDescription="@string/img_description"
                 />
         </FrameLayout>
 
@@ -186,7 +187,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_toLeftOf="@+id/login_bt_change"
                 android:layout_toStartOf="@+id/login_bt_change"
-                android:scaleType="fitXY"/>
+                android:scaleType="fitXY"
+                android:contentDescription="@string/img_description"/>
         </RelativeLayout>
 
         <Button

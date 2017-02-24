@@ -1,4 +1,5 @@
 package com.sunsoft.zyebiz.b2e.mvp.login.presenter;
+
 import android.view.View;
 
 import com.sunsoft.zyebiz.b2e.R;
@@ -24,7 +25,7 @@ import java.util.HashMap;
 public class LoginPresenter extends BasePresenter<LoginFragment> implements LoginContract.ILoginPresenter {
 
 
-    private LoginModel mLoginmodule;
+    private LoginModel mLoginModule;
     private boolean validateCode = false;
     public LoginPresenter(LoginFragment view) {
         super(view);
@@ -41,7 +42,7 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
         hashMap.put("password",mvpView.getPassword());
         hashMap.put("validateCode",mvpView.getCheckNum());
         hashMap.put("uniqueNo", PhoneUniqueUtil.getUniqueStr());    //通过获取手机唯一标识码确定输入三次错误后显示验证码
-        mLoginmodule.loginRequest(ApiUrl.LOGIN,hashMap);
+        mLoginModule.loginRequest(ApiUrl.LOGIN,hashMap);
     }
 
     @Override
@@ -51,13 +52,11 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
 
     @Override
     public boolean refreshVerificationCode() {
-//        if (EmptyUtil.isEmpty(mvpView.getCheckNum())){
-//
-//        }
         mvpView.mLogin_et_checknum.setText("");
         mvpView.mVerification_rl.setVisibility(View.VISIBLE);
         ImageVerification.requestImageVerification(mvpView,mvpView.mChecknum);
-        return false;
+        validateCode = true;
+        return true;
     }
     @Override
     public boolean checkJumpView() {
@@ -69,6 +68,12 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
             ToastUtil.toastDes(R.string.login_phone_hint);
             return false;
         }
+        if(validateCode){
+            if (EmptyUtil.isEmpty(mvpView.getCheckNum())){
+                ToastUtil.toastDes(R.string.toast_input_verificate);
+                return false;
+            }
+        }
         return true;
     }
 
@@ -76,25 +81,23 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
     @Override
     protected void createModel() {
         /*成功*//*失败*/
-        mLoginmodule = new LoginModel(new ISecondaryCallBackData() {
+        mLoginModule = new LoginModel(new ISecondaryCallBackData() {
             @Override
             public void OnSuccess(String tag, Object result) {
                 LoginBean loginBean = (LoginBean)result;
                 int count = 2;
-                if("0".equals(loginBean.getMsgCode())){ /*成功*/
+                if("0".equals(loginBean.getMsgCode())){                 /*成功*/
 
-                }
-                if ("1".equals(loginBean.getMsgCode())&&--count == 1) { /*失败*/
+                }else if ("1".equals(loginBean.getMsgCode())&&--count == 1) {     /*失败*/
                     ToastUtil.toastDes(loginBean.getObj().getMessage());
                 }
                 if ("3".equals(loginBean.getMsgCode())) {
-                      ToastUtil.toastDes(loginBean.getObj().getMessage());
-                      refreshVerificationCode();
+                    ToastUtil.toastDes(loginBean.getObj().getMessage());
+                    refreshVerificationCode();
                 }
             }
             @Override
             public void OnError(String tag, String error) {
-
             }
         });
     }
