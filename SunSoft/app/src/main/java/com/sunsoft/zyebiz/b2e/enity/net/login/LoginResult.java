@@ -1,8 +1,6 @@
 package com.sunsoft.zyebiz.b2e.enity.net.login;
 
-import java.io.Serializable;
-
-public class LoginResult implements Serializable {
+public class LoginResult extends BaseRequestBean{
 	private String id;
 	private String userId;
 	private String userName;

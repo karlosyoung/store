@@ -5,7 +5,6 @@
             android:layout_height="match_parent"
             android:background="@drawable/login_bg">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,12 +85,10 @@
                 android:background="#b0b0b0"
                 />
 
-            <com.sunsoft.zyebiz.b2e.widget.myView.CommunityEditText
+            <com.sunsoft.zyebiz.b2e.widget.myView.PasswordToggleEditText
                 android:id="@+id/edt_passwd"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="@dimen/dimen_30"
-                android:layout_marginRight="@dimen/dimen_30"
                 android:background="@null"
                 android:drawableLeft="@drawable/login_userpas"
                 android:drawablePadding="20dp"
@@ -107,19 +104,17 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/text_hint"
                 android:textSize="15sp"/>
-
-            <ImageButton
-                android:id="@+id/img_pass_show"
-                android:layout_width="@dimen/dimen_30"
-                android:layout_height="@dimen/dimen_30"
-                android:layout_gravity="end|center_vertical"
-                android:background="@null"
-                android:paddingTop="@dimen/dimen_10"
-                android:src="@drawable/auxiliary_view_normal"
-                android:visibility="visible"
-                android:contentDescription="@string/img_description"
-                />
         </FrameLayout>
+        <!--<ImageButton-->
+        <!--android:id="@+id/img_pass_show"-->
+        <!--android:layout_width="@dimen/dimen_30"-->
+        <!--android:layout_height="@dimen/dimen_30"-->
+        <!--android:layout_gravity="end|center_vertical"-->
+        <!--android:background="@null"-->
+        <!--android:paddingTop="@dimen/dimen_10"-->
+        <!--android:src="@drawable/auxiliary_view_normal"-->
+        <!--android:visibility="visible"-->
+        <!--android:contentDescription="@string/img_description"/>-->
 
 
         <!--验证码  -->
@@ -185,10 +180,10 @@
                 android:layout_width="@dimen/dimen_60"
                 android:layout_height="@dimen/dimen_25"
                 android:layout_alignParentTop="true"
-                android:layout_toLeftOf="@+id/login_bt_change"
-                android:layout_toStartOf="@+id/login_bt_change"
-                android:scaleType="fitXY"
-                android:contentDescription="@string/img_description"/>
+                android:layout_toLeftOf="@id/login_bt_change"
+                android:layout_toStartOf="@id/login_bt_change"
+                android:contentDescription="@string/img_description"
+                android:scaleType="fitXY"/>
         </RelativeLayout>
 
         <Button
@@ -242,15 +237,15 @@
                 android:id="@+id/forget_pas"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="37dp"
-                android:layout_marginStart="37dp"
-                android:layout_toEndOf="@+id/center"
-                android:layout_toRightOf="@+id/center"
+                android:layout_marginLeft="38dp"
+                android:layout_marginStart="38dp"
                 android:padding="@dimen/dimen_15"
                 android:text="@string/forget_psd"
                 android:textColor="@color/text_white"
-                android:textSize="@dimen/size_15"/>
+                android:textSize="@dimen/size_15"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/center"
+                android:layout_toEndOf="@+id/center"/>
         </RelativeLayout>
     </RelativeLayout>
 </ScrollView>

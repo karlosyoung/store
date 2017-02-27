@@ -96,7 +96,15 @@ public abstract class HttpMethod {
                     if(result != null){
                         JSONObject jsonObject = new JSONObject(result);
                         if(jsonObject.has("title")){
-                            if(jsonObject.has("body")){
+                            String title = jsonObject.getString("title");
+                            if("0".equals(title) || "1".equals(title)){
+                                handler.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        onDataFinish.OnSuccess(result);
+                                    }
+                                });
+                            } else if(jsonObject.has("body")){
                                 String body = jsonObject.getString("body");
                                 JSONObject jsonObject1 = new JSONObject(body);
                                 if(jsonObject1.has("msgCode")){

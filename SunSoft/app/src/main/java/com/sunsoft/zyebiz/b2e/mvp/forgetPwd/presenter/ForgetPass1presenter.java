@@ -32,9 +32,10 @@ public class ForgetPass1presenter extends BasePresenter<ForgetPassFragment>imple
             @Override
             public void OnSuccess(String tag, Object result) {
                 ForgetPassBean forgetPassBean = (ForgetPassBean) result;
-                if (false){
-
-                }
+//                if("0".equals(forgetPassBean.getMsgCode())){ /*成功*/
+//                }else if ("1".equals(forgetPassBean.getMsgCode())){ /*失败*/
+//                    ToastUtil.toastDes(forgetPassBean.getObj().getTitle());
+//                }
 
             }
 

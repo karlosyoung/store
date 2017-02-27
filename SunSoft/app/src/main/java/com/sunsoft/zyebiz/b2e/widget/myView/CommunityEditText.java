@@ -22,7 +22,7 @@ import com.sunsoft.zyebiz.b2e.R;
 
 public class CommunityEditText extends EditText implements
 		OnFocusChangeListener, TextWatcher {
-	
+
 	public interface onClickClearCallback {
 		
 		public void clear();
@@ -35,6 +35,7 @@ public class CommunityEditText extends EditText implements
 	 * 删除按钮的引用
 	 */
 	private Drawable mClearDrawable;
+	private boolean flag = true;
 
 	public CommunityEditText(Context context) {
 		this(context, null);
@@ -51,14 +52,17 @@ public class CommunityEditText extends EditText implements
 	}
 
 	private void init() {
-		// 获取EditText的DrawableRight,假如没有设置我们就使用默认的图片
+
+//		mEdt_passwd = (EditText) findViewById(R.id.edt_passwd);
+//		mImg_pass_show = (ImageButton)findViewById(R.id.img_pass_show);
+
 		mClearDrawable = getCompoundDrawables()[2];
 		if (mClearDrawable == null) {
 				mClearDrawable = getResources().getDrawable(
 						R.drawable.login_clean);
+			mClearDrawable.setBounds(0, 0, mClearDrawable.getIntrinsicWidth(),
+					mClearDrawable.getIntrinsicHeight());
 		}
-		mClearDrawable.setBounds(0, 0, mClearDrawable.getIntrinsicWidth(),
-				mClearDrawable.getIntrinsicHeight());
 		setClearIconVisible(false);
 		setOnFocusChangeListener(this);
 		addTextChangedListener(this);
@@ -72,16 +76,19 @@ public class CommunityEditText extends EditText implements
 	public boolean onTouchEvent(MotionEvent event) {
 		if (getCompoundDrawables()[2] != null) {
 			if (event.getAction() == MotionEvent.ACTION_UP) {
-				boolean touchable = event.getX() > (getWidth()
-						- getPaddingRight() - mClearDrawable
+				if (flag){
+					boolean touchable = event.getX() > (getWidth()
+							- getPaddingRight() - mClearDrawable
 							.getIntrinsicWidth())
-						&& (event.getX() < ((getWidth() - getPaddingRight())));
-				if (touchable) {
-					this.setText("");
-					if (clearCallBack != null) {
-						clearCallBack.clear();
+							&& (event.getX() < ((getWidth() - getPaddingRight())));
+					if (touchable) {
+						this.setText("");
+						if (clearCallBack != null) {
+							clearCallBack.clear();
+						}
 					}
 				}
+
 			}
 		}
 
@@ -109,6 +116,7 @@ public class CommunityEditText extends EditText implements
 		Drawable right = visible ? mClearDrawable : null;
 		setCompoundDrawables(getCompoundDrawables()[0],
 				getCompoundDrawables()[1], right, getCompoundDrawables()[3]);
+
 	}
 
 	/**

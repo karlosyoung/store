@@ -1,11 +1,7 @@
 package com.sunsoft.zyebiz.b2e.mvp.login;
 
 import android.content.Intent;
-import android.text.Editable;
 import android.text.InputFilter;
-import android.text.InputType;
-import android.text.Selection;
-import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -42,7 +38,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
     private EditText mUsename;
     private FrameLayout mPwd_layout;
     private EditText mEdt_passwd;
-    private Button mTv_login;
+    public Button mTv_login;
     private TextView mTv_register;
     private TextView mForget_pas;
     private Button mLogin_change;
@@ -117,7 +113,6 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
         mUsename_layout = (FrameLayout) mLoginView.findViewById(R.id.username_layout);
         mUsename = (EditText) mLoginView.findViewById(R.id.username);                           //用户名
         mPwd_layout = (FrameLayout) mLoginView.findViewById(R.id.pwd_layout);
-        mImg_pass_show = (ImageButton) mLoginView.findViewById(R.id.img_pass_show);
         mEdt_passwd = (EditText) mLoginView.findViewById(R.id.edt_passwd);                      //密码输入
         mTv_login = (Button) mLoginView.findViewById(R.id.tv_login);                            //输入
         mTv_register = (TextView) mLoginView.findViewById(R.id.tv_register);                    //注册
@@ -146,7 +141,6 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
 
         mTv_login.setOnClickListener(this);                 //登录
         mTv_register.setOnClickListener(this);              //注册
-        mImg_pass_show.setOnClickListener(this);            // 显示密码
         mForget_pas.setOnClickListener(this);               //忘记密码
         mLogin_change.setOnClickListener(this);             //切换验证码
     }
@@ -154,32 +148,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
 
     @Override
     protected void initSubData() {
-//        mLoginPresenter.refreshVerificationCode();
     }
-
-
-    private void setPwdInputType() {
-        int type = mEdt_passwd.getInputType();
-        setPwdImgGone(type == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-        Editable etable = mEdt_passwd.getText();
-        Selection.setSelection(etable, etable.length());
-    }
-
-    private void setPwdImgGone(boolean flag) {
-        setPwdGone(flag, flag);
-
-    }
-
-    private void setPwdGone(boolean flag, boolean isPwdShow) {
-        mImg_pass_show.setImageResource(isPwdShow ? R.drawable.auxiliary_view_normal : R.drawable.auxiliary_view_open);
-        if (flag) {
-            mEdt_passwd.setInputType(InputType.TYPE_CLASS_TEXT
-                    | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-        } else {
-            mEdt_passwd.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-        }
-    }
-
 
     @Override
     public void onClick(View v) {
@@ -194,14 +163,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
                 jumpToRegister();                   //跳转到注册页面
                 break;
             case R.id.forget_pas:
-                jumpToForgetpassword();            //跳转到忘记密码页面
-                break;
-
-            case R.id.img_pass_show:               //查看密码
-                if (TextUtils.isEmpty(mEdt_passwd.getText())) {
-                    return;
-                }
-                setPwdInputType();
+                jumpToForgetPassword();            //跳转到忘记密码页面
                 break;
             case R.id.login_bt_change:
             case R.id.login_iv_checknum:            //获取验证码
@@ -225,7 +187,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
     /***
      * 跳转忘记密码页面
      */
-    private void jumpToForgetpassword() {
+    private void jumpToForgetPassword() {
         Intent intent = new Intent(getActivity(), ForgetPassActivity.class);
         intent.putExtra(Constants.DEFAULT_TITLE_KEY, R.string.forget_psd);
         startActivity(intent);

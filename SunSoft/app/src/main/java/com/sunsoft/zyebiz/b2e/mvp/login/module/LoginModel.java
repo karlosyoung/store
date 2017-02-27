@@ -3,7 +3,7 @@ package com.sunsoft.zyebiz.b2e.mvp.login.module;
 import com.sunsoft.zyebiz.b2e.common.constants.Constants;
 import com.sunsoft.zyebiz.b2e.common.net.http.HttpMethod;
 import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
-import com.sunsoft.zyebiz.b2e.enity.net.login.LoginBean;
+import com.sunsoft.zyebiz.b2e.enity.net.login.BaseRequestBean;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseModel;
 import com.sunsoft.zyebiz.b2e.mvp.login.LoginContract;
 import com.sunsoft.zyebiz.b2e.utils.localUtil.JsonUtils;
@@ -28,8 +28,8 @@ public class LoginModel extends BaseModel implements LoginContract.ILoginModule 
             @Override
             public void OnSuccess(String result) {
                 LogUtil.logMsg("登录："+result);
-                LoginBean loginBean = JsonUtils.json2Bean(result,LoginBean.class);
-                iSecondaryCallBackData.OnSuccess(Constants.REQUEST_SUCCESSFUL,loginBean);
+                BaseRequestBean baseRequestBean = JsonUtils.json2Bean(result,BaseRequestBean.class);
+                iSecondaryCallBackData.OnSuccess(Constants.REQUEST_SUCCESSFUL, baseRequestBean);
             }
 
 
