@@ -28,7 +28,7 @@
             android:name=".mvp.login.LoginActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustUnspecified|stateAlwaysVisible">
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
         </activity>
         <!--引导页-->
         <activity android:name=".mvp.guide.GuideActivity"

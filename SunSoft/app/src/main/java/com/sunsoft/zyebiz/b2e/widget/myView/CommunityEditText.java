@@ -52,10 +52,6 @@ public class CommunityEditText extends EditText implements
 	}
 
 	private void init() {
-
-//		mEdt_passwd = (EditText) findViewById(R.id.edt_passwd);
-//		mImg_pass_show = (ImageButton)findViewById(R.id.img_pass_show);
-
 		mClearDrawable = getCompoundDrawables()[2];
 		if (mClearDrawable == null) {
 				mClearDrawable = getResources().getDrawable(
