@@ -1,6 +1,6 @@
 package com.sunsoft.zyebiz.b2e.enity.net.login;
 
-public class LoginResult extends BaseRequestBean{
+public class LoginResult extends LoginBean {
 	private String id;
 	private String userId;
 	private String userName;

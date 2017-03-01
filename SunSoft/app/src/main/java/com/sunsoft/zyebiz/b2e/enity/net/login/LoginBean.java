@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 登陆时的信息
  */
-public class BaseRequestBean implements Serializable{
+public class LoginBean implements Serializable{
 	/**
 	 * msgCode : 3
 	 * obj : {"title":null,"body":null,"message":"用户名与密码不匹配"}

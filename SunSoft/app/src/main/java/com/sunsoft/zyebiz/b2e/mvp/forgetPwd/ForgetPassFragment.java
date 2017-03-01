@@ -1,5 +1,6 @@
 package com.sunsoft.zyebiz.b2e.mvp.forgetPwd;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -7,6 +8,8 @@ import android.widget.TextView;
 
 import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.common.Manager.AppManager;
+import com.sunsoft.zyebiz.b2e.common.Manager.MyFragmentManager;
+import com.sunsoft.zyebiz.b2e.common.constants.Constants;
 import com.sunsoft.zyebiz.b2e.common.ui.CommonPag;
 import com.sunsoft.zyebiz.b2e.mvp.base.BaseFragment;
 import com.sunsoft.zyebiz.b2e.mvp.forgetPwd.presenter.ForgetPass1presenter;
@@ -118,6 +121,16 @@ public class ForgetPassFragment extends BaseFragment implements ForgetPasswordCo
                 mForgetpresenter.nextStep();
             break;
         }
+    }
+
+    public void jumpToNext(String userName, String mobilePhone, String token) {
+        ForgetPass2Fragment forgetpass2fragment = new ForgetPass2Fragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("username",userName);
+        bundle.putString("mobilePhone",mobilePhone);
+        bundle.putString("token",token);
+        forgetpass2fragment.setArguments(bundle);
+        MyFragmentManager.addFragmentForBack(getActivity(),((ForgetPassActivity)getActivity()).getBaseFrameLayoutId(),forgetpass2fragment, Constants.FRAGMENT_FORGETPASS2_TAG);
     }
 
 }

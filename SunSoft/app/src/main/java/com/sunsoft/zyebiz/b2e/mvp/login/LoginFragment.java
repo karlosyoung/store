@@ -145,7 +145,7 @@ public class LoginFragment extends BaseFragment implements LoginContract.ILoginV
         mLogin_change.setOnClickListener(this);             //切换验证码
     }
 
-    
+
 
     @Override
     protected void initSubData() {

@@ -6,7 +6,7 @@ import com.sunsoft.zyebiz.b2e.R;
 import com.sunsoft.zyebiz.b2e.common.api.ApiUrl;
 import com.sunsoft.zyebiz.b2e.common.module.imageVerificationModule.ImageVerification;
 import com.sunsoft.zyebiz.b2e.common.net.http.ISecondaryCallBackData;
-import com.sunsoft.zyebiz.b2e.enity.net.login.BaseRequestBean;
+import com.sunsoft.zyebiz.b2e.enity.net.login.LoginBean;
 import com.sunsoft.zyebiz.b2e.mvp.base.BasePresenter;
 import com.sunsoft.zyebiz.b2e.mvp.login.LoginContract;
 import com.sunsoft.zyebiz.b2e.mvp.login.LoginFragment;
@@ -61,11 +61,11 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
     @Override
     public boolean checkJumpView() {
         if(EmptyUtil.isEmpty(mvpView.getUserName())){
-//            ToastUtil.toastDes(R.string.input_username);
+            ToastUtil.toastDes(R.string.input_username);
             return false;
         }
         if (EmptyUtil.isEmpty(mvpView.getPassword())){
-//            ToastUtil.toastDes(R.string.login_phone_hint);
+            ToastUtil.toastDes(R.string.login_phone_hint);
             return false;
         }
         if(validateCode){
@@ -80,19 +80,18 @@ public class LoginPresenter extends BasePresenter<LoginFragment> implements Logi
 
     @Override
     protected void createModel() {
-        /*成功*//*失败*/
         mLoginModule = new LoginModel(new ISecondaryCallBackData() {
             @Override
             public void OnSuccess(String tag, Object result) {
-                BaseRequestBean baseRequestBean = (BaseRequestBean)result;
+                LoginBean loginBean = (LoginBean)result;
                 int count = 2;
-                if("0".equals(baseRequestBean.getMsgCode())){                          /*成功*/
-
-                }else if ("1".equals(baseRequestBean.getMsgCode())&&--count == 1) {       /*失败*/
-                    ToastUtil.toastDes(baseRequestBean.getObj().getMessage());
+                if("0".equals(loginBean.getMsgCode())){                              /*成功*/
+                    //TODO
+                }else if ("1".equals(loginBean.getMsgCode())&&--count == 1) {       /*失败*/
+                    ToastUtil.toastDes(loginBean.getObj().getMessage());
                 }
-                if ("3".equals(baseRequestBean.getMsgCode())) {
-                    ToastUtil.toastDes(baseRequestBean.getObj().getMessage());
+                if ("3".equals(loginBean.getMsgCode())) {
+                    ToastUtil.toastDes(loginBean.getObj().getMessage());
                     refreshVerificationCode();
                 }
             }

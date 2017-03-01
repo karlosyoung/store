@@ -52,7 +52,6 @@ public class ForgetPass2Fragment extends BaseFragment implements View.OnClickLis
             @Override
             protected View onCreateSuccessedView() {
                 forgetPass = UIUtil.inflate(R.layout.fragment_forgetpass2);
-                initSubView();
                 return forgetPass;
             }
 
@@ -81,6 +80,7 @@ public class ForgetPass2Fragment extends BaseFragment implements View.OnClickLis
                 initSubCommonTitle();
             }
         };
+        commonPag.showSuccessedView();
         return commonPag;
     }
 

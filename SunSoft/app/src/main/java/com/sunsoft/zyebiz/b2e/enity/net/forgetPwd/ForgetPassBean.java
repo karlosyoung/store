@@ -9,6 +9,7 @@ public class ForgetPassBean {
 
     private BodyBean body;
     private String title;
+    private String message;
 
     public BodyBean getBody() {
         return body;
@@ -24,6 +25,13 @@ public class ForgetPassBean {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public static class BodyBean {
